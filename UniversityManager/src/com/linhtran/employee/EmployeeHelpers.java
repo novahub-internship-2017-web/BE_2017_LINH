@@ -1,7 +1,6 @@
 package com.linhtran.employee;
 
-import java.util.ArrayList;
-
+import java.util.List;
 /* -----------------------------------------------------------------
    This class contain some helper constant value and static methods
    for Employee class and its child classes
@@ -19,7 +18,7 @@ class EmployeeHelpers {
     public static final int REGULAR_EMPLOYEE_ALLOWANCE = 400;
 
     //Bubble sort by name for employee list
-    public static void sortByName(ArrayList<Employee> employeeList) {
+    public static void sortByName(List<Employee> employeeList) {
         for (int i = 0; i < employeeList.size() - 1; i++) {
             for (int j = i; j < employeeList.size(); j++) {
                 if (employeeList.get(i).compareByNameTo(employeeList.get(j)) > 0) {
@@ -32,7 +31,7 @@ class EmployeeHelpers {
     }
 
     //Bubble sort by salary for employee list
-    public static void sortBySalary(ArrayList<Employee> employeeList) {
+    public static void sortBySalary(List<Employee> employeeList) {
         for (int i = 0; i < employeeList.size() - 1; i++) {
             for (int j = i; j < employeeList.size(); j++) {
                 if (employeeList.get(i).compareBySalaryTo(employeeList.get(j)) > 0) {

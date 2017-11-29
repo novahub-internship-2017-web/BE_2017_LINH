@@ -3,6 +3,7 @@ package com.linhtran.employee;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -16,7 +17,7 @@ public class EmployeeHelpersTest {
             "Thanh Tra", "Truong Phong");
     Employee officer2 = new Officer("Le Cuong", 1980, "Ha Noi", 5.00,
             "Thanh Tra", "Truong Phong");
-    ArrayList<Employee> employeeArrayList = new ArrayList<>();
+    List<Employee> employeeArrayList = new ArrayList<>();
 
     @Test
     public void sortByName() {
