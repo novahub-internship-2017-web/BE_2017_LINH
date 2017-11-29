@@ -1,7 +1,5 @@
 package com.linhtran.employee;
 
-import com.linhtran.ConstantNumber;
-
 public class Officer extends Employee {
     private String department;
     private int numberOfWorkingDays;
@@ -52,7 +50,7 @@ public class Officer extends Employee {
 
     @Override
     public String toString() {
-        return "Officer[name=" + getFullName() + ", potition=" + position +
+        return "Officer[name=" + getFullName() + ", position=" + position +
                 ", birth year=" + getBirthYear() + ", number of working days=" +
                 numberOfWorkingDays + "]";
     }
@@ -64,21 +62,22 @@ public class Officer extends Employee {
 
     //Set allowance according to their potition
     private void setPay() {
-        switch (position.toUpperCase()) {
+        switch (position.toLowerCase()) {
             case "truong phong":
-                setAllowance(ConstantNumber.HEAD_DEPARTMENT_ALLOWANCE);
+                setAllowance(EmployeeHelpers.HEAD_DEPARTMENT_ALLOWANCE);
                 break;
 
             case "pho phong":
-                setAllowance(ConstantNumber.DEPUTY_DEPARTMENT_ALLOWANCE);
+                setAllowance(EmployeeHelpers.DEPUTY_DEPARTMENT_ALLOWANCE);
                 break;
 
             case "nhan vien":
-                setAllowance(ConstantNumber.REGULAR_EMPLOYEE_ALLOWANCE);
+                setAllowance(EmployeeHelpers.REGULAR_EMPLOYEE_ALLOWANCE);
                 break;
 
             default:
                 throw new IllegalArgumentException();
         }
     }
+
 }

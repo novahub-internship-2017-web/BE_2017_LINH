@@ -1,7 +1,5 @@
 package com.linhtran.employee;
 
-import com.linhtran.ConstantNumber;
-
 public abstract class Employee {
     private  String fullName;   //Ho va ten
     private  int birthYear;  //Nam sinh
@@ -57,7 +55,7 @@ public abstract class Employee {
     }
 
     public double getSalary() {
-        return salaryFactor * ConstantNumber.UNIT_SALARY + allowance;
+        return salaryFactor * EmployeeHelpers.UNIT_SALARY + allowance;
     }
 
     //Compare two employee by name

@@ -1,7 +1,5 @@
 package com.linhtran.employee;
 
-import com.linhtran.ConstantNumber;
-
 public class Lecturer extends Employee {
     private String faculty;
     private String degree;
@@ -69,15 +67,15 @@ public class Lecturer extends Employee {
     private void setPay() {
         switch (degree.toLowerCase()) {
             case "cu nhan":
-                setAllowance(ConstantNumber.BACHELOR_ALLOWANCE);
+                setAllowance(EmployeeHelpers.BACHELOR_ALLOWANCE);
                 break;
 
             case "thac sy":
-                setAllowance(ConstantNumber.MASTER_ALLOWANCE);
+                setAllowance(EmployeeHelpers.MASTER_ALLOWANCE);
                 break;
 
             case "tien sy":
-                setAllowance(ConstantNumber.DOCTOR_ALLOWANCE);
+                setAllowance(EmployeeHelpers.DOCTOR_ALLOWANCE);
                 break;
 
             default:

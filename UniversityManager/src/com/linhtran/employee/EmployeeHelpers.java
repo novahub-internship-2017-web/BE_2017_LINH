@@ -1,14 +1,22 @@
-package com.linhtran.sort;
-
-import com.linhtran.employee.Employee;
+package com.linhtran.employee;
 
 import java.util.ArrayList;
 
-public class SortEmployee {
-    private SortEmployee(){
+/* -----------------------------------------------------------------
+   This class contain some helper constant value and static methods
+   for Employee class and its child classes
+   ----------------------------------------------------------------*/
+class EmployeeHelpers {
 
-    }
+    public static final int UNIT_SALARY = 730;
 
+    public static final int BACHELOR_ALLOWANCE = 300;
+    public static final int MASTER_ALLOWANCE = 900;
+    public static final int DOCTOR_ALLOWANCE = 2000;
+
+    public static final int HEAD_DEPARTMENT_ALLOWANCE = 1000;
+    public static final int DEPUTY_DEPARTMENT_ALLOWANCE = 600;
+    public static final int REGULAR_EMPLOYEE_ALLOWANCE = 400;
 
     //Bubble sort by name for employee list
     public static void sortByName(ArrayList<Employee> employeeList) {
@@ -35,4 +43,5 @@ public class SortEmployee {
             }
         }
     }
+
 }
