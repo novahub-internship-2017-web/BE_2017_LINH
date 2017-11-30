@@ -81,7 +81,8 @@ public class Officer extends Employee {
                 break;
 
             default:
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("Nhap chuc vu nhan vien khong dung. \n" +
+                        "Chuc vu nhan vien phai la: nhan vien, pho phong hoac truong phong.");
         }
     }
 

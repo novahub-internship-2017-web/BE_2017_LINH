@@ -84,7 +84,8 @@ public class Lecturer extends Employee {
                 break;
 
             default:
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("Nhap trinh do giang vien khong dung.\n" +
+                        "Trinh do giang vien phai la: cu nhan, thac sy hoac tien si");
         }
     }
 }

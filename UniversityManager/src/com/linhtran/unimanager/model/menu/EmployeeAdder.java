@@ -25,8 +25,9 @@ public class EmployeeAdder {
             throw new IndexOutOfBoundsException();
         } else if (index == list.size() - 1) {
             list.add(employee);
+        } else {
+            list.add(index+1, employee);
         }
-        list.add(index+1, employee);
     }
 
 }

@@ -13,8 +13,7 @@ public class Controller {
     private EmployeeAdder employeeAdder = new EmployeeAdder();
 
     public void startProgram() {
-        boolean quit = false;
-        while (!quit) {
+        try {
             int mainMenuChoice = printScreen.printMainMenu();
             if (mainMenuChoice > 0 && mainMenuChoice <= 5) {
                 switch (mainMenuChoice) {
@@ -33,33 +32,34 @@ public class Controller {
                     case 5:
                         break;
                 }
-             }
-         }
-    } //VI SAO CAI NAY KHONG CHAY KHI QUAY LAI TU MENU 1??????
+            }
+        } catch (Exception e) {
+            System.out.println("Some thing went wong");
+            startProgram();
+        }
+
+    }
 
     /*------------------------------------------------------
     HANDLE EVENT WHEN USER CHOSE 1 ON THE MAIN MENU
     ------------------------------------------------------- */
     private void handleMenuOne() {
-
-           int choice = printScreen.printMenu1();
-
+        int choice = printScreen.printMenu1();
+        try {
             switch (choice) {
-
                 case 1:
                 case 2:
                 case 3:
-//                    Employee employee = printScreen.inputNewEmployee();
+                    Employee employee = printScreen.inputNewEmployee();
                     if (choice == 1) {
-                        //                    employeeAdder.addLastEmployee(employeeList, employee);
-                        System.out.println("case 1");
+                        employeeAdder.addLastEmployee(employeeList, employee);
+
                     } else if (choice == 2) {
-                        //                    employeeAdder.addFirstEmployee(employeeList, employee);
-                        System.out.println("case 2");
+                        employeeAdder.addFirstEmployee(employeeList, employee);
+
                     } else {
-//                    int k = printScreen.inputEmployeeIndex(employeeList);
-//                    employeeAdder.addEmployee(employeeList, employee, k);
-                         System.out.println("case 3");
+                        int k = printScreen.inputEmployeeIndex(employeeList);
+                        employeeAdder.addEmployee(employeeList, employee, k);
                     }
                     handleMenuOne();
                     break;
@@ -71,9 +71,11 @@ public class Controller {
                     handleMenuOne();
                     break;
             }
-
-
-    }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            handleMenuOne();
+        }
+     }
 
 
     /*------------------------------------------------------
@@ -94,15 +96,10 @@ public class Controller {
     HANDLE EVENT WHEN USER CHOSE 4 ON THE MAIN MENU
     ------------------------------------------------------- */
     private void handleMenuFour() {
-
-    }
-
-    /*------------------------------------------------------
-    HANDLE EVENT WHEN USER CHOSE 5 ON THE MAIN MENU
-    ------------------------------------------------------- */
-    private void handleMenuFive() {
         printScreen.printEmployeeList(employeeList);
+        startProgram();
     }
+
 
 
 }

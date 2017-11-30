@@ -7,18 +7,20 @@ import com.linhtran.unimanager.model.employee.Officer;
 import java.util.List;
 import java.util.Scanner;
 import static java.lang.System.out;
-import static java.lang.System.setOut;
+
 
 
 //This class plays the role of print everything on screen
 
 public class PrintScreen {
 
-    Scanner keyboard = new Scanner(System.in);
-    int choice = 0;
+
+
 
     //Main screen of program
     public int printMainMenu() {
+        Scanner keyboard = new Scanner(System.in);
+        int choice = 0;
         out.println();
         out.println("CHUONG TRINH QUAN LY NHAN VIEN");
         out.println("---------------------------------------");
@@ -37,6 +39,8 @@ public class PrintScreen {
     //--------------------------------------------------------------------------
     //Add the employee in the employee list
     public int printMenu1() {
+        Scanner keyboard = new Scanner(System.in);
+        int choice ;
         out.println("---------------------------------- \n" +
                 "Them can bo vao danh sach. Nhan:\n" +
                 "1 --> Them can bo vao cuoi danh sach \n" +
@@ -99,7 +103,7 @@ public class PrintScreen {
             System.out.print("Chuc vu: ");
             String position = scanner.nextLine();
 
-            System.out.println("So ngay cong: ");
+            System.out.print("So ngay cong: ");
             int workingDays = scanner.nextInt();
 
             /*
@@ -137,6 +141,8 @@ public class PrintScreen {
     //-----------------------------------------------------------------------------------------------
     //Modify the employee's information
     public int printMenu2() {
+        Scanner keyboard = new Scanner(System.in);
+        int choice ;
         out.println("---------------------------------- \n" +
                     "Chinh sua thong tin can bo");
         out.print("So thu tu can bo can nhap (bat dau tu 0): ");
@@ -171,6 +177,8 @@ public class PrintScreen {
     //------------------------------------------------------------------------------------------------
     //Remove the employee from the list
     public int printMenu3() {
+        Scanner keyboard = new Scanner(System.in);
+        int choice ;
         out.println("---------------------------------- \n" +
                     "Xoa can bo tu danh sach!!!");
         out.print("So thu tu can bo can XOA (bat dau tu 0): ");
@@ -181,6 +189,8 @@ public class PrintScreen {
     //--------------------------------------------------------------------------------------------------
     //Print choices of display employee list
     public int printMenu4() {
+        Scanner keyboard = new Scanner(System.in);
+        int choice ;
         out.println("---------------------------------- \n" +
                 "Hien thi danh sach can bo. Nhan:\n" +
                 "1 --> Hien thi danh sach hien tai \n" +
@@ -204,6 +214,8 @@ public class PrintScreen {
 
     //Search employee by birth year
     public int inputEmployeeBirthYear() {
+        Scanner keyboard = new Scanner(System.in);
+        int choice ;
         out.print("Birth year of employee: ");
         choice = keyboard.nextInt();
         return choice;
@@ -212,9 +224,10 @@ public class PrintScreen {
     //Print table of employee list
     public void printEmployeeList(List<Employee> list) {
         out.println("STT  |" + "Ho va ten              |" + "Nam sinh   |" + "Que quan     |" +
-                    "Loai    |" + "C1         |" + "C2         |" + "C3         |" + "C4         |" + "C5         |");
+                    "Loai    |" + "C1         |" + "C2             |" + "C3         |" +
+                    "C4         |" + "C5      |");
         //Number of space each column
-        int[] spaceColumn = {5, 23, 11, 13, 8, 11, 11, 11, 11, 11};
+        int[] spaceColumn = {5, 23, 11, 13, 8, 11, 15, 11, 11, 8};
         int stt = 0;
         for(Employee employee : list) {
             String sttString = Integer.toString(stt);
@@ -249,6 +262,8 @@ public class PrintScreen {
             out.println();
             stt++;
         }
+        System.out.println("\nC1-->C5 neu la GV: Khoa, trinh do, phu cap, so tiet, he so luong ");
+        System.out.println("C1-->C5 neu la nhan vien: phong ban, chuc vu, phu cap, so ngay cong, he so luong");
 
     }
 
