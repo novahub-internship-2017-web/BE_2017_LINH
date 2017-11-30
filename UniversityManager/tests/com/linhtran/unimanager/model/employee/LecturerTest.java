@@ -1,4 +1,4 @@
-package com.linhtran.employee;
+package com.linhtran.unimanager.model.employee;
 
 import static org.junit.Assert.*;
 
@@ -86,6 +86,11 @@ public class LecturerTest {
     public void testSetGetSalaryFactor() {
         lecturer2.setSalaryFactor(5);
         assertEquals(5, lecturer2.getSalaryFactor(), 0.001);
+    }
+
+    @org.junit.Test
+    public void testReturnType() {
+        assertEquals("GV", lecturer1.getType());
     }
 
     @org.junit.Test

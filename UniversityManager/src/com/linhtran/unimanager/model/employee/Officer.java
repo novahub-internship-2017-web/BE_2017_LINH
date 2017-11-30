@@ -1,4 +1,4 @@
-package com.linhtran.employee;
+package com.linhtran.unimanager.model.employee;
 
 public class Officer extends Employee {
     private String department;
@@ -58,6 +58,11 @@ public class Officer extends Employee {
     @Override
     public double getSalary() {
         return super.getSalary() + this.numberOfWorkingDays * 30;
+    }
+
+    @Override
+    public String getType() {
+        return "NV";
     }
 
     //Set allowance according to their potition

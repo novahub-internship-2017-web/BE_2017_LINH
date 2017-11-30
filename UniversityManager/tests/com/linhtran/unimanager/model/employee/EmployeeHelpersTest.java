@@ -1,4 +1,4 @@
-package com.linhtran.employee;
+package com.linhtran.unimanager.model.employee;
 
 import org.junit.Test;
 

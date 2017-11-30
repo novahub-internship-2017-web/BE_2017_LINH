@@ -1,4 +1,4 @@
-package com.linhtran.employee;
+package com.linhtran.unimanager.model.employee;
 
 public abstract class Employee {
     private  String fullName;   //Ho va ten
@@ -57,6 +57,9 @@ public abstract class Employee {
     public double getSalary() {
         return salaryFactor * EmployeeHelpers.UNIT_SALARY + allowance;
     }
+
+    //Get type of employee, if type is "Giang vien" return "GV", if type is "Nhan vien" return "NV"
+    public abstract String getType();
 
     //Compare two employee by name
     public int compareByNameTo(Employee another) {

@@ -1,4 +1,4 @@
-package com.linhtran.employee;
+package com.linhtran.unimanager.model.employee;
 
 public class Lecturer extends Employee {
     private String faculty;
@@ -61,6 +61,11 @@ public class Lecturer extends Employee {
     @Override
     public double getSalary() {
         return super.getSalary() + teachingQuantity * 45;
+    }
+
+    @Override
+    public String getType() {
+        return "GV";
     }
 
     //Set first salary and allowance when instantiate lecturer object

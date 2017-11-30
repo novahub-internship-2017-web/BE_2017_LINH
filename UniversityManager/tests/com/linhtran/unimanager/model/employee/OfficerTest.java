@@ -1,4 +1,4 @@
-package com.linhtran.employee;
+package com.linhtran.unimanager.model.employee;
 
 import org.junit.Test;
 
@@ -59,5 +59,10 @@ public class OfficerTest {
         officer2.setNumberOfWorkingDays(20);
         expectedSalary = 5 * 730 + 600 + 20 * 30;
         assertEquals(expectedSalary, officer2.getSalary(),0.001);
+    }
+
+    @org.junit.Test
+    public void testReturnType() {
+        assertEquals("NV", officer2.getType());
     }
 }
