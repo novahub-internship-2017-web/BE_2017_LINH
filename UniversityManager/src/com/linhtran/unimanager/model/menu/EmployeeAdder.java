@@ -8,7 +8,6 @@ import java.util.List;
 
 public class EmployeeAdder {
 
-
     //1.1 Add employee at the last of the list
     public void addLastEmployee(List<Employee> list, Employee employee) {
         list.add(employee);
@@ -19,10 +18,11 @@ public class EmployeeAdder {
         list.add(0, employee);
     }
 
-    //1.3 Add employee at the index of k
+    //1.3 Add employee after the index of k
     public void addEmployee(List<Employee> list, Employee employee, int index) {
-        if(index < 0 || index > list.size()) {
-            throw new IndexOutOfBoundsException();
+        if(index < 0 || index >= list.size()) {
+            throw new IndexOutOfBoundsException("So thu tu nay nam ngoai danh sach. \n" +
+                    "Vui long nhap lai.");
         } else if (index == list.size() - 1) {
             list.add(employee);
         } else {

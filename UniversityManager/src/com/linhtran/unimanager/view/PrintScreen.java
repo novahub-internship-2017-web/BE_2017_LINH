@@ -143,7 +143,6 @@ public class PrintScreen {
      --------------------------------------------------------------------------*/
     public int printMenu2(List<Employee> employees) {
         Scanner keyboard = new Scanner(System.in);
-        int choice ;
         out.println(separateLine  +
                     "Chinh sua thong tin can bo");
         out.print("So thu tu can bo tu 0 den " + (employees.size() - 1) + "\n" +

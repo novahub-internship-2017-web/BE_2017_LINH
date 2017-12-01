@@ -4,14 +4,12 @@ import com.linhtran.unimanager.model.employee.Employee;
 import com.linhtran.unimanager.model.employee.Lecturer;
 import com.linhtran.unimanager.model.employee.Officer;
 
-import java.util.List;
-import java.util.Scanner;
 
 //This class contain all method of Menu2
 public class EmployeeModifier {
 
-    public void modifyEmployeeInformation(Employee employee, int indexOfInformation, String newInformation)
-                                            throws  IllegalArgumentException{
+    public void modifyEmployeeInformation(Employee employee, int indexOfInformation, String newInformation) {
+
             switch (indexOfInformation) {
                 case 1:
                     employee.setFullName(newInformation);
