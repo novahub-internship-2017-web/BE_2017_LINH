@@ -5,7 +5,10 @@ import java.util.List;
    This class contain some helper constant value and static methods
    for Employee class and its child classes
    ----------------------------------------------------------------*/
-class EmployeeHelpers {
+public class EmployeeHelpers {
+    private EmployeeHelpers() {
+        throw new UnsupportedOperationException();
+    }
 
     public static final int UNIT_SALARY = 730;
 
