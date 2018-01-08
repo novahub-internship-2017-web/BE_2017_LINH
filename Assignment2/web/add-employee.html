@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add employee</title>
+</head>
+<body>
+<section class="section-form">
+    <div class="row">
+        <h2>Add new employee</h2>
+    </div>
+    <div class="row">
+        <form method="post" action="AddEmployee.do" id="form">
+
+            <div id="regular-infor">
+                Type of employee:
+                <select name="employee-type" required>
+                    <option disabled selected value> -- select an option -- </option>
+                    <option value="lecturer">Lecturer</option>
+                    <option value="officer">Officer</option>
+                </select>
+                <br><br>
+                Username:
+                <input type="text" name="username" minlength="1" maxlength="20" required >
+                <br><br>
+                Password:
+                <input type="password" name="password" minlength="5">
+                <br><br>
+
+                Full name:
+                <input type="text" name="name" maxlength="20" required>
+                <br><br>
+
+                Birth year:
+                <input type="number" name="birth-year" step="1" min="1958" max="1999" required>
+                <br><br>
+
+                Home town:
+                <input type="text" name="home-town" required>
+                <br><br>
+
+                Salary factor:
+                <input type="number" name="salary-factor" step="0.01" min="1.00" max="10.00" required>
+                <br><br>
+            </div>
+
+            <div id="lecturer">
+                Faculty:
+                <select name="faculty">
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Economy">Economy</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Architecture">Architecture</option>
+                </select>
+                <br><br>
+
+                Degree:
+                <select name="degree">
+                    <option value="Doctor">Doctor</option>
+                    <option value="Master">Master</option>
+                    <option value="Bachelor">Bachelor</option>
+                </select>
+                <br><br>
+
+                Teaching quantity:
+                <input type="number" name="quantity" step="1" min="0" max="300" required>
+                <br><br>
+            </div>
+
+            <div id="officer">
+                Department:
+                <select name="department">
+                    <option value="Academic Affairs">Academic Affairs</option>
+                    <option value="Inspection">Inspection</option>
+                    <option value="General Administration">General Administration</option>
+                    <option value="Human Resources">Human Resources</option>
+                </select>
+                <br><br>
+
+                Position:
+                <select name="position">
+                    <option value="Regular employee">Regular employee</option>
+                    <option value="Deputy of department">Deputy of department</option>
+                    <option value="Head of department">Head of department</option>
+                    <option value="Admin">Admin</option>
+                </select>
+                <br><br>
+
+                Number of working days:
+                <input type="number" name="working-days" step="1" min="0" max="31" required>
+                <br><br>
+            </div>
+
+            <div id="submit-btn">
+                <input type="submit" name="submit" value="Add employee">
+            </div>
+        </form>
+    </div>
+    <div>
+        <a href="admin.jsp"><input type="button" value="Dashboard"></a>
+        <a href="Logout"><input type="button" value="Logout"></a>
+    </div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/myscript.js"></script>
+</body>
+</html>
