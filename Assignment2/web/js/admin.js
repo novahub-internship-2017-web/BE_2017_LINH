@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     $(".modify-btn").on("click", function () {
-        $("form").css("display", "block");
+        $(".modify-form").css("display", "block");
         var type = $(this).closest("tr").find(".type").text();
         var parentNode = $(this).closest("tr");
         $("#username").attr("value", parentNode.find(".username").text());
@@ -36,33 +36,5 @@ $(document).ready(function () {
 
 });
 
-$("#search-box").keypress(function () {
-    var searchType = $("#search-type").val();
-    var searchValue = $("#search-box").val();
 
-    switch (searchType) {
-        case "Name":
-            searchByName(searchValue);
-            break;
-        case "Type":
-            searchByType(searchValue);
-            break;
-        case "Birth year":
-            searchByBirthYear(searchValue);
-            break;
-    }
-});
-function searchByName(searchValue) {
-    var nameList = $(".full-name");
-    var name1 = nameList[0].html();
-    console.log(name1);
-}
-
-function searchByType() {
-    alert("Search by type");
-}
-
-function searchByBirthYear() {
-    alert("Search by birth year") ;
-}
 

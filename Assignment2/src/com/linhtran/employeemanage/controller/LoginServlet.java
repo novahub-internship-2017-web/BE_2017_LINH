@@ -46,17 +46,13 @@ public class LoginServlet extends HttpServlet {
             rq.include(request, response);
         } else {
             Employee employee = databaseQuery.getEmployeeFromDatabase(databaseName, username);
-            List<Employee> employeeList = databaseQuery.getEmployeeList(databaseName);
-
             HttpSession session = request.getSession();
             session.setAttribute("employee", employee);
             if (employee instanceof Officer && ((Officer) employee).getPosition().equalsIgnoreCase("admin")) {
-                session.setAttribute("employeeList", employeeList);
-                response.sendRedirect("admin.jsp");
+                 response.sendRedirect("Admin");
             } else {
                 response.sendRedirect("dashboard.jsp");
             }
-
         }
 
 

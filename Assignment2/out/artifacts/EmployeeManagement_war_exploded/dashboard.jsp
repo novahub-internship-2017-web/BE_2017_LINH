@@ -83,7 +83,7 @@
  <div class="col-sm logout">
      <a class="btn btn-primary" href="Logout">Logout</a>
      <c:if test="${(sessionScope.employee.type eq 'Officer') && (sessionScope.employee.position eq 'Admin')}">
-     <a class="btn btn-info" href="admin.jsp">Admin control panel</a>
+     <a class="btn btn-info" href="Admin">Admin control panel</a>
      </c:if>
  </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

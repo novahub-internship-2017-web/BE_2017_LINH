@@ -16,14 +16,18 @@
 <body>
 <c:set var="index" value="0" scope="page" />
 <h1>Admin Control Panel</h1>
-<div class="search">
-    <input type="text" id="search-box" placeholder="Search employee">
-     Search by
-    <select name="search-type" id="search-type">
-        <option value="Name">Name</option>
-        <option value="Birth year">Birth year</option>
-        <option value="Type">Type</option>
-    </select>
+<div>
+    <form action="SearchEmployee" method="post">
+        Search by
+        <select name="search-type" id="search-type">
+            <option value="Name">Name</option>
+            <option value="Birth year">Birth year</option>
+            <option value="Type">Type</option>
+            <option value="Home town">Home town</option>
+        </select>
+        <input type="text" name="search-text" id="search-box" placeholder="Search employee">
+        <input type="submit" value="Search">
+    </form>
 </div>
 <div class="sort">
     <a href="Sort?type=byname" class="name-sort"><input type="button" value="Sort by name"></a>
@@ -49,7 +53,7 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${sessionScope.employeeList}" var="employee">
+    <c:forEach items="${requestScope.employeeList}" var="employee">
         <c:set var="index" value="${index + 1}" scope="page"/>
             <tr class="info-row">
                 <td>${index}</td>
@@ -83,7 +87,10 @@
     </c:forEach>
     </tbody>
 </table>
-<div>
+<c:if test="${not empty requestScope.msg}">
+    <div class="msg">${requestScope.msg}</div>
+</c:if>
+<div class="modify-form">
     <form method="post" action="ModifyInformation">
         <h3>Modify employee's information</h3>
         <div id="regular-infor">

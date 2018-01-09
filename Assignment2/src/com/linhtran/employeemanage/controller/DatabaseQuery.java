@@ -120,6 +120,7 @@ public class DatabaseQuery {
         return employeeList;
     }
 
+
     //-----------------------------------------------------------------------------------------------------
     public Employee getEmployeeFromDatabase(String databaseName, String username) {
         getConnection(databaseName);
@@ -225,6 +226,7 @@ public class DatabaseQuery {
             e.printStackTrace();
         }
     }
+
 
 
 }

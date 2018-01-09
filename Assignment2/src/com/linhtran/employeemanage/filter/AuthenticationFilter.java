@@ -28,7 +28,7 @@ public class AuthenticationFilter implements Filter {
 		String uri = req.getRequestURI();
 		HttpSession session = req.getSession(false);
 
-		if(session == null && !(uri.endsWith("login.html") || uri.endsWith("Login"))){
+		if(session == null && (uri.endsWith("jsp") || uri.endsWith("add-employee.html"))){
 			res.sendRedirect("login.html");
 		} else if (session!=null && (uri.endsWith("add-employee.html") || uri.endsWith("admin.jsp") || uri.contains("DeleteEmployee"))) {
 			Employee employee = (Employee) session.getAttribute("employee");
