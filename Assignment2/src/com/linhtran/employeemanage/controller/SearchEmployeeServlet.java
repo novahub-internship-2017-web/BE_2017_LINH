@@ -34,8 +34,8 @@ public class SearchEmployeeServlet extends HttpServlet {
                     }
                     break;
                 case "Birth year":
-                    String birthyear = employee.getBirthYear() + "";
-                    if (birthyear.contains(searchText)) {
+                    String birthYear = employee.getBirthYear() + "";
+                    if (birthYear.contains(searchText)) {
                         employeeList.add(employee);
                     }
                     break;

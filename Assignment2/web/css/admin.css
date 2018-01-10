@@ -14,6 +14,10 @@ h1 {
     text-align: center;
 }
 
+.modify-form {
+    display: none;
+}
+
 .msg {
     color: red;
 }
