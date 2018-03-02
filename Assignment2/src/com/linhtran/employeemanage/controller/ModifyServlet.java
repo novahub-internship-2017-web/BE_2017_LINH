@@ -74,7 +74,7 @@ public class ModifyServlet extends HttpServlet {
             }
             ValidateInput.checkEmployeeProperties(employee);
             databaseQuery.updateDatabase("EmployeeDB", employee);
-            response.sendRedirect("dashboard.jsp");
+            response.sendRedirect("Admin");
         }
 
     }
