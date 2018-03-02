@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: 200px;
+    height: auto;
+    padding-top: 15px;
+    padding-right: 20px;   
+}
+
+h3 {
+    width: 50%;
+    margin: 20px auto;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold; 
+    color: rgb(43, 7, 63);   
+}
+
+div.author {
+    color: rgb(43, 7, 63);
+    font-size: 20px;
+    font-style: italic;    
+}
+
+div.date, div.created-by, div.description {
+    font-size: 18px;
+    margin-top: 5px;
+
+}
+
+.box {
+    border: 1px solid rgb(56, 53, 53); 
+    height: 1000px;
+    width: 800px;    
+    margin: 0 auto;
+}
+
+span {
+    font-weight: bold;   
+}
