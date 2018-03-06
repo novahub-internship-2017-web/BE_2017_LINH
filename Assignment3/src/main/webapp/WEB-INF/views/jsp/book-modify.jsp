@@ -45,7 +45,7 @@ charset=utf-8" pageEncoding="utf-8"%>
     <form:errors path="title" class="error"/>
     <form:input path="author" type="text" class="form-control text-input" value="${book.author}"/>
     <form:errors path="author" class="error"/>
-    <form:textarea path="description" type="text" class="form-control text-input" value="${book.description}"/>
+    <form:textarea path="description" type="text" class="form-control text-input" placeholder="Book's description" value="${book.description}"/>
     <c:if test="${updated == true}">
       <div style="color:green;">Your book is updated successfully.</div>
     </c:if>

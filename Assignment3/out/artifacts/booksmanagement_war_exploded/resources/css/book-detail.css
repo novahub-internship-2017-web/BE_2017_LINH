@@ -35,7 +35,7 @@ div.date, div.created-by, div.description {
 
 .box {
     border: 1px solid rgb(56, 53, 53); 
-    height: 300px;
+    height: 600px;
     width: 800px;    
     margin: 0 auto;
 }

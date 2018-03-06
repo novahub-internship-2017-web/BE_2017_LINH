@@ -25,13 +25,13 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       </div>
       <div class="col-md-6 navbar">
         <ul class="nav navbar-nav navbar-right nav-menu">
-          <li><a href="/user/profile">Your profile</a></li>
-          <li><a href="/book/mybook">My list</a></li>
-          <li><a href="/user/profile">User manager</a></li>
+          <li><a href="user/profile">Your profile</a></li>
+          <li><a href="book/mybook">My list</a></li>
+          <li><a href="user/profile">User manager</a></li>
           <security:authorize access="hasRole('ADMIN')">
-            <li><a href="/admin/user-manager">User manager</a></li>
+            <li><a href="admin/user-manager">User manager</a></li>
           </security:authorize>
-          <li><a href="/signout" onclick="return confirm('Do you really want to sign out?')">Sign out</a></li>
+          <li><a href="signout" onclick="return confirm('Do you really want to sign out?')">Sign out</a></li>
         </ul>
       </div>
     </nav>

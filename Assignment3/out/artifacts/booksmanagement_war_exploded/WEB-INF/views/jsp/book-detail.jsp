@@ -25,7 +25,6 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       </div>
       <div class="col-md-6 navbar">
         <ul class="nav navbar-nav navbar-right nav-menu">
-          <li><a href="/user/profile">Your profile</a></li>
           <li><a href="/book/list">Books list</a></li>
           <security:authorize access="hasRole('ADMIN')">
             <li><a href="/admin/user-manager">User manager</a></li>
@@ -50,8 +49,8 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       <div class="date">Created at: <span>${book.createdAt}</span></div>
       <div class="date">Updated at: <span>${book.updatedAt}</span></div>
       <div class="created-by">Created by: <span>${book.user.email}</span></div>
-      <div class="description">
-        Description
+      <div class="created-by">
+        Description:
         <div>
           ${book.description}
         </div>
