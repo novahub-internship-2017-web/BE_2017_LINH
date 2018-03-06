@@ -14,11 +14,11 @@ public class User {
 	private int id;
 	
 	@Column(name = "firstName")
-	@Size(max = 20, min = 3, message = "{user.firstname.invalid}")
+	@Size(max = 20, min = 1, message = "{user.firstname.invalid}")
 	private String firstName;
 	
 	@Column(name = "lastName")
-	@Size(max = 20, min = 3, message = "{user.lastname.invalid}")
+	@Size(max = 20, min = 1, message = "{user.lastname.invalid}")
 	private String lastName;
 	
 	
@@ -30,7 +30,11 @@ public class User {
 	@Size(min = 8, message = "{user.password.invalid}")
 	private String password;
 
+
 	private String confirmPassword;
+
+	@Column(name = "enabled")
+	private boolean enabled;
 	
 	@Column(name = "role")
 	private String role;
@@ -80,6 +84,7 @@ public class User {
 		this.password = password;
 	}
 
+	@Transient
 	public String getConfirmPassword() {
 		return confirmPassword;
 	}
@@ -103,5 +108,13 @@ public class User {
 
 	public void setBooks(Set<Book> books) {
 		this.books = books;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 }

@@ -33,6 +33,12 @@ public class UserDaoImp implements UserDao {
 	}
 
 	@Override
+	@Transactional
+	public void deleteUser(User user) {
+		sessionFactory.getCurrentSession().delete(user);
+	}
+
+	@Override
 	@Transactional(readOnly = true)
 	@SuppressWarnings("unchecked")
 	public User findUserByEmail(String email) {

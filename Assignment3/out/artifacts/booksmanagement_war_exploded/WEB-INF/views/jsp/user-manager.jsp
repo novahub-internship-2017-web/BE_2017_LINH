@@ -1,8 +1,8 @@
-<%@ page language="java" contentType="text/html; 
+<%@ page contentType="text/html;
 charset=ISO-8859-1" pageEncoding="utf-8"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,11 +24,8 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       </div>
       <div class="col-md-6 navbar">
         <ul class="nav navbar-nav navbar-right nav-menu">
-          <li><a href="/book/list">Book list </a></li>
-          <li><a href="/user/profile">Your profile</a></li>
-          <security:authorize access="hasRole('ADMIN')">
-            <li><a href="/admin/user-manager">User manager</a></li>
-          </security:authorize>
+          <li><a href="/book/add">Add new book </a></li>
+          <li><a href="/book/mybook">My list</a></li>
           <li><a href="/signout" onclick="return confirm('Do you really want to sign out?')">Sign out</a></li>
         </ul>
       </div>
@@ -37,46 +34,63 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
 </div>
 <c:set var="index" value="0" scope="page" />
 <div class="container">
-  <h3>My list of books</h3>
-  <c:if test="${books.size() != 0}">
+  <h3>User manager</h3>
+  <c:if test="${users.size() != 0}">
     <table class="table table-striped">
       <thead>
       <tr>
         <th>Index</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Detail</th>
-        <th>Modify</th>
+        <th>Full name</th>
+        <th>Email address</th>
+        <th>Number of books</th>
+        <th>Role</th>
+        <th>Enabled</th>
         <th>Delete</th>
       </tr>
       </thead>
       <tbody>
-      <c:forEach var="book" items="${books}">
+      <c:forEach var="user" items="${users}">
         <c:set var="index" value="${index + 1}" scope="page"/>
         <tr>
           <td>${index}</td>
-          <td>${book.title}</td>
-          <td>${book.author}</td>
-          <td class="col-md-1"><a href="/book/detail?id=${book.id}"><i class="glyphicon glyphicon-folder-open"></i></a></td>
-          <td class="col-md-1"><a href="/book/modify?id=${book.id}"><i class="glyphicon glyphicon-edit"></i></a></td>
-          <td class="col-md-1"><a href="/book/delete?id=${book.id}" onclick="return confirm('Are you sure?')"><i class="glyphicon glyphicon-remove-circle"></i></a></td>
+          <td>${user.firstName} ${user.lastName}</td>
+          <td>${user.email}</td>
+          <td>${user.books.size()}</td>
+          <td>${user.role}</td>
+          <td>
+            <c:if test="${user.role ne 'ADMIN'}">
+            <input type="checkbox" name="enabled" id="${user.id}" <c:if test="${user.enabled == true}">checked</c:if>>
+            </c:if>
+          </td>
+          <td>
+            <c:if test="${user.role ne 'ADMIN'}">
+            <a href="/admin/delete?id=${user.id}" onclick="return confirm('Do you really want to delete this user')">
+              <i class="glyphicon glyphicon-remove-circle"></i>
+            </a>
+            </c:if>
+          </td>
         </tr>
       </c:forEach>
       </tbody>
-    </table>    
+    </table>
   </c:if>
-  <c:if test="${books.size() == 0}">
-    <h3>There are no book in your list! Please adding new one.</h3>
-  </c:if>
-  
-  <div class="row">
-    <div class="col-md-12">
-      <a href="/book/add" class="btn btn-primary">Add new book</a>
+  <c:if test="${deleteSucceed == true}">
+    <div class="error" style="color: green">
+      Delete user with email ${userEmail} succeed!
     </div>
-  </div>
+  </c:if>
+  <c:if test="${deleteSucceed == false}">
+    <div class="error" style="color: green">
+      You can not delete admin!
+    </div>
+  </c:if>
+  <c:if test="${noResult == true}">
+    <div class="error" style="color: green">No result can found!</div>
+  </c:if>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/resources/js/user-manager.js"></script>
 </body>
 </html>

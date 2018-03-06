@@ -26,7 +26,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-            http.authorizeRequests().anyRequest().hasAnyRole( "USER")
+            http.authorizeRequests()
+                    .antMatchers("/admin/*").hasRole("ADMIN")
+                    .anyRequest().authenticated()
                 .and()
                 .authorizeRequests().antMatchers("/login**").permitAll()
                 .and()
@@ -37,11 +39,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .passwordParameter("password")
                     .defaultSuccessUrl("/login-success")
                     .permitAll()
-                    .failureUrl("/?failure")
+                    .failureUrl("/login-failure")
                 .and()
                 .logout()
                     .logoutUrl("/signout")
                     .logoutSuccessUrl("/").permitAll()
+                .and()
+                    .exceptionHandling().accessDeniedPage("/403")
                 .and()
                 .csrf().disable();
     }

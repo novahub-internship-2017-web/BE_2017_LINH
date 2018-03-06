@@ -36,6 +36,12 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
                     <form action="signin" method="post" >                          
                         <input type="email" name="email" class="form-control text-input" placeholder="Enter your email address">
                         <input type="password" name="password" class="form-control text-input" placeholder="Your password">
+                        <c:if test="${loginFailured == true}">
+                            <div class="error">Your username or password are wrong.</div>
+                        </c:if>
+                        <c:if test="${enabledUser == false}">
+                            <div class="error">Your account is blocked! Please contact to admin to open.</div>
+                        </c:if>
                         <input type="submit" class="btn btn-primary signup-btn" value="Sign in">
                     </form>
                     <h4>New here? Create a new account!</h4>

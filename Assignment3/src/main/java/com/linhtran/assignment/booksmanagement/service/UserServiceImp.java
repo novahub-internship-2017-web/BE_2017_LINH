@@ -22,12 +22,29 @@ public class UserServiceImp implements UserService {
 		//Set role to user	
 		setRoleToUser(user, "USER");
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
+		user.setEnabled(true);
 		userDao.save(user);		
+	}
+
+	@Override
+	public void deleteUser(int id) {
+		User user = userDao.findUserById(id);
+		userDao.deleteUser(user);
+	}
+
+	@Override
+	public void updateUser(User user) {
+		userDao.update(user);
 	}
 
 	@Override
 	public User searchUserByEmail(String email) {
 		return userDao.findUserByEmail(email);
+	}
+
+	@Override
+	public User searchUserById(int id) {
+		return userDao.findUserById(id);
 	}
 
 	@Override
@@ -40,4 +57,18 @@ public class UserServiceImp implements UserService {
 		user.setRole(role);
 	}
 
+	@Override
+	public int changeUserPassword(User user, String currentPass,
+									 String newPass, String confirmNewPass) {
+
+
+		if (!passwordEncoder.matches(currentPass, user.getPassword())) {
+			return 0;
+		}
+		if (!newPass.equals(confirmNewPass)) {
+			return 1;
+		}
+		user.setPassword(passwordEncoder.encode(newPass));
+		return 2;
+	}
 }

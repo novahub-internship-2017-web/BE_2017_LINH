@@ -14,4 +14,12 @@ public interface UserService {
 
 	User searchUserByEmail(String email);
 
+	User searchUserById(int id);
+
+	void deleteUser(int id);
+
+	void updateUser(User user);
+
+	int changeUserPassword(User user, String currentPass, String newPass, String confirmNewPass);
+
 }
