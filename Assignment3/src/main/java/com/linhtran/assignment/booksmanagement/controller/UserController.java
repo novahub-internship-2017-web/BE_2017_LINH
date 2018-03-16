@@ -50,6 +50,11 @@ public class UserController {
       }
    }
 
+   @GetMapping("/rest")
+   public String restPage() {
+      return "bookslist-rest";
+   }
+
    @GetMapping("/login-failure")
    public String loginFailure(Model model) {
       model.addAttribute("user", new User());

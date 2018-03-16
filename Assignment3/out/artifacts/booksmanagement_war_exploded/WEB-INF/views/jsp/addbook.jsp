@@ -45,7 +45,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
     <c:if test="${emptyAuthor == true}">
       <div class="error">Author of the book must not be empty.</div>
     </c:if>
-    <textarea name="description" class="form-control text-input"></textarea>
+    <textarea name="description" class="form-control text-input" placeholder="Book's description"></textarea>
     <c:if test="${isSucceed eq true}">
       <p style="color:green">Adding new book successful!</p>
     </c:if>

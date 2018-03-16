@@ -1,5 +1,9 @@
 package com.linhtran.assignment.booksmanagement.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.linhtran.assignment.booksmanagement.view.Views;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
@@ -11,34 +15,41 @@ import java.util.Set;
 @Table(name = "users")
 public class User {
 
+	@JsonView(Views.Public.class)
 	private int id;
-	
+
+	@JsonView(Views.Public.class)
 	@Column(name = "firstName")
 	@Size(max = 20, min = 1, message = "{user.firstname.invalid}")
 	private String firstName;
-	
+
+	@JsonView(Views.Public.class)
 	@Column(name = "lastName")
 	@Size(max = 20, min = 1, message = "{user.lastname.invalid}")
 	private String lastName;
-	
-	
+
+	@JsonView(Views.Public.class)
 	@Column(name = "email")
 	@Email(message = "{user.email.invalid}")
 	private String email;
-	
+
+	@JsonIgnore
 	@Column(name = "password")
 	@Size(min = 8, message = "{user.password.invalid}")
 	private String password;
 
-
+	@JsonIgnore
 	private String confirmPassword;
 
+	@JsonView(Views.Public.class)
 	@Column(name = "enabled")
 	private boolean enabled;
-	
+
+	@JsonView(Views.Public.class)
 	@Column(name = "role")
 	private String role;
 
+	@JsonIgnore
 	private Set<Book> books = new HashSet<>();
 
 	@Id
@@ -117,4 +128,5 @@ public class User {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
+
 }

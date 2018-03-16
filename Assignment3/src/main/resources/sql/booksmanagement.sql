@@ -30,6 +30,7 @@ CREATE TABLE `books` (
   `updatedAt` datetime DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `description` varchar(1000) DEFAULT NULL,
+  `imagePath` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`book_id`),
   KEY `fk_user_id` (`user_id`),
   CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
@@ -42,7 +43,7 @@ CREATE TABLE `books` (
 
 LOCK TABLES `books` WRITE;
 /*!40000 ALTER TABLE `books` DISABLE KEYS */;
-INSERT INTO `books` VALUES (7,'Catcher In The Rye','J. D. Salinger','2018-02-23 17:36:15','2018-03-02 10:55:49',3,'Lorem ipsum dolor sit amet, consectetur adipiscing elit.taciti sociosqu ad.'),(11,'Universe in the nutshell','Steven Hawking','2018-02-27 15:50:26','2018-02-28 17:01:06',3,NULL),(15,'The Lord of the Rings','J. R. R. Tolkien','2018-02-28 17:31:44','2018-02-28 17:31:44',3,NULL),(25,'The Hunger Games','Suzanne Collins','2018-03-02 11:20:35','2018-03-02 11:20:35',3,'');
+INSERT INTO `books` VALUES (7,'Catcher In The Rye','J. D. Salinger','2018-02-23 17:36:15','2018-03-02 10:55:49',3,'Lorem ipsum dolor sit amet, consectetur adipiscing elit.taciti sociosqu ad.','/resources/img/book_7_41hZbJx4T0L._SX379_BO1,204,203,200_.jpg'),(11,'Universe in the nutshell','Steven Hawking','2018-02-27 15:50:26','2018-03-06 16:32:24',3,'','/resources/img/book_11_41hZbJx4T0L._SX379_BO1,204,203,200_.jpg'),(15,'The Lord of the Rings','J. R. R. Tolkien','2018-02-28 17:31:44','2018-02-28 17:31:44',3,NULL,'/resources/img/book_15_Screenshot from 2017-12-13 18-02-13.png'),(25,'The Hunger Games','Suzanne Collins','2018-03-02 11:20:35','2018-03-02 11:20:35',3,'','/resources/img/genericBookCover.jpg');
 /*!40000 ALTER TABLE `books` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,7 +65,7 @@ CREATE TABLE `hibernate_sequence` (
 
 LOCK TABLES `hibernate_sequence` WRITE;
 /*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
-INSERT INTO `hibernate_sequence` VALUES (30);
+INSERT INTO `hibernate_sequence` VALUES (33);
 /*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,7 +85,7 @@ CREATE TABLE `users` (
   `role` varchar(20) DEFAULT 'USER',
   `enabled` bit(1) DEFAULT b'1',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,7 +94,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (3,'tran dinh manh','linh','manhlinh.sama@gmail.com','$2a$10$/xu9OdYW8k1tsffd1fzO6.H5SVc0cvIXDTITeCDVhJRZrAeAYlgNq','ADMIN',''),(16,'Nguyet','Tran','trannguyet@gmail.com','$2a$10$PL1oRX2OLaA//j6CQ/9eA.1Tp5tSd/QManN6L9qyc5uTtjUq3HLwu','USER',''),(17,'Hang','Tran','hang@gmail.com','$2a$10$AaSvoLE7GVbktXJVVkUl2ewBwhS2jQ9ux4uq9OCsl9GAkvYhChhye','USER',''),(20,'linh','tran','linh123@gmail.com','$2a$10$OqRnpwuhLlMktlPasYCW/ODF4jRy3bY.TJQjtzygS1ZMnDzstf1oq','USER',''),(21,'tran dinh','linh','manhlinh.sama123@gmail.com','$2a$10$XDRrefdw5syQltBsYOoppONQ5l2PuURr.HowHnbJbnbAcupA3u8u6','USER',''),(28,'Lam ','Tran','lam@gmail.com','$2a$10$bE2UnPu6iHjtc4QWk5gsS.YWnUk1aWIaLMWLSkZRWbjhOt6kmz0vi','USER',''),(29,'Le Quang','Lam','quanglam@gmail.com','$2a$10$qkWzN0SfxKH41djhyk21FOTIJDfSc0V42YUmHkKrvjoMZ53SAp.wW','USER','');
+INSERT INTO `users` VALUES (3,'tran dinh manh','linh','manhlinh.sama@gmail.com','$2a$10$/xu9OdYW8k1tsffd1fzO6.H5SVc0cvIXDTITeCDVhJRZrAeAYlgNq','ADMIN',''),(16,'Nguyet','Tran','trannguyet@gmail.com','$2a$10$PL1oRX2OLaA//j6CQ/9eA.1Tp5tSd/QManN6L9qyc5uTtjUq3HLwu','USER',''),(17,'Hang','Tran','hang@gmail.com','$2a$10$AaSvoLE7GVbktXJVVkUl2ewBwhS2jQ9ux4uq9OCsl9GAkvYhChhye','USER',''),(20,'linh','tran','linh123@gmail.com','$2a$10$OqRnpwuhLlMktlPasYCW/ODF4jRy3bY.TJQjtzygS1ZMnDzstf1oq','USER',''),(21,'tran dinh','linh','manhlinh.sama123@gmail.com','$2a$10$XDRrefdw5syQltBsYOoppONQ5l2PuURr.HowHnbJbnbAcupA3u8u6','USER',''),(28,'Lam ','Le Quang','lam@gmail.com','$2a$10$c9/1hEfnIFIP2TPraSoBceri0oXzXtor12RygKgbHtnx.KPnjqN4O','USER',''),(29,'Le Quang','Lam','quanglam@gmail.com','$2a$10$qkWzN0SfxKH41djhyk21FOTIJDfSc0V42YUmHkKrvjoMZ53SAp.wW','USER',''),(32,'abc','def','abc@gmail.com','$2a$10$r.7e56PlxFUYhkZhzsp/q.XouIJ7omas/Slhk/vLaqbjw1p2kDEeq','USER','');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -106,4 +107,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-06  9:08:48
+-- Dump completed on 2018-03-16 11:56:33

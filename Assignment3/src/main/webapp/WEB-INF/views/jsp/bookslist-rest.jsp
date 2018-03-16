@@ -37,13 +37,8 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
     </nav>
   </div>
 </div>
-<c:set var="index" value="0" scope="page" />
+
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <a href="/rest" class="btn btn-primary">Books list page restful</a>
-    </div>
-  </div>
   <h3>List of books</h3>
   <form class="row search-form" action="/book/search" method="post">
     <div class="col-md-3">
@@ -65,7 +60,6 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       </div>
     </div>
   </form>
-  <c:if test="${books.size() != 0}">
     <table class="table table-striped">
       <thead>
       <tr>
@@ -77,23 +71,20 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       </tr>
       </thead>
       <tbody>
-      <c:forEach var="book" items="${books}">
-        <c:set var="index" value="${index + 1}" scope="page"/>
         <tr>
-          <td>${index}</td>
-          <td>${book.title}</td>
-          <td>${book.author}</td>
-          <td>${book.user.email}</td>
-          <td><a href="/book/detail?id=${book.id}"><i class="glyphicon glyphicon-folder-open"></i></a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="#"><i class="glyphicon glyphicon-folder-open"></i></a></td>
         </tr>
-      </c:forEach>
       </tbody>
     </table>
-  </c:if>
 
-  <c:if test="${noResult == true}">
-    <div class="error" style="color: green">No result can found!</div>
-  </c:if>
+
+  <%--<c:if test="${noResult == true}">--%>
+    <%--<div class="error" style="color: green">No result can found!</div>--%>
+  <%--</c:if>--%>
   <div class="row">
     <div class="col-md-12">
       <a href="/book/add" class="btn btn-primary">Add new book</a>
@@ -103,5 +94,6 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/resources/js/bookslist-rest.js"></script>
 </body>
 </html>

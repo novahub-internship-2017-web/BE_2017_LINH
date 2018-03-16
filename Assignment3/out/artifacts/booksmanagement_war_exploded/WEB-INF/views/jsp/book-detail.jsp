@@ -41,7 +41,46 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
   <h3>Detail of book</h3>
   <div class="row panel panel-default box">
     <div class="col col-md-6">
-      <img src="/resources/img/genericBookCover.jpg" alt="book picture" class="pull-right">
+      <div class="row">
+        <img src="${book.imagePath}" alt="book picture" class="pull-right">
+      </div>
+
+      <security:authorize access="isAuthenticated()">
+        <security:authentication var="principal" property="principal" />
+      </security:authorize>
+
+      <c:if test="${principal.username eq book.user.email}">
+        <div class="row">
+          <button type="button" class="btn btn-info signup-btn pull-right" data-toggle="modal" data-target="#uploadModal">Upload file</button>
+        </div>
+      </c:if>
+
+      <!-- Modal -->
+      <div id="uploadModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">File upload form</h4>
+            </div>
+            <div class="modal-body">
+              <!-- Form -->
+              <form method="post" action="/uploadImage?id=${book.id}" enctype="multipart/form-data">
+                Select file : <input type="file" name="file" id="file" class="form-control"><br>
+                <input type="submit" class="btn btn-info" value='Upload' id='upload'>
+              </form>
+
+              <!-- Preview-->
+              <div id='preview'></div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
     </div>
     <div class="col col-md-6">
       <h2 class="title">${book.title}</h2>

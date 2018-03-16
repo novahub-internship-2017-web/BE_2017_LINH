@@ -39,6 +39,11 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
 </div>
 <c:set var="index" value="0" scope="page" />
 <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <a href="/rest" class="btn btn-primary">Books list page restful</a>
+    </div>
+  </div>
   <h3>List of books</h3>
   <form class="row search-form" action="/book/search" method="post">
     <div class="col-md-3">
