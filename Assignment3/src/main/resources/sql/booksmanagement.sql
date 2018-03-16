@@ -94,7 +94,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (3,'tran dinh manh','linh','manhlinh.sama@gmail.com','$2a$10$/xu9OdYW8k1tsffd1fzO6.H5SVc0cvIXDTITeCDVhJRZrAeAYlgNq','ADMIN',''),(16,'Nguyet','Tran','trannguyet@gmail.com','$2a$10$PL1oRX2OLaA//j6CQ/9eA.1Tp5tSd/QManN6L9qyc5uTtjUq3HLwu','USER',''),(17,'Hang','Tran','hang@gmail.com','$2a$10$AaSvoLE7GVbktXJVVkUl2ewBwhS2jQ9ux4uq9OCsl9GAkvYhChhye','USER',''),(20,'linh','tran','linh123@gmail.com','$2a$10$OqRnpwuhLlMktlPasYCW/ODF4jRy3bY.TJQjtzygS1ZMnDzstf1oq','USER',''),(21,'tran dinh','linh','manhlinh.sama123@gmail.com','$2a$10$XDRrefdw5syQltBsYOoppONQ5l2PuURr.HowHnbJbnbAcupA3u8u6','USER',''),(28,'Lam ','Le Quang','lam@gmail.com','$2a$10$c9/1hEfnIFIP2TPraSoBceri0oXzXtor12RygKgbHtnx.KPnjqN4O','USER',''),(29,'Le Quang','Lam','quanglam@gmail.com','$2a$10$qkWzN0SfxKH41djhyk21FOTIJDfSc0V42YUmHkKrvjoMZ53SAp.wW','USER',''),(32,'abc','def','abc@gmail.com','$2a$10$r.7e56PlxFUYhkZhzsp/q.XouIJ7omas/Slhk/vLaqbjw1p2kDEeq','USER','');
+INSERT INTO `users` VALUES (3,'tran dinh manh','linh','manhlinh.sama@gmail.com','$2a$10$/xu9OdYW8k1tsffd1fzO6.H5SVc0cvIXDTITeCDVhJRZrAeAYlgNq','ADMIN',''),(16,'Nguyet','Tran','trannguyet@gmail.com','$2a$10$PL1oRX2OLaA//j6CQ/9eA.1Tp5tSd/QManN6L9qyc5uTtjUq3HLwu','USER',''),(17,'Hang','Tran','hang@gmail.com','$2a$10$AaSvoLE7GVbktXJVVkUl2ewBwhS2jQ9ux4uq9OCsl9GAkvYhChhye','USER',''),(20,'linh','tran','linh123@gmail.com','$2a$10$OqRnpwuhLlMktlPasYCW/ODF4jRy3bY.TJQjtzygS1ZMnDzstf1oq','USER',''),(21,'tran dinh','linh','manhlinh.sama123@gmail.com','$2a$10$XDRrefdw5syQltBsYOoppONQ5l2PuURr.HowHnbJbnbAcupA3u8u6','USER',''),(28,'Lam ','Le Quang','lam@gmail.com','$2a$10$9JCcYF9uSrYy/FAPnAqeoOD37iaT12IlwUq8ZbC2mszgUAaBfFW6O','USER',''),(29,'Le Quang','Lam','quanglam@gmail.com','$2a$10$qkWzN0SfxKH41djhyk21FOTIJDfSc0V42YUmHkKrvjoMZ53SAp.wW','USER',''),(32,'abc','def','abc@gmail.com','$2a$10$r.7e56PlxFUYhkZhzsp/q.XouIJ7omas/Slhk/vLaqbjw1p2kDEeq','USER','');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -107,4 +107,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-16 11:56:33
+-- Dump completed on 2018-03-16 12:07:35
