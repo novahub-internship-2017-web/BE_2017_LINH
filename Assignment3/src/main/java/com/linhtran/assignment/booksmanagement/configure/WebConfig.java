@@ -1,6 +1,8 @@
 package com.linhtran.assignment.booksmanagement.configure;
 
 
+
+
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,15 +14,18 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
+
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
 
 
 
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.linhtran.assignment.booksmanagement")
-public class WebConfig implements WebMvcConfigurer{
+public class WebConfig implements WebMvcConfigurer {
 	
 	@Bean
 	public ViewResolver viewResolver() {
@@ -56,6 +61,13 @@ public class WebConfig implements WebMvcConfigurer{
 	      validator.setValidationMessageSource(messageSource());
 	      return validator;
 	}
+
+//	@Override
+//	public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+//		MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
+//		converter.setObjectMapper(new ObjectMapper());
+//		converters.add(converter);
+//	}
 
 
 }

@@ -1,5 +1,6 @@
 package com.linhtran.assignment.booksmanagement.model;
 
+
 import com.fasterxml.jackson.annotation.JsonView;
 import com.linhtran.assignment.booksmanagement.view.Views;
 

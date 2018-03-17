@@ -19,3 +19,8 @@
 .search-btn {
     height: 34px;
 }
+
+.hidden {
+    display: none;
+}
+

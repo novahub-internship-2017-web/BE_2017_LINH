@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.linhtran.assignment.booksmanagement.view.Views;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.*;
@@ -11,7 +12,7 @@ import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "books")
-public class Book {
+public class Book implements Serializable{
 
 	@JsonView(Views.Public.class)
 	private int id;
@@ -42,7 +43,7 @@ public class Book {
 	@Column(name = "imagePath")
 	private String imagePath;
 
-	@JsonIgnore
+	@JsonView(Views.Public.class)
 	private User user;
 
 	public Book() {}

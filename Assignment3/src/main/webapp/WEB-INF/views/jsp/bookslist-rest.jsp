@@ -60,7 +60,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       </div>
     </div>
   </form>
-    <table class="table table-striped">
+    <table class="hidden">
       <thead>
       <tr>
         <th>Index</th>
@@ -70,15 +70,15 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
         <th>Detail</th>
       </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><a href="#"><i class="glyphicon glyphicon-folder-open"></i></a></td>
-        </tr>
-      </tbody>
+      <%--<tbody>--%>
+        <%--<tr>--%>
+          <%--<td></td>--%>
+          <%--<td></td>--%>
+          <%--<td></td>--%>
+          <%--<td></td>--%>
+          <%--<td><a href="#"><i class="glyphicon glyphicon-folder-open"></i></a></td>--%>
+        <%--</tr>--%>
+      <%--</tbody>--%>
     </table>
 
 
