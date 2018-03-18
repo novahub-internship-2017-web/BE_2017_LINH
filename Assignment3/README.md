@@ -13,8 +13,9 @@ This is a Spring MVC web application. This app have some main features:
 ## Clone or download 
 
 Clone all three projects in this repository with command
-
+````
 git clone https://github.com/thanqminh/BE_2017_LINH.git
+````
 
 This assignment in to Assignment3 repository
 
@@ -26,12 +27,25 @@ Change database configuration in file resources/db.properties
 Via commandline:
 
 - Build a war file
+````
   mvn compile war:war
+````
 
 ## Deploy
 - Change war file name to ROOT.war
 - Copy war file in to <catalina_home>/webapps
 - Import database in file /resources/sql/BooksManagement.sql
 - Start tomcat
+
+##Test account
+````
+ADMIN
+email: manhlinh.sama@gmail.com
+password: password
+
+REGULAR USER
+email: lam@gmail.com
+password: password
+````
 
 
