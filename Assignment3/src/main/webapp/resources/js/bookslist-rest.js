@@ -1,9 +1,8 @@
 var table = $("table");
 
 $(document).ready(function () {
-    $.get("/rest/books", function (res) {
-        displayBooks(res.result, "There are no books in the list! Let's create one.")
-    });
+
+    getBookList();
 
     $(".search-form").submit(function (event) {
         event.preventDefault();
@@ -11,14 +10,75 @@ $(document).ready(function () {
         $("tbody").remove();
         searchBook();
     });
+
+    $(".addbook-form").submit(function (event) {
+        event.preventDefault();
+        addNewBook();
+    });
 });
 
+    function getBookList() {
+        table.addClass("hidden");
+        $("tbody").remove();
+        $.get("/rest/books", function (res) {
+            displayBooks(res.result, "There are no books in the list! Let's create one.")
+        });
+    }
 
 
+    function addNewBook() {
+        var newBook = {};
+        newBook["title"] = $("input[name=title]").val();
+        newBook["author"] = $("input[name=author]").val();
+        newBook["description"] = $("texarea[name=description]").val();
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/rest/addbook",
+            data: JSON.stringify(newBook),
+            dataType: 'json',
+            timeout: 100000,
+            success: function (res) {
+                addNewBookHandler(res, newBook["title"]);
+                var lastTr = $("tr").last();
+                var index = lastTr.find("td:first-child").html();
+                lastTr.after(createOneRowBook(res.book, Number(index) + 1));
+                console.log(res);
+            }
+        });
+
+
+    }
+
+    function addNewBookHandler(res, title) {
+        $(".error").remove();
+        $(".notification").remove();
+        var successNotification = $("<div>");
+        var errorTitleNotification = $("<div>");
+        var errorAuthorNotification = $("<div>");
+        if (res.validBook === true) {
+            successNotification.html("Adding book with title \"" + title + "\" success");
+            successNotification.addClass("notification");
+            table.after(successNotification);
+            $("#addBookModal").modal("hide");
+        } else {
+            if (res.validTitle === false) {
+                errorTitleNotification.html("Title must not be empty!");
+                errorTitleNotification.addClass("error");
+                $("#title").after(errorTitleNotification);
+            }
+
+            if(res.validAuthor === false) {
+                errorAuthorNotification.html("Author must not be empty!");
+                errorAuthorNotification.addClass("error");
+                $("#author").after(errorAuthorNotification);
+            }
+        }
+    }
    //Search book ajax request
     function searchBook() {
         var search = {};
-        var searchResult;
         search["searchType"] = $("select[name=search-type]").val();
         search["searchValue"] = $("input[name=search-value]").val();
         console.log(search["searchType"]);
@@ -59,40 +119,38 @@ $(document).ready(function () {
 
             //Create tbody element
             var tbody = $("<tbody>");
-            var tr = $("<tr>");
-
-            //Create td column
-            var index = $("<td>").append(i);
-            var title = $("<td>").append(book.title);
-            var author = $("<td>").append(book.author);
-            var createdBy = $("<td>").append(book.user.email);
-
-            //Create td for button detail
-            var aTag = $("<a/>", {
-                href : "/book/detail?id=" + book.id
-            }).append($("<i>").addClass("glyphicon glyphicon-folder-open"));
-            var detail = $("<td>").append(aTag);
-
-            tr.append(index);
-            tr.append(title);
-            tr.append(author);
-            tr.append(createdBy);
-            tr.append(detail);
-            tbody.append(tr);
-
+            tbody.append(createOneRowBook(book, i));
             //Show table and add tbody
             table.removeClass("hidden");
             table.addClass("table table-striped");
             table.append(tbody);
-            console.log(i);
-            console.log(book);
-            console.log(book.title);
-            console.log(book.author);
-            console.log(book.user.email);
-            console.log(new Date(book.createdAt));
-            console.log(new Date(book.updatedAt));
         }
     }
+
+    function createOneRowBook(book, index) {
+        var tr = $("<tr>");
+
+        //Create td column
+        var index = $("<td>").append(index);
+        var title = $("<td>").append(book.title);
+        var author = $("<td>").append(book.author);
+        var createdBy = $("<td>").append(book.user.email);
+
+         //Create td for button detail
+        var aTag = $("<a/>", {
+            href : "/book/detail?id=" + book.id
+        }).append($("<i>").addClass("glyphicon glyphicon-folder-open"));
+        var detail = $("<td>").append(aTag);
+
+        tr.append(index);
+        tr.append(title);
+        tr.append(author);
+        tr.append(createdBy);
+        tr.append(detail);
+
+        return tr;
+    }
+
 
 
 

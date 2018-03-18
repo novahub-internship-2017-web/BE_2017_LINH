@@ -103,15 +103,19 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
               </button>
             </div>
             <div class="modal-body">
-              <form method="POST">
+              <form method="POST" class="addbook-form">
+                <label for="title">Title: </label>
                 <input type="text" name="title" id="title" class="form-control text-input" placeholder="Book's title">
+                <label for="author">Author: </label>
                 <input type="text" name="author" id="author" class="form-control text-input" placeholder="Author">
-                <textarea name="description" class="form-control text-input" placeholder="Book's description"></textarea>
+                <label for="description">Description: </label>
+                <textarea name="description" id="description" class="form-control text-input" placeholder="Book's description"></textarea>
+                <input type="submit" id="submit-form" class="hidden">
               </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-              <button type="button" class="btn btn-primary">Save book</button>
+              <label for="submit-form" class="btn btn-primary">Save book</label>
             </div>
           </div>
         </div>
