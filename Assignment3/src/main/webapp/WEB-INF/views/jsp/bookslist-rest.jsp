@@ -87,7 +87,35 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
   <%--</c:if>--%>
   <div class="row">
     <div class="col-md-12">
-      <a href="/book/add" class="btn btn-primary">Add new book</a>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addBookModal">
+        Add new book
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="addBookModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="modalLabel">ADD NEW BOOK</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form method="POST">
+                <input type="text" name="title" id="title" class="form-control text-input" placeholder="Book's title">
+                <input type="text" name="author" id="author" class="form-control text-input" placeholder="Author">
+                <textarea name="description" class="form-control text-input" placeholder="Book's description"></textarea>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Save book</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

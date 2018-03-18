@@ -19,3 +19,12 @@
 .search-btn {
     height: 34px;
 }
+
+.hidden {
+    display: none;
+}
+
+.notification{
+    color : green;
+    font-size: 18px;
+}
