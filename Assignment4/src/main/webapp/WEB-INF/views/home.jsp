@@ -3,7 +3,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="/resources/css/home.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/home.css">
 </head>
 <body>  
     <header>       
@@ -45,35 +45,23 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
                         <input type="submit" class="btn btn-primary signup-btn" value="Sign in">
                     </form>
                     <h4>New here? Create a new account!</h4>
-                    <form:form action="register" method="post" modelAttribute="user">
-                        <form:input path="firstName" type="text" class="form-control text-input" placeholder="First name"/>
-                        <form:errors path="firstName" class="error"/>
-                        <form:input path="lastName" type="text" class="form-control text-input" placeholder="Last name"/>
-                        <form:errors path="lastName" class="error"/>
-                        <form:input path="email" type="email" class="form-control text-input" placeholder="Email address"/>
-                        <form:errors path="email" class="error"/>
-                        <form:input path="password" type="password" class="form-control text-input" placeholder="Password"/>
-                        <form:errors path="password" class="error"/>
-                        <form:input path="confirmPassword" type="password" class="form-control text-input" placeholder="Confirm password"/>
-                        <c:if test="${confirmError == true}">
-                            <div class="error">Password and confirm password is not match!</div>
-                        </c:if>
-                        <c:if test="${registerSucceed == true}">
-                            <div class="error" style="color: green">Register succeed!</div>
-                        </c:if>
-                        <c:if test="${isTakenEmail == true}">
-                            <div class="error" >This email is registered! Please chose another one.</div>
-                        </c:if>
+                    <form action="/api/users/register" method="post" modelAttribute="user">
+                        <input type="text" class="form-control text-input" placeholder="First name"/>
+                        <input type="text" class="form-control text-input" placeholder="Last name"/>
+                        <input type="email" class="form-control text-input" placeholder="Email address"/>
+                        <input type="password" class="form-control text-input" placeholder="Password"/>
+                        <input type="password" class="form-control text-input" placeholder="Confirm password"/>
                         <div>
                             <input type="submit" class="btn btn-primary signup-btn" value="Sign up"/>
                         </div>
-                    </form:form>
+                    </form>
                 </div>
             </div>   
         </div>           
     
     </header>  
     
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/home.js"></script>
 </body>
 </html>

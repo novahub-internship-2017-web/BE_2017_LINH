@@ -1,4 +1,4 @@
-package com.linhtran.assignment.springboot.booksmanagement.configure;
+package com.linhtran.springboot.booksmanagement.configure;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -53,7 +53,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()
-                .antMatchers("/resources/**",
-                        "/register");
+                .antMatchers("/resources/css/**",
+                        "/register", "/resources/img/**", "/resources/js/**");
     }
 }

@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h4 {
+    color: #ffffff;
+}
+
+
+html {
+    background-color: #fff;
+    color: #555555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+header {
+    background-image: url(../img/header-background.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+nav {
+    border-bottom: 1px solid #242222;
+    margin-bottom: 10px;
+}
+
+.logo {
+    font-family: 'Patua One', cursive;
+    font-size: 60px;
+    color: #fefefe;
+}
+
+.nav-menu {
+    padding-top: 30px;
+    padding-right: 50px;
+}
+
+.nav-menu  li a{
+    font-family: 'Patua One', cursive;
+    font-size: 18px;
+    color: #fefefe;
+}
+
+.nav-menu li a:hover {
+    background-color: #464646;
+}
+
+.hero-text {
+    padding-top: 150px;
+    font-family: 'Patua One', cursive;
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.text-input {
+    width: 70%;
+    margin-top: 20px;
+}
+
+.error {
+    color: red;
+    font-size: 20px;
+}
+
+.signup-btn {
+    margin-top: 20px;
+}
+

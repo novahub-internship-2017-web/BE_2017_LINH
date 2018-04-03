@@ -40,7 +40,6 @@ public class UserController {
 
    @GetMapping("/")
    public String userForm(Model model, Principal principal) {
-
       if (principal == null) {
          model.addAttribute("user", new User());
          model.addAttribute("users", userService.list());
