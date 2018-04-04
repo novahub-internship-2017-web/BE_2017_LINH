@@ -13,8 +13,8 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
   <title>Books list</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <link rel="stylesheet" href="/resources/css/home.css">
-  <link rel="stylesheet" href="/resources/css/bookslist-style.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/home.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/dashboard.css">
 </head>
 <body>
 <div class="navbar-div">
@@ -126,6 +126,6 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="/resources/js/bookslist-rest.js"></script>
+<script src="/resources/js/dashboard.js"></script>
 </body>
 </html>

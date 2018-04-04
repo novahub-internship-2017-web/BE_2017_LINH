@@ -34,7 +34,7 @@ public class MainController {
             session.invalidate();
             return "home";
         }
-        return "redirect:/api/users";
+        return "redirect:/dashboard";
     }
 
     @GetMapping("/login-failure")
@@ -42,5 +42,11 @@ public class MainController {
         model.addAttribute("loginFailured", true);
         return "home";
     }
+
+    @GetMapping("/dashboard")
+    public String dashboard() {
+        return "dashboard";
+    }
+
 
 }

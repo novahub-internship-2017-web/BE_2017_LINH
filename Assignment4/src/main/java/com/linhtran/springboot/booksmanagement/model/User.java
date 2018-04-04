@@ -2,8 +2,11 @@ package com.linhtran.springboot.booksmanagement.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.linhtran.springboot.booksmanagement.view.Views;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -13,23 +16,34 @@ public class User {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
 
+    @JsonView(Views.Public.class)
+    @Column
     private String email;
 
     @JsonIgnore
+    @Column
     private String password;
 
     @Transient
     @JsonIgnore
     private String confirmPassword;
 
+    @Column
     private String firstName;
 
+    @Column
     private String lastName;
 
+    @Column
     private boolean enabled;
 
+    @Column
     private String avatarUrl;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<Book> books;
+
+    @Column
     private int roleId;
 
     public int getId() {
@@ -102,5 +116,13 @@ public class User {
 
     public void setRoleId(int roleId) {
         this.roleId = roleId;
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 }
