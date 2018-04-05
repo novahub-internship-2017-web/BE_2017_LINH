@@ -9,7 +9,6 @@ import com.linhtran.springboot.booksmanagement.view.Views;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -37,12 +36,6 @@ public class BookController {
             bookService.addNewBook(newBook);
         }
         return bookValidation;
-    }
-
-    @GetMapping("/test")
-    public BookValidation test() {
-        Book book = new Book("abc", "def");
-        return new BookValidation(book);
     }
 
 }

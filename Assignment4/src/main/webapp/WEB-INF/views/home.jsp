@@ -12,6 +12,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
     <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/home.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/dashboard.css">
 </head>
 <body>  
     <header>       
@@ -45,12 +46,12 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
                         <input type="submit" class="btn btn-primary signup-btn" value="Sign in">
                     </form>
                     <h4>New here? Create a new account!</h4>
-                    <form action="/api/users/register" method="post" modelAttribute="user">
-                        <input type="text" class="form-control text-input" placeholder="First name"/>
-                        <input type="text" class="form-control text-input" placeholder="Last name"/>
-                        <input type="email" class="form-control text-input" placeholder="Email address"/>
-                        <input type="password" class="form-control text-input" placeholder="Password"/>
-                        <input type="password" class="form-control text-input" placeholder="Confirm password"/>
+                    <form class="register" action="/api/users/register" method="post">
+                        <input type="text" name="firstName" class="form-control text-input" placeholder="First name"/>
+                        <input type="text" name="lastName" class="form-control text-input" placeholder="Last name"/>
+                        <input type="email" name="email" class="form-control text-input" placeholder="Email address"/>
+                        <input type="password" name="password" class="form-control text-input" placeholder="Password"/>
+                        <input type="password" name="confirmPassword" class="form-control text-input" placeholder="Confirm password"/>
                         <div>
                             <input type="submit" class="btn btn-primary signup-btn" value="Sign up"/>
                         </div>
@@ -59,8 +60,9 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
             </div>   
         </div>           
     
-    </header>  
-    
+    </header>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/home.js"></script>
 </body>
