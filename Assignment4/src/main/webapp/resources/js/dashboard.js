@@ -137,7 +137,7 @@ $(document).ready(function () {
 
          //Create td for button detail
         var aTag = $("<a/>", {
-            href : "/book/detail?id=" + book.id
+            href : "/book/detail/" + book.id
         }).append($("<i>").addClass("glyphicon glyphicon-folder-open"));
         var detail = $("<td>").append(aTag);
 

@@ -27,11 +27,17 @@ public class UserValidation {
     private boolean confirmPasswordMatchPassword;
 
     public UserValidation(User user) {
-        this.user = user;
-        this.validEmail = EmailValidator.getInstance().isValid(user.getEmail());
-        this.confirmPasswordMatchPassword = user.getPassword().equals(user.getConfirmPassword());
-        this.availableEmail = userRepository.findByEmail(user.getEmail()) != null;
+        if (user != null) {
+            this.validEmail = EmailValidator.getInstance().isValid(user.getEmail());
+            this.confirmPasswordMatchPassword = user.getPassword().equals(user.getConfirmPassword());
+            this.availableEmail = userRepository.findByEmail(user.getEmail()) != null;
+        } else {
+            this.validEmail = false;
+            this.confirmPasswordMatchPassword =false;
+            this.availableEmail = false;
+        }
         this.validUser = validEmail && availableEmail && confirmPasswordMatchPassword;
+
     }
 
     public UserRepository getUserRepository() {

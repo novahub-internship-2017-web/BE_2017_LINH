@@ -1,34 +1,28 @@
 package com.linhtran.springboot.booksmanagement.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.util.Date;
 
-
-public class Comment {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+@MappedSuperclass
+public abstract class Comment {
 
     private String message;
 
-    private int userId;
-
-    private int bookId;
-
     private Date createdAt;
 
-    private Date updatedAt;
+    private Date updateAt;
 
-    public int getId() {
-        return id;
+    private int likes;
+
+    private int userId;
+
+    public Comment() {
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Comment(String message) {
+        this.message = message;
+        this.createdAt = new Date();
+        this.updateAt = createdAt;
     }
 
     public String getMessage() {
@@ -39,22 +33,6 @@ public class Comment {
         this.message = message;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public int getBookId() {
-        return bookId;
-    }
-
-    public void setBookId(int bookId) {
-        this.bookId = bookId;
-    }
-
     public Date getCreatedAt() {
         return createdAt;
     }
@@ -63,11 +41,26 @@ public class Comment {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdatedAt() {
-        return updatedAt;
+    public Date getUpdateAt() {
+        return updateAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setUpdateAt(Date updateAt) {
+        this.updateAt = updateAt;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

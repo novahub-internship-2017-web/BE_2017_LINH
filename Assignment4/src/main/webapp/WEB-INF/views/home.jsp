@@ -46,16 +46,29 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
                         <input type="submit" class="btn btn-primary signup-btn" value="Sign in">
                     </form>
                     <h4>New here? Create a new account!</h4>
-                    <form class="register" action="/api/users/register" method="post">
-                        <input type="text" name="firstName" class="form-control text-input" placeholder="First name"/>
-                        <input type="text" name="lastName" class="form-control text-input" placeholder="Last name"/>
-                        <input type="email" name="email" class="form-control text-input" placeholder="Email address"/>
-                        <input type="password" name="password" class="form-control text-input" placeholder="Password"/>
-                        <input type="password" name="confirmPassword" class="form-control text-input" placeholder="Confirm password"/>
-                        <div>
-                            <input type="submit" class="btn btn-primary signup-btn" value="Sign up"/>
-                        </div>
-                    </form>
+                    <<form:form action="register" method="post" modelAttribute="user">
+                    <form:input path="firstName" type="text" class="form-control text-input" placeholder="First name"/>
+                    <form:errors path="firstName" class="error"/>
+                    <form:input path="lastName" type="text" class="form-control text-input" placeholder="Last name"/>
+                    <form:errors path="lastName" class="error"/>
+                    <form:input path="email" type="email" class="form-control text-input" placeholder="Email address"/>
+                    <form:errors path="email" class="error"/>
+                    <form:input path="password" type="password" class="form-control text-input" placeholder="Password"/>
+                    <form:errors path="password" class="error"/>
+                    <form:input path="confirmPassword" type="password" class="form-control text-input" placeholder="Confirm password"/>
+                    <c:if test="${confirmError == true}">
+                        <div class="error">Password and confirm password is not match!</div>
+                    </c:if>
+                    <c:if test="${registerSucceed == true}">
+                        <div class="error" style="color: green">Register succeed!</div>
+                    </c:if>
+                    <c:if test="${isTakenEmail == true}">
+                        <div class="error" >This email is registered! Please chose another one.</div>
+                    </c:if>
+                    <div>
+                        <input type="submit" class="btn btn-primary signup-btn" value="Sign up"/>
+                    </div>
+                </form:form>
                 </div>
             </div>   
         </div>           
@@ -64,6 +77,5 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/js/home.js"></script>
 </body>
 </html>

@@ -23,7 +23,7 @@ public class UserServiceImp implements UserService {
 		setRoleToUser(user, "USER");
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		user.setEnabled(true);
-		userDao.save(user);		
+		userDao.save(user);
 	}
 
 	@Override

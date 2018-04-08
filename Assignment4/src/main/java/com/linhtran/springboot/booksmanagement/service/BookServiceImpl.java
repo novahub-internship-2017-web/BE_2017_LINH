@@ -25,6 +25,11 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    public Book searchBookById(int id) {
+        return bookRepository.findById(id).orElse(null);
+    }
+
+    @Override
     public void addNewBook(Book newBook) {
         String currentUserEmail=  SecurityContextHolder.getContext()
                 .getAuthentication().getName();

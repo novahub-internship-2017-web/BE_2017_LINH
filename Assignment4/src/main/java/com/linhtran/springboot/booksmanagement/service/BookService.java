@@ -8,5 +8,7 @@ public interface BookService {
 
     List<Book> listAllBooks();
 
+    Book searchBookById(int id);
+
     void addNewBook(Book newBook);
 }

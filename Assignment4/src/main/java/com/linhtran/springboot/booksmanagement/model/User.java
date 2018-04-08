@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonView;
 import com.linhtran.springboot.booksmanagement.view.Views;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Entity
@@ -18,10 +21,13 @@ public class User {
 
     @JsonView(Views.Public.class)
     @Column
+    @Email(message = "{user.email.invalid}")
+    @NotEmpty(message = "{user.email.empty}")
     private String email;
 
     @JsonIgnore
     @Column
+    @Size(min = 8, message = "{user.password.invalid}")
     private String password;
 
     @Transient
@@ -29,9 +35,11 @@ public class User {
     private String confirmPassword;
 
     @Column
+    @Size(max = 20, min = 1, message = "{user.firstname.invalid}")
     private String firstName;
 
     @Column
+    @Size(max = 20, min = 1, message = "{user.lastname.invalid}")
     private String lastName;
 
     @Column
@@ -45,6 +53,19 @@ public class User {
 
     @Column
     private int roleId;
+
+    public User() {
+    }
+
+    public User(String email, String password, String confirmPassword, String firstName, String lastName) {
+        this.email = email;
+        this.password = password;
+        this.confirmPassword = confirmPassword;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.enabled = true;
+        this.roleId = 2;
+    }
 
     public int getId() {
         return id;
@@ -125,4 +146,5 @@ public class User {
     public void setBooks(Set<Book> books) {
         this.books = books;
     }
+
 }
