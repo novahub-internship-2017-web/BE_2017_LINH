@@ -91,35 +91,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addBookModal">
         Add new book
       </button>
-
-      <!-- Modal -->
-      <div class="modal fade" id="addBookModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 class="modal-title" id="modalLabel">ADD NEW BOOK</h3>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form method="POST" class="addbook-form">
-                <label for="title">Title: </label>
-                <input type="text" name="title" id="title" class="form-control text-input" placeholder="Book's title">
-                <label for="author">Author: </label>
-                <input type="text" name="author" id="author" class="form-control text-input" placeholder="Author">
-                <label for="description">Description: </label>
-                <textarea name="description" id="description" class="form-control text-input" placeholder="Book's description"></textarea>
-                <input type="submit" id="submit-form" class="hidden">
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-              <label for="submit-form" class="btn btn-primary">Save book</label>
-            </div>
-          </div>
-        </div>
-      </div>
+      <jsp:include page="addbook-modal.jsp"/>
     </div>
   </div>
 </div>
