@@ -61,7 +61,6 @@ public class UserServiceImp implements UserService {
 	public int changeUserPassword(User user, String currentPass,
 									 String newPass, String confirmNewPass) {
 
-
 		if (!passwordEncoder.matches(currentPass, user.getPassword())) {
 			return 0;
 		}

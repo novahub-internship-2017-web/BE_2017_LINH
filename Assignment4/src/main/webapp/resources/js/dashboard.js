@@ -30,7 +30,7 @@ $(document).ready(function () {
         var newBook = {};
         newBook["title"] = $("input[name=title]").val();
         newBook["author"] = $("input[name=author]").val();
-        newBook["description"] = $("texarea[name=description]").val();
+        newBook["description"] = $("textarea[name=description]").val();
 
         $.ajax({
             type: "POST",

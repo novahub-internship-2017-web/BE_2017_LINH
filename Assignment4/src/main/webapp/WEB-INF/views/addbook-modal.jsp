@@ -18,6 +18,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
             </div>
             <div class="modal-body">
                 <form method="POST" class="addbook-form">
+                    <input type="hidden" id="book-id">
                     <label for="title">Title: </label>
                     <input type="text" name="title" id="title" class="form-control text-input" placeholder="Book's title">
                     <label for="author">Author: </label>

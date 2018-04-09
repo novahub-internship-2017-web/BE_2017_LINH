@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -37,5 +38,18 @@ public class BookServiceImpl implements BookService {
         newBook.setUser(currentUser);
         currentUser.getBooks().add(newBook);
         userRepository.save(currentUser);
+    }
+
+    @Override
+    public void updateBook(Book currentBook) {
+        Book book = bookRepository.findById(currentBook.getId()).orElse(null);
+        if (book != null) {
+            book.setTitle(currentBook.getTitle());
+            book.setAuthor(currentBook.getAuthor());
+            if (!currentBook.getDescription().trim().isEmpty()) {
+                book.setDescription(currentBook.getDescription());
+            }
+            bookRepository.save(book);
+        }
     }
 }

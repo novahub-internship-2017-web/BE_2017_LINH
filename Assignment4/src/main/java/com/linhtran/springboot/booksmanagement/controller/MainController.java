@@ -57,6 +57,7 @@ public class MainController {
     @GetMapping("/login-failure")
     public String loginFailure(Model model) {
         model.addAttribute("loginFailured", true);
+        model.addAttribute("user", new User());
         return "home";
     }
 

@@ -11,4 +11,6 @@ public interface BookService {
     Book searchBookById(int id);
 
     void addNewBook(Book newBook);
+
+    void updateBook(Book currentBook);
 }

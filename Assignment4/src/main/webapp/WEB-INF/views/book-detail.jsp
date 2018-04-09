@@ -65,6 +65,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
     </div>
     <div class="col col-md-6">
       <h2 class="title">${book.title}</h2>
+      <input type="hidden" id="book-id" value="${book.id}">
       <div class="author">Written by <span>${book.author}</span></div>
       <div class="date">Created at: <span>${book.createdAt}</span></div>
       <div class="date">Updated at: <span>${book.updatedAt}</span></div>
@@ -78,12 +79,18 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       <c:if test="${permission == false}">
         <div style="color: red">You are not permitted to modify this book</div>
       </c:if>
-      <div><a href="/book/modify?id=${book.id}" class="btn btn-primary signup-btn">Modify</a></div>
+      <div>
+        <button type="button" id="modify-book" class="btn btn-primary" data-toggle="modal" data-target="#addBookModal">
+          Modify book
+        </button>
+      </div>
+      <jsp:include page="addbook-modal.jsp"/>
     </div>
   </div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/book-detail.js"></script>
 </body>
 </html>

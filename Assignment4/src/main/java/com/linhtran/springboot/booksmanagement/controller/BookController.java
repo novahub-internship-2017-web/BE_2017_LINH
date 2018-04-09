@@ -6,6 +6,8 @@ import com.linhtran.springboot.booksmanagement.response.BookDTO;
 import com.linhtran.springboot.booksmanagement.service.BookService;
 import com.linhtran.springboot.booksmanagement.validation.BookValidation;
 import com.linhtran.springboot.booksmanagement.view.Views;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api")
 public class BookController {
+
+    Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private BookService bookService;
@@ -37,5 +41,21 @@ public class BookController {
         }
         return bookValidation;
     }
+
+    @JsonView(Views.Public.class)
+    @PostMapping("/modify-book")
+    public Book modifyBookInformation(@RequestBody Book book) {
+        bookService.updateBook(book);
+        logger.info(book.getDescription());
+        logger.info(book.getTitle());
+        return book;
+    }
+
+    @JsonView(Views.Public.class)
+    @GetMapping("/get-book/{id}")
+    public Book getBookById(@PathVariable("id") int bookId) {
+        return bookService.searchBookById(bookId);
+    }
+
 
 }
