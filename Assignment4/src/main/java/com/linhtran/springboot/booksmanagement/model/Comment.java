@@ -1,11 +1,22 @@
 package com.linhtran.springboot.booksmanagement.model;
 
-import javax.persistence.MappedSuperclass;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.linhtran.springboot.booksmanagement.view.Views;
+
+import javax.persistence.*;
 import java.util.Date;
 
-@MappedSuperclass
-public abstract class Comment {
+@Entity
+@Table(name = "comments")
+public class Comment {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    private int bookId;
+
+    @JsonView(Views.Public.class)
     private String content;
 
     private Date createdAt;
@@ -14,7 +25,10 @@ public abstract class Comment {
 
     private int likes;
 
-    private int userId;
+    @JsonView(Views.Public.class)
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public Comment() {
     }
@@ -24,6 +38,22 @@ public abstract class Comment {
         this.createdAt = new Date();
         this.updateAt = createdAt;
         this.likes = 0;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(int bookId) {
+        this.bookId = bookId;
     }
 
     public String getContent() {
@@ -58,11 +88,11 @@ public abstract class Comment {
         this.likes = likes;
     }
 
-    public int getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

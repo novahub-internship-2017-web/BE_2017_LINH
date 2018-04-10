@@ -34,6 +34,7 @@ public class User {
     @JsonIgnore
     private String confirmPassword;
 
+    @JsonView(Views.Public.class)
     @Column
     @Size(max = 20, min = 1, message = "{user.firstname.invalid}")
     private String firstName;
@@ -50,6 +51,9 @@ public class User {
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Book> books;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<Comment> comments;
 
     @Column
     private int roleId;
@@ -147,4 +151,11 @@ public class User {
         this.books = books;
     }
 
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
+    }
 }

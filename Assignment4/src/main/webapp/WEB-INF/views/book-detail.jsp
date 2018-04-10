@@ -17,6 +17,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/book-detail.css">
 </head>
 <body>
+
 <jsp:include page="header.jsp"/>
 
 <div class="container">
@@ -73,7 +74,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
         </div>
         <input type="submit" id="submit-comment" class="hidden">
       </form>
-    <div class="col col-md-12 comment">
+    <div class="col col-md-12 comment hidden">
       <div class="user">
         Linh
       </div>

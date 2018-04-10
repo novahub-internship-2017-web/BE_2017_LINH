@@ -19,9 +19,9 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
             <div class="modal-body">
                 <form method="POST" class="addbook-form">
                     <input type="hidden" id="book-id">
-                    <label for="title">Title: </label>
+                    <label for="title">Title: <span style="color: red">(*)</span> </label>
                     <input type="text" name="title" id="title" class="form-control text-input" placeholder="Book's title">
-                    <label for="author">Author: </label>
+                    <label for="author">Author: <span style="color: red">(*)</span> </label>
                     <input type="text" name="author" id="author" class="form-control text-input" placeholder="Author">
                     <label for="description">Description: </label>
                     <textarea name="description" id="description" class="form-control text-input" placeholder="Book's description"></textarea>

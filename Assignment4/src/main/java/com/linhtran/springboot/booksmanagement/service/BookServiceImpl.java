@@ -30,6 +30,11 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    public Book searchBookByTitle(String title) {
+        return bookRepository.findByTitle(title);
+    }
+
+    @Override
     public void addNewBook(Book newBook) {
         String currentUserEmail=  SecurityContextHolder.getContext()
                 .getAuthentication().getName();

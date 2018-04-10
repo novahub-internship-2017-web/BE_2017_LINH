@@ -1,5 +1,4 @@
 package com.linhtran.springboot.booksmanagement;
-import com.linhtran.springboot.booksmanagement.model.MainComment;
 import com.linhtran.springboot.booksmanagement.repository.BookRepository;
 import com.linhtran.springboot.booksmanagement.repository.CommentRepository;
 import com.linhtran.springboot.booksmanagement.service.CommentService;

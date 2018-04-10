@@ -14,6 +14,7 @@ $(document).ready(function () {
     $(".addbook-form").submit(function (event) {
         event.preventDefault();
         addNewBook();
+        $(".text-input").val("");
     });
 });
 

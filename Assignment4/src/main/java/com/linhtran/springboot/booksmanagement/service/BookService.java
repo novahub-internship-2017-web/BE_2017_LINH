@@ -10,6 +10,8 @@ public interface BookService {
 
     Book searchBookById(int id);
 
+    Book searchBookByTitle(String title);
+
     void addNewBook(Book newBook);
 
     void updateBook(Book currentBook);

@@ -34,6 +34,11 @@ public class UserServiceImp implements UserService {
 	}
 
 	@Override
+	public List<User> listAll() {
+		return userRepository.findAll();
+	}
+
+	@Override
 	public int changeUserPassword(User user, String currentPass,
 									 String newPass, String confirmNewPass) {
 

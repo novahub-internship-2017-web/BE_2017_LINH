@@ -6,7 +6,7 @@ import com.linhtran.springboot.booksmanagement.view.Views;
 
 public class BookValidation {
 
-
+    @JsonView(Views.Public.class)
     private Book book;
 
     @JsonView(Views.Public.class)

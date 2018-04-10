@@ -53,3 +53,15 @@ div.date, div.created-by, div.description {
 span {
     font-weight: bold;   
 }
+
+/*--------------------------------------*/
+/*Comments*/
+/*-----------------------------------------*/
+.user {
+    font-size: 20px;
+    font-weight: bold ;
+}
+
+.comment-content {
+    font-size: 18px;
+}

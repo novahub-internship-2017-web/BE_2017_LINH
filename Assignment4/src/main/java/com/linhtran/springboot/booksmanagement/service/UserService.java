@@ -12,7 +12,7 @@ public interface UserService {
 //
 //	void setRoleToUser(User user, String role);
 //
-//	List<User> list();
+	List<User> listAll();
 //
 	User searchUserByEmail(String email);
 //

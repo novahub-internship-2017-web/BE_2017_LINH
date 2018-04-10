@@ -3,7 +3,7 @@ package com.linhtran.springboot.booksmanagement.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.linhtran.springboot.booksmanagement.model.User;
-import com.linhtran.springboot.booksmanagement.repository.UserRepository;
+import com.linhtran.springboot.booksmanagement.service.UserService;
 import com.linhtran.springboot.booksmanagement.validation.UserValidation;
 import com.linhtran.springboot.booksmanagement.view.Views;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class UserController {
     @Autowired
-    UserRepository userRepository;
+    UserService userService;
 
     @JsonView(Views.Public.class)
     @PostMapping("/users/register")
@@ -23,14 +23,14 @@ public class UserController {
         UserValidation userValidation = new UserValidation(newUser);
 
         if (userValidation.isValidUser()) {
-            userRepository.save(newUser);
+            userService.register(newUser);
         }
         return userValidation;
     }
 
     @GetMapping("/users")
     public List<User> getAllUsers() {
-        return userRepository.findAll();
+        return userService.listAll();
     }
 
 

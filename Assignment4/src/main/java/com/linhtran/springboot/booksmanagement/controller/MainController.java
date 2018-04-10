@@ -21,8 +21,6 @@ import java.security.Principal;
 
 @Controller
 public class MainController {
-    @Autowired
-    UserRepository userRepository;
 
     @Autowired
     UserService userService;
@@ -44,7 +42,7 @@ public class MainController {
     @GetMapping("/login-success")
     public String loginSucess(HttpSession session, Authentication authentication, Model model) {
         String userEmail = authentication.getName();
-        User user = userRepository.findByEmail(userEmail);
+        User user = userService.searchUserByEmail(userEmail);
         if (!user.isEnabled()) {
             model.addAttribute("enabledUser", false);
             model.addAttribute("user", new User());
@@ -79,7 +77,7 @@ public class MainController {
             return "home";
         }
 
-        User registeredUser = userRepository.findByEmail(user.getEmail());
+        User registeredUser = userService.searchUserByEmail(user.getEmail());
         if (registeredUser != null) {
             model.addAttribute("isTakenEmail", true);
             return "home";

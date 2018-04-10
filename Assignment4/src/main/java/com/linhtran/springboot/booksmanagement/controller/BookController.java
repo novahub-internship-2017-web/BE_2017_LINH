@@ -39,6 +39,9 @@ public class BookController {
         logger.info(book.getDescription());
         if (bookValidation.isValidBook()) {
             bookService.addNewBook(newBook);
+            newBook = bookService.searchBookByTitle(newBook.getTitle());
+            bookValidation.getBook().setId(newBook.getId());
+            logger.info("" + newBook.getId());
         }
         return bookValidation;
     }

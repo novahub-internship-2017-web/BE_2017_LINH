@@ -1,4 +1,7 @@
 $(document).ready(function () {
+
+    getAllComments();
+
     $("#modify-book").click(function () {
         $("#modalLabel").html("MODIFY BOOK");
         getBookInformation();
@@ -11,7 +14,9 @@ $(document).ready(function () {
 
     $("#comment-box").keypress(function (e) {
         if(e.which == 13 && !e.altKey) {
+            $(".error").remove();
             postNewComment();
+            $(this).val("");
             e.preventDefault();
         }
     });
@@ -71,7 +76,14 @@ function postNewComment() {
         dataType: 'json',
         timeout: 100000,
         success: function (res) {
-            addCommentLine(res);
+            if (res.result.length > 0) {
+                addCommentLine(res.result[0]);
+            } else {
+                var notificaton = $("<div>");
+                notificaton.html("Your comment must not be empty");
+                notificaton.addClass("error");
+                $("#comment-box").after(notificaton);
+            }
         }
     });
 }
@@ -81,12 +93,31 @@ function addCommentLine(res) {
     var commentOwner = $("<div>");
     var commentContent = $("<div>");
 
-    commentOwner.html("Linh tran");
+    commentOwner.html(res.user.firstName);
     commentContent.html(res.content);
+
+    commentOwner.addClass("user");
+    commentContent.addClass("comment-content");
 
     comment.append(commentOwner);
     comment.append(commentContent);
-    comment.addClass("comment");
+    comment.addClass("col col-md-12 comment");
 
-    $(".comment").last().after(comment);
+    $(".comment").first().before(comment);
+}
+
+function getAllComments() {
+    $.ajax({
+        contentType: "application/json",
+        url: "/api/all-comments/" + $("#book-id").val(),
+        dataType: 'json',
+        timeout: 100000,
+        success: function (res) {
+            if (res.result.length > 0) {
+                for (var i = 0; i < res.result.length; i++ ) {
+                    addCommentLine(res.result[i]);
+                }
+            }
+        }
+    });
 }

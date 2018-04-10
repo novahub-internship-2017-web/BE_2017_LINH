@@ -7,6 +7,8 @@ import com.linhtran.springboot.booksmanagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CommentServiceImpl implements CommentService {
 
@@ -20,14 +22,16 @@ public class CommentServiceImpl implements CommentService {
     CommentRepository commentRepository;
 
     @Override
-    public void postNewComment(Book book, User user, MainComment mainComment) {
-        mainComment.setUserId(user.getId());
-        mainComment.setBookId(book.getId());
-        commentRepository.save(mainComment);
+    public void postNewComment(Book book, User user, Comment newComment) {
+        newComment.setBookId(book.getId());
+        newComment.setUser(user);
+        user.getComments().add(newComment);
+        userRepository.save(user);
     }
 
     @Override
-    public void replyComment(MainComment mainComment, ReplyComment replyComment) {
-
+    public List<Comment> searchCommentsByBookId(int id) {
+        return commentRepository.findByBookId(id);
     }
+
 }
