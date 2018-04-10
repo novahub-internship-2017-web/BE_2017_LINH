@@ -17,27 +17,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/dashboard.css">
 </head>
 <body>
-<div class="navbar-div">
-  <div class="container">
-    <nav class="row">
-      <div class="col-md-6">
-        <h1 class="logo">Book Management</h1>
-      </div>
-      <div class="col-md-6 navbar">
-        <ul class="nav navbar-nav navbar-right nav-menu">
-          <li><a href="/user/profile">Your profile</a></li>
-          <li><a href="/book/mybook">My list</a></li>
-          <li><a href="/user/profile">User manager</a></li>
-          <security:authorize access="hasRole('ADMIN')">
-            <li><a href="/admin/user-manager">User manager</a></li>
-          </security:authorize>
-          <li><a href="/signout" onclick="return confirm('Do you really want to sign out?')">Sign out</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-</div>
-
+<jsp:include page="header.jsp"/>
 <div class="container">
   <h3>List of books</h3>
   <form class="row search-form" action="/book/search" method="post">
@@ -98,6 +78,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/resources/js/event-handler.js"></script>
 <script src="/resources/js/dashboard.js"></script>
 </body>
 </html>

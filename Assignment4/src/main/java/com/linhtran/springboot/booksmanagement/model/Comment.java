@@ -6,7 +6,7 @@ import java.util.Date;
 @MappedSuperclass
 public abstract class Comment {
 
-    private String message;
+    private String content;
 
     private Date createdAt;
 
@@ -19,18 +19,19 @@ public abstract class Comment {
     public Comment() {
     }
 
-    public Comment(String message) {
-        this.message = message;
+    public Comment(String content) {
+        this.content = content;
         this.createdAt = new Date();
         this.updateAt = createdAt;
+        this.likes = 0;
     }
 
-    public String getMessage() {
-        return message;
+    public String getContent() {
+        return content;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public Date getCreatedAt() {
@@ -60,6 +61,7 @@ public abstract class Comment {
     public int getUserId() {
         return userId;
     }
+
     public void setUserId(int userId) {
         this.userId = userId;
     }

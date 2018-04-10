@@ -29,6 +29,11 @@ public class UserServiceImp implements UserService {
 	}
 
 	@Override
+	public User searchUserByEmail(String email) {
+		return userRepository.findByEmail(email);
+	}
+
+	@Override
 	public int changeUserPassword(User user, String currentPass,
 									 String newPass, String confirmNewPass) {
 

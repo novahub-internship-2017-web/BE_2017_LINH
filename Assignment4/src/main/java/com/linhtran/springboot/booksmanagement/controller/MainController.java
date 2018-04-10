@@ -47,6 +47,7 @@ public class MainController {
         User user = userRepository.findByEmail(userEmail);
         if (!user.isEnabled()) {
             model.addAttribute("enabledUser", false);
+            model.addAttribute("user", new User());
             session.invalidate();
             return "home";
         }

@@ -14,7 +14,7 @@ public interface UserService {
 //
 //	List<User> list();
 //
-//	User searchUserByEmail(String email);
+	User searchUserByEmail(String email);
 //
 //	User searchUserById(int id);
 //

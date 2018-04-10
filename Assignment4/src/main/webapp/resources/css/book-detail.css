@@ -4,10 +4,10 @@
 
 img {
     width: 200px;
-    height: 600px;
+    height: auto;
     padding-top: 15px;
-    padding-bottom: 40px;
-    padding-right: 20px;   
+    padding-bottom: 0px;
+    padding-right: 20px;
 }
 
 h3 {
@@ -33,11 +33,21 @@ div.date, div.created-by, div.description {
 
 }
 
-.box {
+.detail-box {
     border: 1px solid rgb(56, 53, 53); 
     height: 600px;
-    width: 800px;    
+    width: 600px;
     margin: 0 auto;
+}
+
+.img-container img {
+    margin: 10px auto;
+    display: block;
+}
+
+.upload-container button{
+    margin: 10px auto;
+    display: block;
 }
 
 span {

@@ -36,6 +36,7 @@ public class BookController {
         newBook.setImageUrl("/resources/upload/book-covers/genericBookCover.jpg");
         newBook.setDescription(book.getDescription());
         BookValidation bookValidation = new BookValidation(newBook);
+        logger.info(book.getDescription());
         if (bookValidation.isValidBook()) {
             bookService.addNewBook(newBook);
         }
@@ -44,11 +45,15 @@ public class BookController {
 
     @JsonView(Views.Public.class)
     @PostMapping("/modify-book")
-    public Book modifyBookInformation(@RequestBody Book book) {
-        bookService.updateBook(book);
-        logger.info(book.getDescription());
-        logger.info(book.getTitle());
-        return book;
+    public BookValidation modifyBookInformation(@RequestBody Book book) {
+        Book newBook = new Book(book.getTitle(), book.getAuthor());
+        newBook.setImageUrl("/resources/upload/book-covers/genericBookCover.jpg");
+        newBook.setDescription(book.getDescription());
+        BookValidation bookValidation = new BookValidation(newBook);
+        if (bookValidation.isValidBook()) {
+            bookService.updateBook(book);
+        }
+        return bookValidation;
     }
 
     @JsonView(Views.Public.class)

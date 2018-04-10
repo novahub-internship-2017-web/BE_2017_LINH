@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $("#modify-book").click(function () {
+        $("#modalLabel").html("MODIFY BOOK");
         getBookInformation();
     });
 
@@ -7,6 +8,15 @@ $(document).ready(function () {
         event.preventDefault();
         modifyBookInfo();
     });
+
+    $("#comment-box").keypress(function (e) {
+        if(e.which == 13 && !e.altKey) {
+            postNewComment();
+            e.preventDefault();
+        }
+    });
+
+
 });
 
 function getBookInformation() {
@@ -47,5 +57,36 @@ function modifyBookInfo() {
             console.log("modify book success" + res);
         }
     });
+}
 
+function postNewComment() {
+    var newComment = {};
+    newComment["content"] = $("#comment-box").val();
+    newComment["bookId"] = $("#book-id").val();
+  $.ajax({
+        type: "POST",
+        contentType: "application/json",
+        url: "/api/post-comment",
+        data: JSON.stringify(newComment),
+        dataType: 'json',
+        timeout: 100000,
+        success: function (res) {
+            addCommentLine(res);
+        }
+    });
+}
+
+function addCommentLine(res) {
+    var comment = $("<div>");
+    var commentOwner = $("<div>");
+    var commentContent = $("<div>");
+
+    commentOwner.html("Linh tran");
+    commentContent.html(res.content);
+
+    comment.append(commentOwner);
+    comment.append(commentContent);
+    comment.addClass("comment");
+
+    $(".comment").last().after(comment);
 }

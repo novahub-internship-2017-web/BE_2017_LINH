@@ -18,50 +18,24 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
+
 <div class="container">
   <h3>Detail of book</h3>
-  <div class="row panel panel-default box">
-    <div class="col col-md-6">
-      <div class="row">
-        <img src="${book.imageUrl}" alt="book picture" class="pull-right">
-      </div>
 
+  <div class="row detail-box">
+    <div class="col col-md-6">
+      <div class="img-container">
+        <img src="${book.imageUrl}" alt="book picture">
+      </div>
+      <%--Button display if this book belong to user--%>
       <security:authorize access="isAuthenticated()">
         <security:authentication var="principal" property="principal" />
       </security:authorize>
-
       <c:if test="${principal.username eq book.user.email}">
-        <div class="row">
-          <button type="button" class="btn btn-info signup-btn pull-right" data-toggle="modal" data-target="#uploadModal">Upload file</button>
+        <div class="upload-container">
+          <button type="button" class="btn btn-info signup-btn" data-toggle="modal" data-target="#uploadModal">Upload file</button>
         </div>
       </c:if>
-
-      <!-- Modal -->
-      <div id="uploadModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">File upload form</h4>
-            </div>
-            <div class="modal-body">
-              <!-- Form -->
-              <form method="post" action="/uploadImage?id=${book.id}" enctype="multipart/form-data">
-                Select file : <input type="file" name="file" id="file" class="form-control"><br>
-                <input type="submit" class="btn btn-info" value='Upload' id='upload'>
-              </form>
-
-              <!-- Preview-->
-              <div id='preview'></div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
     </div>
     <div class="col col-md-6">
       <h2 class="title">${book.title}</h2>
@@ -70,27 +44,52 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       <div class="date">Created at: <span>${book.createdAt}</span></div>
       <div class="date">Updated at: <span>${book.updatedAt}</span></div>
       <div class="created-by">Created by: <span>${book.user.email}</span></div>
-      <div class="created-by">
-        Description:
-        <div>
-          ${book.description}
-        </div>
-      </div>
       <c:if test="${permission == false}">
         <div style="color: red">You are not permitted to modify this book</div>
       </c:if>
       <div>
-        <button type="button" id="modify-book" class="btn btn-primary" data-toggle="modal" data-target="#addBookModal">
-          Modify book
-        </button>
+        <c:if test="${principal.username eq book.user.email}">
+          <button type="button" id="modify-book" class="btn btn-primary" data-toggle="modal" data-target="#addBookModal">
+            Modify book
+          </button>
+        </c:if>
       </div>
-      <jsp:include page="addbook-modal.jsp"/>
+    </div>
+
+    <div class="col col-md-12">
+      Description:
+      <div>
+        ${book.description}
+      </div>
+    </div>
+  </div>
+  <div class="row comments">
+      <form class="col col-md-12" id="post-comment" action="/api/comment">
+        <div>
+          <label for="comment-box">COMMENTS</label>
+        </div>
+        <div>
+          <textarea name="comment-box" id="comment-box" rows="4" cols="100"></textarea>
+        </div>
+        <input type="submit" id="submit-comment" class="hidden">
+      </form>
+    <div class="col col-md-12 comment">
+      <div class="user">
+        Linh
+      </div>
+      <div class="comment-content">
+        This book is awesome!
+      </div>
     </div>
   </div>
 </div>
 
+<jsp:include page="addbook-modal.jsp"/>
+<jsp:include page="upload-modal.jsp"/>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/event-handler.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/book-detail.js"></script>
 </body>
 </html>
