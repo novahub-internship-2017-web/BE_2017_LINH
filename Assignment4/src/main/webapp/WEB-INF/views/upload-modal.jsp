@@ -17,7 +17,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
             </div>
             <div class="modal-body">
                 <!-- Form -->
-                <form method="post" action="/uploadBookCover" enctype="multipart/form-data">
+                <form method="post" action="/uploadBookCover" id="upload-form" enctype="multipart/form-data">
                     Select file : <input type="file" name="file" id="file" class="form-control"><br>
                     <input type="hidden" name="id" value="${book.id}">
                     <input type="submit" class="btn btn-info" value='Upload' id='upload'>

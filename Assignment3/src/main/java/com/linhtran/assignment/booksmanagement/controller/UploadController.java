@@ -3,6 +3,8 @@ package com.linhtran.assignment.booksmanagement.controller;
 
 import com.linhtran.assignment.booksmanagement.model.Book;
 import com.linhtran.assignment.booksmanagement.service.BookService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +25,7 @@ public class UploadController {
 
     @Autowired
     BookService bookService;
+
 
     @PostMapping("/uploadImage")
     public String uploadFile(@RequestParam("file") MultipartFile file,

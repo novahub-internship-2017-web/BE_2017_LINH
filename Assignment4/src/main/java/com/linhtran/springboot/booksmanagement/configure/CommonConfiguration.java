@@ -34,10 +34,10 @@ public class CommonConfiguration implements WebMvcConfigurer{
         return validator;
     }
 
-    @Bean
-    public CommonsMultipartResolver multipartResolver() {
-        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
-        multipartResolver.setMaxUploadSize(10*1024*1024);
-        return multipartResolver;
-    }
+//    @Bean
+//    public CommonsMultipartResolver multipartResolver() {
+//        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+//        multipartResolver.setMaxUploadSize(10*1024*1024);
+//        return multipartResolver;
+//    }
 }

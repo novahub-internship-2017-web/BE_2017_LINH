@@ -4,6 +4,8 @@ package com.linhtran.springboot.booksmanagement.controller;
 
 import com.linhtran.springboot.booksmanagement.model.Book;
 import com.linhtran.springboot.booksmanagement.service.BookService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +20,8 @@ import java.security.Principal;
 @Controller
 public class UploadController {
 
+    Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     private HttpServletRequest request;
 
@@ -29,6 +33,7 @@ public class UploadController {
                              @RequestParam("id") int bookId,
                              Principal principal,
                              Model model) {
+        logger.info("=============> It go here");
         String userEmail = principal.getName();
         Book book = bookService.searchBookById(bookId);
         if (!userEmail.equals(book.getUser().getEmail())) {

@@ -1,6 +1,8 @@
 $(document).ready(function () {
 
     getAllComments();
+    var bookId = $("#book-id").val();
+    $("input[name=id]").val(bookId);
 
     $("#modify-book").click(function () {
         $("#modalLabel").html("MODIFY BOOK");
@@ -11,6 +13,8 @@ $(document).ready(function () {
         event.preventDefault();
         modifyBookInfo();
     });
+
+
 
     $("#comment-box").keypress(function (e) {
         if(e.which == 13 && !e.altKey) {
