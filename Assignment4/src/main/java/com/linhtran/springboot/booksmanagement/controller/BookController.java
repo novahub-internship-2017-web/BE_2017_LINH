@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.List;
 
 
 @RestController
@@ -26,9 +27,18 @@ public class BookController {
 
     @JsonView(Views.Public.class)
     @GetMapping(value = "/books")
-    public BookDTO listAllBooks(Principal principal) {
+    public BookDTO listAllBooks() {
         BookDTO bookDTO = new BookDTO();
         bookDTO.setResult(bookService.listAllBooks());
+        return bookDTO;
+    }
+
+    @JsonView(Views.Public.class)
+    @GetMapping(value = "/books/{type}")
+    public BookDTO sortBooks(@PathVariable("type") String type) {
+        BookDTO bookDTO = new BookDTO();
+        List<Book> books = bookService.sortBooks(bookService.listAllBooks(), type);
+        bookDTO.setResult(books);
         return bookDTO;
     }
 

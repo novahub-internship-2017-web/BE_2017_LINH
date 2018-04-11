@@ -90,8 +90,11 @@ $(document).ready(function () {
     }
 
     // Sort book list
-   function sortBooksList() {
-
+   function sortBooksList(sortType) {
+       $("tbody").remove();
+       $.get("/api/books/" + sortType, function (res) {
+           displayBooks(res.result, "There are no books in the list! Let's create one.")
+       });
    }
 
 

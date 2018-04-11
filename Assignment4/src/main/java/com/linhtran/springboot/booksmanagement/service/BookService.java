@@ -10,6 +10,8 @@ public interface BookService {
 
     List<Book> searchBooks(String searchType, String searchValue);
 
+    List<Book> sortBooks(List<Book> books, String sortType);
+
     Book searchBookById(int id);
 
     Book searchBookByTitle(String title);
@@ -17,4 +19,5 @@ public interface BookService {
     void addNewBook(Book newBook);
 
     void updateBook(Book currentBook);
+
 }

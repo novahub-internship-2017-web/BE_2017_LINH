@@ -132,4 +132,16 @@ public class Book {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public int compareTo(Book that, String compareParameter) {
+        switch (compareParameter) {
+            case "title":
+                return this.getTitle().compareToIgnoreCase(that.getTitle());
+            case "author":
+                return this.getAuthor().compareToIgnoreCase(that.getAuthor());
+            default:
+                return this.getUser().getEmail().compareToIgnoreCase(that.getUser().getEmail());
+        }
+    }
+
 }
