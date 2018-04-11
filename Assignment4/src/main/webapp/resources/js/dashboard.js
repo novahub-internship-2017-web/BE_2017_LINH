@@ -16,6 +16,22 @@ $(document).ready(function () {
         addNewBook();
         $(".text-input").val("");
     });
+
+    $(".clickable").click(function () {
+        var sortType;
+        if ($(this).is("#th-title")) {
+            sortType = "title";
+            console.log("Th title clicked")
+        } else if ($(this).is("#th-author")) {
+            sortType = "author";
+            console.log("Th author clicked")
+        } else {
+            sortType = "owner";
+            console.log("Th created clicked")
+        }
+        sortBooksList(sortType);
+    });
+
 });
 
     function getBookList() {
@@ -72,6 +88,11 @@ $(document).ready(function () {
         });
 
     }
+
+    // Sort book list
+   function sortBooksList() {
+
+   }
 
 
 

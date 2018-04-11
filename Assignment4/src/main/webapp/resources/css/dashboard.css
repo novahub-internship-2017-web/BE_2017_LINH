@@ -1,3 +1,12 @@
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    background-color: #666069;
+    color: white;
+}
 .navbar-div {
     background-color: #666069;    
 }
@@ -23,4 +32,5 @@
 .hidden {
     display: none;
 }
+
 

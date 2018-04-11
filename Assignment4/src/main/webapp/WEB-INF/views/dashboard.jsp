@@ -48,10 +48,10 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
     <table class="hidden">
       <thead>
       <tr>
-        <th>Index</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Created by</th>
+        <th>Index  </th>
+        <th class="clickable" id="th-title">Title  <i class="glyphicon glyphicon-sort-by-alphabet"></i></th>
+        <th class="clickable" id="th-author">Author <i class="glyphicon glyphicon-sort-by-alphabet"></i></th>
+        <th class="clickable" id="th-created">Created by <i class="glyphicon glyphicon-sort-by-alphabet"></i></th>
         <th>Detail</th>
       </tr>
       </thead>
