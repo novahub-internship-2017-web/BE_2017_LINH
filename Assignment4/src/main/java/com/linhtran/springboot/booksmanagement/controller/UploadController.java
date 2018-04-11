@@ -33,7 +33,7 @@ public class UploadController {
                              @RequestParam("id") int bookId,
                              Principal principal,
                              Model model) {
-        logger.info("=============> It go here");
+
         String userEmail = principal.getName();
         Book book = bookService.searchBookById(bookId);
         if (!userEmail.equals(book.getUser().getEmail())) {

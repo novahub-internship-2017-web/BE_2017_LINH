@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+
 
 @RestController
 @RequestMapping("/api")
@@ -23,7 +25,7 @@ public class BookController {
 
     @JsonView(Views.Public.class)
     @GetMapping(value = "/books")
-    public BookDTO listAllBooks() {
+    public BookDTO listAllBooks(Principal principal) {
         BookDTO bookDTO = new BookDTO();
         bookDTO.setResult(bookService.listAllBooks());
         return bookDTO;

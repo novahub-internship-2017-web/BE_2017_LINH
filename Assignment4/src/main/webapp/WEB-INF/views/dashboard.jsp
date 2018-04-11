@@ -20,26 +20,31 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
 <jsp:include page="header.jsp"/>
 <div class="container">
   <h3>List of books</h3>
-  <form class="row search-form" action="/book/search" method="post">
-    <div class="col-md-3">
-      <div>
-        <select name="search-type" class="form-control search">
-          <option value="by-title">Search by title</option>
-          <option value="by-author">Search by author</option>
-        </select>
+
+  <%--Only login user could see this form--%>
+  <security:authorize access="isAuthenticated()">
+    <form class="row search-form" action="/book/search" method="post">
+      <div class="col-md-3">
+        <div>
+          <select name="search-type" class="form-control search">
+            <option value="by-title">Search by title</option>
+            <option value="by-author">Search by author</option>
+          </select>
+        </div>
       </div>
-    </div>
-    <div class="col-md-9">
-      <div class="input-group">
-        <input name="search-value" type="text" class="search-query form-control" placeholder="Search" />
-        <span class="input-group-btn">
+      <div class="col-md-9">
+        <div class="input-group">
+          <input name="search-value" type="text" class="search-query form-control" placeholder="Search" />
+          <span class="input-group-btn">
           <button class="btn btn-primary search-btn" type="submit">
             <span class=" glyphicon glyphicon-search"></span>
           </button>
         </span>
+        </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </security:authorize>
+
     <table class="hidden">
       <thead>
       <tr>
@@ -68,9 +73,11 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
   <div class="row">
     <div class="col-md-12">
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addBookModal">
-        Add new book
-      </button>
+      <security:authorize access="isAuthenticated()">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addBookModal">
+          Add new book
+        </button>
+      </security:authorize>
       <jsp:include page="addbook-modal.jsp"/>
     </div>
   </div>

@@ -24,7 +24,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
                 <div class="col-md-6 navbar">
                     <ul class="nav navbar-nav navbar-right nav-menu">
                         <li class="active"><a href="/">Home</a></li>
-                        <li><a href="/book/list">Books list</a></li>
+                        <li><a href="/dashboard">Books list</a></li>
                     </ul>
                 </div>
             </nav>

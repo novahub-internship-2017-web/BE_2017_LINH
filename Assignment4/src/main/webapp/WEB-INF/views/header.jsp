@@ -14,11 +14,14 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       </div>
       <div class="col-md-6 navbar">
         <ul class="nav navbar-nav navbar-right nav-menu">
+          <li><a href="/">Home</a></li>
           <li><a href="/dashboard">Dashboard</a></li>
           <security:authorize access="hasRole('ADMIN')">
             <li><a href="/admin/user-manager">User manager</a></li>
           </security:authorize>
-          <li><a href="/signout" onclick="return confirm('Do you really want to sign out?')">Sign out</a></li>
+          <security:authorize access="isAuthenticated()">
+            <li><a href="/signout" onclick="return confirm('Do you really want to sign out?')">Sign out</a></li>
+          </security:authorize>
         </ul>
       </div>
     </nav>

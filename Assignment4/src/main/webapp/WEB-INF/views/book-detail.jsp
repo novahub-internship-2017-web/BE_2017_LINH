@@ -65,6 +65,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
     </div>
   </div>
   <div class="row comments">
+    <security:authorize access="isAuthenticated()">
       <form class="col col-md-12" id="post-comment" action="/api/comment">
         <div>
           <label for="comment-box">COMMENTS</label>
@@ -74,6 +75,8 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
         </div>
         <input type="submit" id="submit-comment" class="hidden">
       </form>
+    </security:authorize>
+
     <div class="col col-md-12 comment hidden">
       <div class="user">
         Linh
