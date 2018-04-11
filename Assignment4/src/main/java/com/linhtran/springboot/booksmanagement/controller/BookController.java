@@ -2,6 +2,7 @@ package com.linhtran.springboot.booksmanagement.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.linhtran.springboot.booksmanagement.model.Book;
+import com.linhtran.springboot.booksmanagement.request.SearchBookForm;
 import com.linhtran.springboot.booksmanagement.response.BookDTO;
 import com.linhtran.springboot.booksmanagement.service.BookService;
 import com.linhtran.springboot.booksmanagement.validation.BookValidation;
@@ -67,5 +68,12 @@ public class BookController {
         return bookService.searchBookById(bookId);
     }
 
+    @JsonView(Views.Public.class)
+    @PostMapping(value = "/books/search")
+    public BookDTO searchBooks(@RequestBody SearchBookForm search) {
+        BookDTO result = new BookDTO();
+        result.setResult(bookService.searchBooks(search.getSearchType(), search.getSearchValue()));
+        return result;
+    }
 
 }

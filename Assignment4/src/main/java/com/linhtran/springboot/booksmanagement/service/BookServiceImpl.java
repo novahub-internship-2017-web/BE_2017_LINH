@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,6 +23,18 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<Book> listAllBooks() {
         return bookRepository.findAll();
+    }
+
+    @Override
+    public List<Book> searchBooks(String searchType, String searchValue) {
+        switch (searchType) {
+            case "by-title":
+                return bookRepository.findByTitleContaining(searchValue);
+            case "by-author":
+                return bookRepository.findByAuthorContaining(searchValue);
+            default:
+                return new ArrayList<>();
+        }
     }
 
     @Override

@@ -62,7 +62,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             contentType: "application/json",
-            url: "/rest/search",
+            url: "/api/books/search",
             data: JSON.stringify(search),
             dataType: 'json',
             timeout: 100000,

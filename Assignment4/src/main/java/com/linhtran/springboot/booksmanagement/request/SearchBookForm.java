@@ -1,4 +1,4 @@
-package com.linhtran.assignment.booksmanagement.model;
+package com.linhtran.springboot.booksmanagement.request;
 
 public class SearchBookForm {
     private String searchType;

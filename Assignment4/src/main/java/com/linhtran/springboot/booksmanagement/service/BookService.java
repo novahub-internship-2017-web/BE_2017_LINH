@@ -8,6 +8,8 @@ public interface BookService {
 
     List<Book> listAllBooks();
 
+    List<Book> searchBooks(String searchType, String searchValue);
+
     Book searchBookById(int id);
 
     Book searchBookByTitle(String title);
