@@ -4,6 +4,14 @@ $(document).ready(function () {
 
     getBookList();
 
+    $(".dropdown-toggle").click(function (e) {
+        e.preventDefault();
+        $(".dropdown-menu").toggle();
+        $(".dropdown-menu").mouseleave(function () {
+            $(this).hide();
+        });
+    });
+
     $(".search-form").submit(function (event) {
         event.preventDefault();
         table.addClass("hidden");

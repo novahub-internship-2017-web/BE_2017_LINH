@@ -19,10 +19,20 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
           <security:authorize access="hasRole('ADMIN')">
             <li><a href="/admin/user-manager">User manager</a></li>
           </security:authorize>
-          <security:authorize access="isAuthenticated()">
-            <li><a href="/signout" onclick="return confirm('Do you really want to sign out?')">Sign out</a></li>
-          </security:authorize>
+          <li>
+            <a href="#" class="dropdown-toggle">Menu</a>
+          </li>
+          <li>
+            <div class="dropdown">
+              <ul class="dropdown-menu">
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+              </ul>
+            </div>
+          </li>
         </ul>
+
       </div>
     </nav>
   </div>
