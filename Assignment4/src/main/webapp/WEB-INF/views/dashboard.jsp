@@ -27,14 +27,14 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       <div class="col-md-3">
         <div>
           <select name="search-type" class="form-control search">
-            <option value="by-title">Search by title</option>
-            <option value="by-author">Search by author</option>
+            <option enabled="by-title">Search by title</option>
+            <option enabled="by-author">Search by author</option>
           </select>
         </div>
       </div>
       <div class="col-md-9">
         <div class="input-group">
-          <input name="search-value" type="text" class="search-query form-control" placeholder="Search" />
+          <input name="search-enabled" type="text" class="search-query form-control" placeholder="Search" />
           <span class="input-group-btn">
           <button class="btn btn-primary search-btn" type="submit">
             <span class=" glyphicon glyphicon-search"></span>
@@ -53,6 +53,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
         <th class="clickable" id="th-author">Author <i class="glyphicon glyphicon-sort-by-alphabet"></i></th>
         <th class="clickable" id="th-created">Created by <i class="glyphicon glyphicon-sort-by-alphabet"></i></th>
         <th>Detail</th>
+        <th>Enabled</th>
       </tr>
       </thead>
       <%--<tbody>--%>
@@ -65,7 +66,6 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
         <%--</tr>--%>
       <%--</tbody>--%>
     </table>
-
 
   <%--<c:if test="${noResult == true}">--%>
     <%--<div class="error" style="color: green">No result can found!</div>--%>
@@ -81,6 +81,8 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       <jsp:include page="addbook-modal.jsp"/>
     </div>
   </div>
+  <%--Logged in user id--%>
+  <input type="hidden" id="userId" value="${user.id}">
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

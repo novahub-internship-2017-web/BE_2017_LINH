@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    console.log($("#userId"));
 
     getAllComments();
     var bookId = $("#book-id").val();

@@ -144,4 +144,18 @@ public class Book {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", description='" + description + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", enabled=" + enabled +
+                ", user=" + user +
+                '}';
+    }
 }

@@ -43,7 +43,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
                         <c:if test="${enabledUser == false}">
                             <div class="error">Your account is blocked! Please contact to admin to open.</div>
                         </c:if>
-                        <input type="submit" class="btn btn-primary signup-btn" value="Sign in">
+                        <input type="submit" class="btn btn-primary signup-btn" enabled="Sign in">
                     </form>
                     <h4>New here? Create a new account!</h4>
                     <<form:form action="register" method="post" modelAttribute="user">
@@ -66,7 +66,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
                         <div class="error" >This email is registered! Please chose another one.</div>
                     </c:if>
                     <div>
-                        <input type="submit" class="btn btn-primary signup-btn" value="Sign up"/>
+                        <input type="submit" class="btn btn-primary signup-btn" enabled="Sign up"/>
                     </div>
                 </form:form>
                 </div>

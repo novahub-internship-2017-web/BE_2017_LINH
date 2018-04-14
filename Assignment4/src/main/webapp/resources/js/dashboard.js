@@ -40,6 +40,11 @@ $(document).ready(function () {
         sortBooksList(sortType);
     });
 
+    $("body").on("click", "input.enabled-checkbox", function () {
+        blockAndUnblockBook($(this));
+        console.log($(this).attr("id") + " Checkbox clicked");
+    });
+
 });
 
     function getBookList() {
@@ -105,6 +110,24 @@ $(document).ready(function () {
        });
    }
 
+   // Block and unblock book
+    function blockAndUnblockBook(checkbox) {
+        var data = {};
+        data.id = checkbox.attr("id");
+        data.enabled = checkbox.is(":checked");
+        $.ajax({
+            type: "POST",
+            url: "/api/book/block",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            timeout: 100000,
+            success: function (res) {
+                console.log("Book is enabled/disabled");
+            }
+
+    });
+    }
 
 
     function displayBooks(books, notification) {
@@ -143,17 +166,38 @@ $(document).ready(function () {
         var author = $("<td>").append(book.author);
         var createdBy = $("<td>").append(book.user.email);
 
+
          //Create td for button detail
         var aTag = $("<a/>", {
             href : "/book/detail/" + book.id
         }).append($("<i>").addClass("glyphicon glyphicon-folder-open"));
         var detail = $("<td>").append(aTag);
 
+        //Create td for enable or disable book
+        var enabled = $("<td>");
+        var checkBox = $("<input>").addClass("enabled-checkbox");
+        checkBox.prop("type", "checkbox");
+        checkBox.prop("id", book.id);
+
+        if (book.enabled) {
+            checkBox.prop("checked", true);
+        }
+
+
+        if (parseInt(book.user.id) !== parseInt($("#userId").val())) {
+            checkBox.prop("disabled", true);
+        } else {
+            checkBox.prop("disabled", false);
+        }
+        enabled.append(checkBox);
+
+
         tr.append(index);
         tr.append(title);
         tr.append(author);
         tr.append(createdBy);
         tr.append(detail);
+        tr.append(enabled);
 
         return tr;
     }

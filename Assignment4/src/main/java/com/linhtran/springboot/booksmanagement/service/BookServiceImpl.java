@@ -4,6 +4,8 @@ import com.linhtran.springboot.booksmanagement.model.Book;
 import com.linhtran.springboot.booksmanagement.model.User;
 import com.linhtran.springboot.booksmanagement.repository.BookRepository;
 import com.linhtran.springboot.booksmanagement.repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,8 @@ import java.util.List;
 
 @Service
 public class BookServiceImpl implements BookService {
+
+    Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     UserRepository userRepository;
@@ -75,10 +79,16 @@ public class BookServiceImpl implements BookService {
     @Override
     public void updateBook(Book currentBook) {
         Book book = bookRepository.findById(currentBook.getId()).orElse(null);
+        logger.info("Current book =====>" + currentBook.toString());
+        if (book == null) {
+            logger.info("Object book is null");
+        } else {
+            logger.info("==========>" + book.toString());
+        }
         if (book != null) {
             book.setTitle(currentBook.getTitle());
             book.setAuthor(currentBook.getAuthor());
-            if (!currentBook.getDescription().trim().isEmpty()) {
+            if (currentBook.getDescription() != null && !currentBook.getDescription().trim().isEmpty()) {
                 book.setDescription(currentBook.getDescription());
             }
             bookRepository.save(book);

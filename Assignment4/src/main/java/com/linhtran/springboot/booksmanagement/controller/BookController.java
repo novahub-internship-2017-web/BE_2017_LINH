@@ -2,6 +2,7 @@ package com.linhtran.springboot.booksmanagement.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.linhtran.springboot.booksmanagement.model.Book;
+import com.linhtran.springboot.booksmanagement.request.BlockBookForm;
 import com.linhtran.springboot.booksmanagement.request.SearchBookForm;
 import com.linhtran.springboot.booksmanagement.response.BookDTO;
 import com.linhtran.springboot.booksmanagement.service.BookService;
@@ -84,6 +85,19 @@ public class BookController {
         BookDTO result = new BookDTO();
         result.setResult(bookService.searchBooks(search.getSearchType(), search.getSearchValue()));
         return result;
+    }
+
+//    Not validate owner yet
+    @JsonView(Views.Public.class)
+    @PostMapping("/book/block")
+    public Book blockUnblockBook(@RequestBody BlockBookForm blockBookForm, Principal principal) {
+        Book book = bookService.searchBookById(blockBookForm.getId());
+        book.setEnabled(blockBookForm.isEnabled());
+        //Check if owner are modify book's information
+        if (book.getUser().getEmail().equals(principal.getName())) {
+            bookService.updateBook(book);
+        }
+        return book;
     }
 
 }

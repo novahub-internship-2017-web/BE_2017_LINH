@@ -15,6 +15,7 @@ import java.util.Set;
 @Table(name = "users")
 public class User {
 
+    @JsonView(Views.Public.class)
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;

@@ -61,7 +61,10 @@ public class MainController {
     }
 
     @GetMapping("/dashboard")
-    public String dashboard() {
+    public String dashboard(Principal principal, Model model) {
+        String loginUserEmail = principal.getName();
+        User loginUser = userService.searchUserByEmail(loginUserEmail);
+        model.addAttribute("user", loginUser);
         return "dashboard";
     }
 
