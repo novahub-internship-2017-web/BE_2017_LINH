@@ -83,6 +83,8 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
   </div>
   <%--Logged in user id--%>
   <input type="hidden" id="userId" value="${user.id}">
+  <input type="hidden" id="roleId" value="${user.roleId}">
+
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

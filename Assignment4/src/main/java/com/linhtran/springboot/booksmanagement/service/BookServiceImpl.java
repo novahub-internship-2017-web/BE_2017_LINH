@@ -30,6 +30,17 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    public List<Book> listAllBooksByStatus(boolean enabled) {
+        return bookRepository.findByEnabled(enabled);
+    }
+
+    @Override
+    public List<Book> listAllBooksByUserIdAndStatus(int userId, boolean enabled) {
+        return bookRepository.findByUserIdAndEnabled(userId, enabled);
+    }
+
+
+    @Override
     public List<Book> searchBooks(String searchType, String searchValue) {
         switch (searchType) {
             case "by-title":

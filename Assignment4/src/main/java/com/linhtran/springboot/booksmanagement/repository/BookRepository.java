@@ -8,6 +8,10 @@ import java.util.List;
 public interface BookRepository extends JpaRepository<Book, Integer> {
     Book findByTitle(String title);
 
+    List<Book> findByEnabled(boolean enabled);
+
+    List<Book> findByUserIdAndEnabled(int userId, boolean enabled);
+
     List<Book> findByTitleContaining(String title);
 
     List<Book> findByAuthorContaining(String author);

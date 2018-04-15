@@ -8,6 +8,10 @@ public interface BookService {
 
     List<Book> listAllBooks();
 
+    List<Book> listAllBooksByStatus(boolean enabled);
+
+    List<Book> listAllBooksByUserIdAndStatus(int userId, boolean enabled);
+
     List<Book> searchBooks(String searchType, String searchValue);
 
     List<Book> sortBooks(List<Book> books, String sortType);

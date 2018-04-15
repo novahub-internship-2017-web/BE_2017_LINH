@@ -2,18 +2,24 @@ package com.linhtran.springboot.booksmanagement.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.linhtran.springboot.booksmanagement.model.Book;
+import com.linhtran.springboot.booksmanagement.model.User;
 import com.linhtran.springboot.booksmanagement.request.BlockBookForm;
 import com.linhtran.springboot.booksmanagement.request.SearchBookForm;
 import com.linhtran.springboot.booksmanagement.response.BookDTO;
 import com.linhtran.springboot.booksmanagement.service.BookService;
+import com.linhtran.springboot.booksmanagement.service.UserService;
 import com.linhtran.springboot.booksmanagement.validation.BookValidation;
 import com.linhtran.springboot.booksmanagement.view.Views;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -26,11 +32,30 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
+    @Autowired
+    private UserService userService;
+
     @JsonView(Views.Public.class)
     @GetMapping(value = "/books")
-    public BookDTO listAllBooks() {
+    public BookDTO listAllBooks(Authentication authentication) {
+        Collection<? extends GrantedAuthority> granted = authentication.getAuthorities();
+        String userEmail = authentication.getName();
+        User currentUser = userService.searchUserByEmail(userEmail);
+        boolean isAdmin = granted.contains(new SimpleGrantedAuthority("ROLE_ADMIN"));
+
         BookDTO bookDTO = new BookDTO();
-        bookDTO.setResult(bookService.listAllBooks());
+        List<Book> result;
+        List<Book> disabledList;
+
+        if (isAdmin) {
+            result = bookService.listAllBooks();
+        } else {
+            result = bookService.listAllBooksByStatus(true);
+            disabledList = bookService.listAllBooksByUserIdAndStatus(currentUser.getId(), false);
+            result.addAll(disabledList);
+        }
+
+        bookDTO.setResult(result);
         return bookDTO;
     }
 

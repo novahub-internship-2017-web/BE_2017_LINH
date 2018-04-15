@@ -56,6 +56,7 @@ public class User {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Comment> comments;
 
+    @JsonView(Views.Public.class)
     @Column
     private int roleId;
 

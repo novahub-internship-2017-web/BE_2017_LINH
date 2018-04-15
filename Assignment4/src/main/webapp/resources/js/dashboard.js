@@ -184,8 +184,12 @@ $(document).ready(function () {
         }
 
 
-        if (parseInt(book.user.id) !== parseInt($("#userId").val())) {
-            checkBox.prop("disabled", true);
+        if (parseInt(book.user.id) !== parseInt($("#userId").val())) { //If logged user is not book's owner
+            if (parseInt($("#roleId").val()) === 1) { //Check if user is admin
+                checkBox.prop("disabled", false);
+            } else {
+                checkBox.prop("disabled", true);
+            }
         } else {
             checkBox.prop("disabled", false);
         }
