@@ -21,18 +21,25 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
           </security:authorize>
           <li>
             <a href="#" class="dropdown-toggle">Menu</a>
-          </li>
-          <li>
             <div class="dropdown">
               <ul class="dropdown-menu">
-                <li><a href="#">HTML</a></li>
-                <li><a href="#">CSS</a></li>
-                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">My list</a></li>
+                <li><a href="#" data-target=".bs-example-modal-sm" data-toggle="modal">Log out</a></li>
               </ul>
             </div>
           </li>
         </ul>
 
+      </div>
+
+      <div tabindex="-1" class="modal bs-example-modal-sm" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header"><h4>Logout <i class="fa fa-lock"></i></h4></div>
+            <div class="modal-body"><i class="fa fa-question-circle"></i> Are you sure you want to log-off?</div>
+            <div class="modal-footer"><a class="btn btn-primary btn-block" href="/signout">Logout</a></div>
+          </div>
+        </div>
       </div>
     </nav>
   </div>

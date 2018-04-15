@@ -33,4 +33,19 @@
     display: none;
 }
 
+/*Header*/
+.dropdown-menu {
+    padding: 0;
+}
+.dropdown-menu li {
+    background-color: #666069;
+    color: white;
+    margin: 0;
+}
+
+.dropdown-menu li a:hover {
+    color: white;
+}
+
+
 
