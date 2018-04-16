@@ -3,6 +3,7 @@ package com.linhtran.springboot.booksmanagement.service;
 
 
 import com.linhtran.springboot.booksmanagement.model.User;
+import org.springframework.security.core.Authentication;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ public interface UserService {
 	List<User> listAll();
 //
 	User searchUserByEmail(String email);
+
 //
 //	User searchUserById(int id);
 //

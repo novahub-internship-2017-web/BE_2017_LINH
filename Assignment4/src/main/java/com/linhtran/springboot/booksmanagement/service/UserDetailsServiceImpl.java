@@ -1,6 +1,7 @@
 package com.linhtran.springboot.booksmanagement.service;
 
 
+import com.linhtran.springboot.booksmanagement.model.Role;
 import com.linhtran.springboot.booksmanagement.model.User;
 import com.linhtran.springboot.booksmanagement.repository.RoleRepository;
 import com.linhtran.springboot.booksmanagement.repository.UserRepository;
@@ -28,7 +29,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if (user != null) {
             userBuilder = org.springframework.security.core.userdetails.User.withUsername(s);
             userBuilder.password(user.getPassword());
-            userBuilder.authorities("ROLE_" + roleRepository.findById(user.getRoleId()));
+            Role role = roleRepository.findById(user.getRoleId()).orElse(null);
+            if (role != null) {
+                userBuilder.authorities("ROLE_" + role.getName());
+            } else {
+                userBuilder.authorities("ROLE_ANONYMOUS");
+
+            }
         } else {
             throw new UsernameNotFoundException("This user not found");
         }

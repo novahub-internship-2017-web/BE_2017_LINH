@@ -2,8 +2,10 @@ package com.linhtran.springboot.booksmanagement.service;
 
 
 import com.linhtran.springboot.booksmanagement.model.User;
+import com.linhtran.springboot.booksmanagement.repository.RoleRepository;
 import com.linhtran.springboot.booksmanagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,9 @@ public class UserServiceImp implements UserService {
 	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
+
+	@Autowired
+	private RoleRepository roleRepository;
 	
 	@Override
 	public void register(User user) {

@@ -16,8 +16,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 import java.util.Collection;
 import java.util.List;
@@ -35,19 +37,19 @@ public class BookController {
     @Autowired
     private UserService userService;
 
+
     @JsonView(Views.Public.class)
     @GetMapping(value = "/books")
-    public BookDTO listAllBooks(Authentication authentication) {
-        Collection<? extends GrantedAuthority> granted = authentication.getAuthorities();
+    public BookDTO listAllBooks(HttpServletRequest request, Authentication authentication) {
         String userEmail = authentication.getName();
         User currentUser = userService.searchUserByEmail(userEmail);
-        boolean isAdmin = granted.contains(new SimpleGrantedAuthority("ROLE_ADMIN"));
 
         BookDTO bookDTO = new BookDTO();
         List<Book> result;
         List<Book> disabledList;
+        logger.info("==============?" + isAdmin(request));
 
-        if (isAdmin) {
+        if (isAdmin(request)) {
             result = bookService.listAllBooks();
         } else {
             result = bookService.listAllBooksByStatus(true);
@@ -61,10 +63,11 @@ public class BookController {
 
     @JsonView(Views.Public.class)
     @GetMapping(value = "/books/{type}")
-    public BookDTO sortBooks(@PathVariable("type") String type) {
-        BookDTO bookDTO = new BookDTO();
-        List<Book> books = bookService.sortBooks(bookService.listAllBooks(), type);
-        bookDTO.setResult(books);
+    public BookDTO sortBooks(@PathVariable("type") String type,
+                             HttpServletRequest request,
+                             Authentication authentication) {
+        BookDTO bookDTO = listAllBooks(request, authentication);
+        bookService.sortBooks(bookDTO.getResult(), type);
         return bookDTO;
     }
 
@@ -115,14 +118,24 @@ public class BookController {
 //    Not validate owner yet
     @JsonView(Views.Public.class)
     @PostMapping("/book/block")
-    public Book blockUnblockBook(@RequestBody BlockBookForm blockBookForm, Principal principal) {
+    public Book blockUnblockBook(@RequestBody BlockBookForm blockBookForm,
+                                 Authentication authentication,
+                                 HttpServletRequest request) {
         Book book = bookService.searchBookById(blockBookForm.getId());
         book.setEnabled(blockBookForm.isEnabled());
         //Check if owner are modify book's information
-        if (book.getUser().getEmail().equals(principal.getName())) {
+        logger.info("======>" + isAdmin(request));
+        if (book.getUser().getEmail().equals(authentication.getName()) || isAdmin(request)) {
             bookService.updateBook(book);
         }
         return book;
+    }
+
+    private boolean isAdmin(HttpServletRequest request) {
+        SecurityContextHolderAwareRequestWrapper sc =
+                new SecurityContextHolderAwareRequestWrapper(request, "ROLE_");
+        return sc.isUserInRole("ADMIN");
+
     }
 
 }
