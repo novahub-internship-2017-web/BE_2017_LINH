@@ -62,7 +62,9 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
         <th class="clickable" id="th-author">Author <i class="glyphicon glyphicon-sort-by-alphabet"></i></th>
         <th class="clickable" id="th-created">Created by <i class="glyphicon glyphicon-sort-by-alphabet"></i></th>
         <th>Detail</th>
-        <th>Enabled</th>
+        <c:if test="${user.id == 1}">
+          <th>Enabled</th>
+        </c:if>
       </tr>
       </thead>
       <%--<tbody>--%>

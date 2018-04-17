@@ -187,35 +187,24 @@ $(document).ready(function () {
         }).append($("<i>").addClass("glyphicon glyphicon-folder-open"));
         var detail = $("<td>").append(aTag);
 
-        //Create td for enable or disable book
-        var enabled = $("<td>");
-        var checkBox = $("<input>").addClass("enabled-checkbox");
-        checkBox.prop("type", "checkbox");
-        checkBox.prop("id", book.id);
-
-        if (book.enabled) {
-            checkBox.prop("checked", true);
-        }
-
-
-        if (parseInt(book.user.id) !== parseInt($("#userId").val())) { //If logged user is not book's owner
-            if (parseInt($("#roleId").val()) === 1) { //Check if user is admin
-                checkBox.prop("disabled", false);
-            } else {
-                checkBox.prop("disabled", true);
-            }
-        } else {
-            checkBox.prop("disabled", false);
-        }
-        enabled.append(checkBox);
-
-
-        tr.append(index);
+        tr.append(book.id);
         tr.append(title);
         tr.append(author);
         tr.append(createdBy);
         tr.append(detail);
-        tr.append(enabled);
+
+        //Create td for enable or disable book
+        if ($("#userId").val() == 1) {
+            var enabled = $("<td>");
+            var checkBox = $("<input>").addClass("enabled-checkbox");
+            checkBox.prop("type", "checkbox");
+            checkBox.prop("id", book.id);
+            enabled.append(checkBox);
+            if (book.enabled) {
+                checkBox.prop("checked", true);
+            }
+            tr.append(enabled);
+        }
 
         return tr;
     }

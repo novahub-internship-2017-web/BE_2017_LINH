@@ -1,0 +1,841 @@
+<table cellpadding='0' cellspacing='0' width='100%'><tr> <td style='height:20' colspan='4' align='Center'>TRƯỜNG ĐẠI HỌC KIẾN TRÚC ĐÀ NẴNG<BR/>PHÒNG ĐÀO TẠO</td><td width='300px' style='height:30' colspan='6' align='Center'>CỘNG HÒA XÃ HỘI CHŨ NGHĨA VIỆT NAM <BR/> Độc lập - Tự do - Hạnh phúc </td></tr><tr ><td colspan='10' align='Center'> DANH SÁCH SINH VIÊN </td></tr><tr><td colspan='2'>Học kỳ: HK02</td><td colspan='2'>Năm học: 2017-2018</td><td colspan='2'>Khóa học: DHCQ_K2014</td><td colspan='4'>Hệ: Chính quy</td></tr><tr><td colspan='10' >Ngành/Chuyên ngành:</td></tr><tr><td colspan='4'>Học phần: 17211CTE309 - Kỹ thuật thi công</td><td colspan='6'>Lớp học phần: 17211CTE30904</td></tr><tr><td colspan='10'>Thời gian học: Bắt đầu :11/01/2018 Kết thúc:19/04/2018</td></tr><tr ><td colspan='6'>&nbsp;</td><td>HSĐQT:</td><td>30%</td><td>HSĐKT:</td><td>70%</td></tr><tr><td >&nbsp;</td><td colspan='8'>Thứ Năm,13g00-16g40,407,<br/></td><td></td></tr></table><table cellspacing="0" cellpadding="0" rules="cols" id="dtgMessages" style="border-width:1px;border-style:solid;width:100%;border-collapse:collapse;">
+	<tr class="Inbox_header_dl">
+		<td style="width:50px;">STT</td><td style="width:100px;">Mã SV</td><td style="width:100px;">Lớp SV</td><td style="width:1%;">Họ lót</td><td style="width:1%;">Tên</td><td style="width:1%;">Ngày sinh</td><td style="width:1%;">Điểm thi <br/>kết thúc HP</td><td style="width:1%;">Điểm <br/>quá trình</td><td style="width:1%;">Điểm <br/>học phần</td><td style="width:1%;">Ghi chú</td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_0">1</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_0">1451030207</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_0">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_0">Phạm Châu Tuấn</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_0">Anh</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_0">15/07/1996</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_0" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_1">2</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_1">1451030020</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_1">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_1">Nguyễn Thanh</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_1">Bình</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_1">24/09/1996</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_1" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_2">3</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_2">1451030201</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_2">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_2">Cao Đăng</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_2">Chung</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_2">21/05/1995</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_2" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_3">4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_3">1451030084</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_3">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_3">Bùi Khương</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_3">Duy</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_3">27/03/1996</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_3" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_4">5</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_4">1451030219</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_4">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_4">Hoàng </span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_4">Duy</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_4">30/08/1995</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_4" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_5">6</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_5">1451030185</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_5">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_5">Trần Quốc</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_5">Dương</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_5">15/09/1996</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_5" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_6">7</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_6">1451030055</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_6">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_6">Phạm Văn</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_6">Đệ</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_6">07/05/1993</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_6" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_7">8</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_7">1351030172</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_7">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_7">Lê Thị Thuý</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_7">Hằng</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_7">22/04/1995</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_7" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_8">9</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_8">1451030197</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_8">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_8">Nguyễn Văn</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_8">Hậu</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_8">17/06/1995</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_8" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_9">10</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_9">1251030142</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_9">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_9">Nguyễn Công</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_9">Hoan</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_9">25/10/1993</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_9" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_10">11</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_10">1451030189</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_10">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_10">Nguyễn Văn</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_10">Hoàng</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_10">02/08/1995</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_10" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_11">12</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_11">1451030053</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_11">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_11">Tống Thanh</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_11">Hoàng</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_11">24/08/1996</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_11" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_12">13</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_12">1451030087</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_12">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_12">Lê Duy</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_12">Khánh</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_12">02/12/1996</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_12" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_13">14</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_13">1451030101</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_13">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_13">Nguyễn Ngọc</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_13">Khiêm</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_13">20/02/1996</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_13" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_14">15</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_14">1251030058</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_14">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_14">Nguyễn Thanh</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_14">Linh</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_14">13/05/1994</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_14" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_15">16</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_15">1351030052</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_15">13XD3</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_15">Hồ Văn</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_15">Lĩnh</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_15">27/07/1995</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_15" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_16">17</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_16">1451030212</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_16">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_16">Trương Văn</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_16">Minh</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_16">20/03/1995</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_16" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_17">18</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_17">1451030204</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_17">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_17">Nguyễn Phú</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_17">Nghĩa</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_17">20/07/1996</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_17" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_18">19</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_18">1451030037</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_18">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_18">Doãn Hữu</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_18">Ngọc</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_18">04/11/1995</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_18" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_19">20</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_19">1251030086</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_19">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_19">Huỳnh Thảo</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_19">Nguyên</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_19">31/12/1994</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_19" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_20">21</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_20">1451030054</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_20">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_20">Nguyễn Bảo</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_20">Nguyên</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_20">02/06/1996</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_20" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_21">22</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_21">1451030081</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_21">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_21">Nguyễn Duy</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_21">Phong</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_21">20/07/1996</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_21" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_22">23</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_22">1451030175</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_22">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_22">Trần Châu</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_22">Phong</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_22">19/05/1995</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_22" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_23">24</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_23">1451030135</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_23">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_23">Đặng Văn</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_23">Phúc</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_23">03/02/1995</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_23" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_24">25</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_24">1451030121</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_24">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_24">Lê Văn</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_24">Quang</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_24">18/07/1994</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_24" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_25">26</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_25">1451030083</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_25">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_25">Đinh Viết</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_25">Quân</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_25">06/09/1995</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_25" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_26">27</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_26">1451030023</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_26">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_26">Nguyễn Đức</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_26">Sâm</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_26">24/09/1995</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_26" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_27">28</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_27">1451030136</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_27">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_27">Phạm Ngọc</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_27">Sơn</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_27">12/08/1995</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_27" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_28">29</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_28">1451030188</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_28">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_28">Huỳnh Văn</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_28">Tâm</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_28">21/03/1996</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_28" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_29">30</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_29">1451030003</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_29">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_29">Phạm Phú</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_29">Tây</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_29">20/08/1994</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_29" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_30">31</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_30">16L1030021</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_30">L16XD</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_30">Phạm Phước</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_30">Thảo</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_30">09/11/1993</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_30" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_31">32</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_31">1451030032</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_31">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_31">Trần Xuân</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_31">Thịnh</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_31">10/10/1994</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_31" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_32">33</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_32">1451030198</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_32">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_32">Nguyễn Văn</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_32">Tín</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_32">27/10/1996</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_32" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_33">34</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_33">1351030197</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_33">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_33">Hà Đức</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_33">Tịnh</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_33">20/02/1995</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_33" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_34">35</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_34">1451030223</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_34">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_34">Võ Minh</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_34">Trình</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_34">10/11/1996</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_34" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_35">36</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_35">1451030199</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_35">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_35">Hoàng Bảo</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_35">Trung</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_35">12/09/1996</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_35" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_36">37</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_36">1451030202</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_36">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_36">Nguyễn Văn</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_36">Trường</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_36">15/08/1996</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_36" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr><tr class="Inbox_Item">
+		<td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblSTT_37">38</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblStudentID_37">1451030154</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblClassStudentName_37">14XD4</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblLastMiddleName_37">Đỗ Văn</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblFirstName_37">Vũ</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    <span id="dtgMessages_lblBirthday_37">03/12/1995</span>
+                                </td><td class="studyprogram_normal_dl">
+                                   
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td><td class="studyprogram_normal_dl">
+                                     <span id="dtgMessages_lblBirthday_37" class="aspNetDisabled">=round((H8*indirect(Address(Row(),8,1)))+(J8*indirect(Address(Row(),7,1))),1)</span>
+                                </td><td class="studyprogram_normal_dl">
+                                    
+                                </td>
+	</tr>
+</table><table cellpadding='0' cellspacing='0' width='100%'><tr> <td colspan='10'> &nbsp;</td></tr><tr height='25'><td colspan='5'>Số sinh viên dự thi: __________________________</td> <td colspan='5'>Họ tên, chữ ký giảng viên chấm điểm quá trình:</td></tr ><tr height='25'><td colspan='5'>Số tờ giấy thi: ______________________________</td><td colspan='5'></td></tr><tr height='25'><td colspan='5'>Họ tên chữ ký các bộ coi thi: </td><td colspan='5'>__________________________</td></tr><tr height='25'><td colspan='5'>1._______________________________________</td><td colspan='5'>Họ tên, chữ ký giảng viên chấm điểm thi kết thúc học phần:</td></tr><tr height='25'><td colspan='5'>2._______________________________________</td><td colspan='5'></td></tr><tr height='25'><td colspan='5'>Số sinh viên dự học (Điểm quá trình):____________</td><td colspan='5'>__________________________</td></tr><tr height='25'><td colspan='5'></td><td colspan='5'>Họ tên, chữ ký của trưởng (Phó) bộ môn</td></tr>
