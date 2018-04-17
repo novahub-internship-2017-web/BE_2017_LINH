@@ -55,8 +55,8 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<Book> sortBooks(List<Book> books, String sortType) {
         for (int i = 0; i < books.size() - 1; i++ ) {
-            for (int j = 0; j < books.size(); j++) {
-                if (books.get(i).compareTo(books.get(j), sortType) < 0) {
+            for (int j = i + 1; j < books.size(); j++) {
+                if (books.get(i).compareTo(books.get(j), sortType) > 0) {
                     Book temp = books.get(i);
                     books.set(i, books.get(j));
                     books.set(j, temp);

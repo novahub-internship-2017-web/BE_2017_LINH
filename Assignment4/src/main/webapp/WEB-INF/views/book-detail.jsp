@@ -40,7 +40,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
     </div>
     <div class="col col-md-6">
       <h2 class="title">${book.title}</h2>
-      <input type="hidden" id="book-id" enabled="${book.id}">
+      <input type="hidden" id="book-id" value="${book.id}">
       <div class="author">Written by <span>${book.author}</span></div>
       <div class="date">Created at: <span>${book.createdAt}</span></div>
       <div class="date">Updated at: <span>${book.updatedAt}</span></div>
