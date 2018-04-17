@@ -39,6 +39,20 @@ public class BookServiceImpl implements BookService {
         return bookRepository.findByUserIdAndEnabled(userId, enabled);
     }
 
+    @Override
+    public List<Book> pagingBooks(List<Book> books, int maxBooksPerPage, int page) {
+        if (books == null || books.size() == 0) {
+            return new ArrayList<>();
+        }
+        int startIndex = page * maxBooksPerPage;
+        int endIndex = startIndex + maxBooksPerPage;
+        if (endIndex > books.size()) {
+            endIndex = books.size();
+        }
+
+        return books.subList(startIndex, endIndex);
+    }
+
 
     @Override
     public List<Book> searchBooks(String searchType, String searchValue) {

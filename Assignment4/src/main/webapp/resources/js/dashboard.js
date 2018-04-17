@@ -2,7 +2,17 @@ var table = $("table");
 
 $(document).ready(function () {
 
-    getBookList();
+    getBookList(0);
+
+    $("#max-books").change(function () {
+        getBookList(0);
+    });
+
+    $(".pagination").on("click", "a", function () {
+        var page = $(this).text();
+        console.log(page);
+        getBookList(page - 1);
+    });
 
     $(".dropdown-toggle").click(function (e) {
         e.preventDefault();
@@ -47,10 +57,14 @@ $(document).ready(function () {
 
 });
 
-    function getBookList() {
+    function getBookList(page) {
         table.addClass("hidden");
+        var maxBooks = $("#max-books").val();
+        var uri = "/api/books/list/" + maxBooks + "/" + page;
+        console.log(maxBooks);
+        console.log(page);
         $("tbody").remove();
-        $.get("/api/books", function (res) {
+        $.get(uri, function (res) {
             displayBooks(res.result, "There are no books in the list! Let's create one.")
         });
     }

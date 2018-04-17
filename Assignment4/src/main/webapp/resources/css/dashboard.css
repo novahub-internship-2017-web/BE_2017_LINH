@@ -47,5 +47,14 @@
     color: white;
 }
 
-
-
+/*Select form*/
+.maxbooks-select {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#max-books {
+    display: inline-block;
+    width: 80px;
+    margin-left: 5px;
+    margin-right: 5px;
+}

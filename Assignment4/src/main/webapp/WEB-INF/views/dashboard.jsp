@@ -44,6 +44,15 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       </div>
     </form>
   </security:authorize>
+  <div class="maxbooks-select">
+    Display
+    <select class="form-control" id="max-books">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+    </select>
+       books per page.
+  </div>
 
     <table class="hidden">
       <thead>
@@ -66,6 +75,13 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
         <%--</tr>--%>
       <%--</tbody>--%>
     </table>
+  <ul class="pagination" id="page">
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+  </ul>
 
   <%--<c:if test="${noResult == true}">--%>
     <%--<div class="error" style="color: green">No result can found!</div>--%>

@@ -39,8 +39,10 @@ public class BookController {
 
 
     @JsonView(Views.Public.class)
-    @GetMapping(value = "/books")
-    public BookDTO listAllBooks(HttpServletRequest request, Authentication authentication) {
+    @GetMapping(value = "/books/list/{max-books}/{page}")
+    public BookDTO listAllBooks(HttpServletRequest request, Authentication authentication,
+                                @PathVariable("max-books") int maxbooks,
+                                @PathVariable("page") int page) {
         String userEmail = authentication.getName();
         User currentUser = userService.searchUserByEmail(userEmail);
 
@@ -57,6 +59,8 @@ public class BookController {
             result.addAll(disabledList);
         }
 
+        result = bookService.pagingBooks(result, maxbooks, page);
+
         bookDTO.setResult(result);
         return bookDTO;
     }
@@ -66,7 +70,7 @@ public class BookController {
     public BookDTO sortBooks(@PathVariable("type") String type,
                              HttpServletRequest request,
                              Authentication authentication) {
-        BookDTO bookDTO = listAllBooks(request, authentication);
+        BookDTO bookDTO = listAllBooks(request, authentication, 10, 0);
         bookService.sortBooks(bookDTO.getResult(), type);
         return bookDTO;
     }

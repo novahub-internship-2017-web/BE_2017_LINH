@@ -12,6 +12,8 @@ public interface BookService {
 
     List<Book> listAllBooksByUserIdAndStatus(int userId, boolean enabled);
 
+    List<Book> pagingBooks(List<Book> books, int maxBooksPerPage, int page);
+
     List<Book> searchBooks(String searchType, String searchValue);
 
     List<Book> sortBooks(List<Book> books, String sortType);
