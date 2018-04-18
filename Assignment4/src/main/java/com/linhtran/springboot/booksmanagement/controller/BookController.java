@@ -43,7 +43,9 @@ public class BookController {
     public BookDTO listAllBooks(HttpServletRequest request, Authentication authentication,
                                 @RequestParam("type") String type,
                                 @RequestParam("max-books") int maxbooks,
-                                @RequestParam("page") int page) {
+                                @RequestParam("page") int page,
+                                @RequestParam("search-type") String searchType,
+                                @RequestParam("search-value") String searchValue) {
         String userEmail = authentication.getName();
         User currentUser = userService.searchUserByEmail(userEmail);
 
@@ -59,10 +61,14 @@ public class BookController {
             disabledList = bookService.listAllBooksByUserIdAndStatus(currentUser.getId(), false);
             result.addAll(disabledList);
         }
+
+        result = bookService.searchBooks(searchType, searchValue, result);
+        int amountOfBooks = result.size();
         bookService.sortBooks(result, type);
         result = bookService.pagingBooks(result, maxbooks, page);
 
         bookDTO.setResult(result);
+        bookDTO.setAmountOfBooks(amountOfBooks);
         return bookDTO;
     }
 
@@ -114,13 +120,13 @@ public class BookController {
         return bookService.searchBookById(bookId);
     }
 
-    @JsonView(Views.Public.class)
-    @PostMapping(value = "/books/search")
-    public BookDTO searchBooks(@RequestBody SearchBookForm search) {
-        BookDTO result = new BookDTO();
-        result.setResult(bookService.searchBooks(search.getSearchType(), search.getSearchValue()));
-        return result;
-    }
+//    @JsonView(Views.Public.class)
+//    @PostMapping(value = "/books/search")
+//    public BookDTO searchBooks(@RequestBody SearchBookForm search) {
+//        BookDTO result = new BookDTO();
+//        result.setResult(bookService.searchBooks(search.getSearchType(), search.getSearchValue()));
+//        return result;
+//    }
 
 //    Not validate owner yet
     @JsonView(Views.Public.class)

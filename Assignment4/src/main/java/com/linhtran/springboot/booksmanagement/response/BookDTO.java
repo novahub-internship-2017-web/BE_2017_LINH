@@ -15,12 +15,24 @@ public class BookDTO {
     @JsonView(Views.Public.class)
     private List<Book> result;
 
+    @JsonView(Views.Public.class)
+    private int amountOfBooks;
+
+
     public List<Book> getResult() {
         return result;
     }
 
     public void setResult(List<Book> result) {
         this.result = result;
+    }
+
+    public int getAmountOfBooks() {
+        return amountOfBooks;
+    }
+
+    public void setAmountOfBooks(int amountOfBooks) {
+        this.amountOfBooks = amountOfBooks;
     }
 
     @Override

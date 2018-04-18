@@ -55,15 +55,24 @@ public class BookServiceImpl implements BookService {
 
 
     @Override
-    public List<Book> searchBooks(String searchType, String searchValue) {
+    public List<Book> searchBooks(String searchType, String searchValue, List<Book> books) {
+        List<Book> result = new ArrayList<>();
         switch (searchType) {
             case "by-title":
-                return bookRepository.findByTitleContaining(searchValue);
+                for (Book book : books) {
+                    if (book.getTitle().toLowerCase().contains(searchValue.toLowerCase())) {
+                        result.add(book);
+                    }
+                }
+                break;
             case "by-author":
-                return bookRepository.findByAuthorContaining(searchValue);
-            default:
-                return new ArrayList<>();
+                for (Book book : books) {
+                    if ( book.getAuthor().toLowerCase().contains(searchValue.toLowerCase()) ) {
+                        result.add(book);
+                    }
+                }
         }
+        return result;
     }
 
     @Override

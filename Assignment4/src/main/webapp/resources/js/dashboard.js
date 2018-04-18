@@ -30,7 +30,7 @@ $(document).ready(function () {
         event.preventDefault();
         table.addClass("hidden");
         $("tbody").remove();
-        searchBook();
+        getBookList($("#sortType").val(), 0);
     });
 
     $(".addbook-form").submit(function (event) {
@@ -65,11 +65,16 @@ $(document).ready(function () {
     function getBookList(sortType, page) {
         table.addClass("hidden");
         var maxBooks = $("#max-books").val();
+        var searchType = $("select[name=search-type]").val();
+        var searchValue = $("input[name=search-value]").val();
         var uri = "/api/books/list/?type=" + sortType +
                   "&max-books=" + maxBooks +
-                   "&page=" + page;
+                   "&page=" + page +
+                    "&search-type=" + searchType +
+                    "&search-value=" + searchValue;
         $("tbody").remove();
         $.get(uri, function (res) {
+            $("#total-books").html(res.amountOfBooks);
             displayBooks(res.result, "There are no books in the list! Let's create one.")
         });
     }
@@ -100,26 +105,26 @@ $(document).ready(function () {
 
 
    //Search book ajax request
-    function searchBook() {
-        var search = {};
-        search["searchType"] = $("select[name=search-type]").val();
-        search["searchValue"] = $("input[name=search-value]").val();
-        console.log(search["searchType"]);
-        console.log(search["searchValue"]);
-
-        $.ajax({
-            type: "POST",
-            contentType: "application/json",
-            url: "/api/books/search",
-            data: JSON.stringify(search),
-            dataType: 'json',
-            timeout: 100000,
-            success: function (res) {
-                displayBooks(res.result, "No result can found!");
-            }
-        });
-
-    }
+   //  function searchBook() {
+   //      var search = {};
+   //      search["searchType"] = $("select[name=search-type]").val();
+   //      search["searchValue"] = $("input[name=search-value]").val();
+   //      console.log(search["searchType"]);
+   //      console.log(search["searchValue"]);
+   //
+   //      $.ajax({
+   //          type: "POST",
+   //          contentType: "application/json",
+   //          url: "/api/books/search",
+   //          data: JSON.stringify(search),
+   //          dataType: 'json',
+   //          timeout: 100000,
+   //          success: function (res) {
+   //              displayBooks(res.result, "No result can found!");
+   //          }
+   //      });
+   //
+   //  }
 
    //  // Sort book list
    // function sortBooksList(sortType, page) {

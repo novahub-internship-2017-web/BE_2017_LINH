@@ -27,14 +27,14 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       <div class="col-md-3">
         <div>
           <select name="search-type" class="form-control search">
-            <option enabled="by-title">Search by title</option>
-            <option enabled="by-author">Search by author</option>
+            <option value="by-title">Search by title</option>
+            <option value="by-author">Search by author</option>
           </select>
         </div>
       </div>
       <div class="col-md-9">
         <div class="input-group">
-          <input name="search-enabled" type="text" class="search-query form-control" placeholder="Search" />
+          <input name="search-value" type="text" class="search-query form-control" placeholder="Search" />
           <span class="input-group-btn">
           <button class="btn btn-primary search-btn" type="submit">
             <span class=" glyphicon glyphicon-search"></span>
@@ -84,6 +84,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
     <li><a href="#">4</a></li>
     <li><a href="#">5</a></li>
   </ul>
+  <div>This list have <span id="total-books"></span> books in total.</div>
 
   <%--<c:if test="${noResult == true}">--%>
     <%--<div class="error" style="color: green">No result can found!</div>--%>
