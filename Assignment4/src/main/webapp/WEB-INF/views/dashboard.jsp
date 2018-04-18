@@ -102,6 +102,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
   <%--Logged in user id--%>
   <input type="hidden" id="userId" value="${user.id}">
   <input type="hidden" id="roleId" value="${user.roleId}">
+  <input type="hidden" id="sortType" value="unsorted">
 
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

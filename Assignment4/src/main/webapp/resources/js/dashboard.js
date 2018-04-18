@@ -2,16 +2,20 @@ var table = $("table");
 
 $(document).ready(function () {
 
-    getBookList(0);
+    getBookList($("#sortType").val(), 0);
 
     $("#max-books").change(function () {
-        getBookList(0);
+        var sortType = $("#sortType").val();
+        getBookList(sortType, 0);
+
     });
 
     $(".pagination").on("click", "a", function () {
         var page = $(this).text();
-        console.log(page);
-        getBookList(page - 1);
+        var sortType = $("#sortType").val();
+
+        getBookList(sortType, page - 1);
+
     });
 
     $(".dropdown-toggle").click(function (e) {
@@ -47,7 +51,8 @@ $(document).ready(function () {
             sortType = "owner";
             console.log("Th created clicked")
         }
-        sortBooksList(sortType);
+        $("#sortType").val(sortType);
+        getBookList(sortType, 0);
     });
 
     $("body").on("click", "input.enabled-checkbox", function () {
@@ -57,12 +62,12 @@ $(document).ready(function () {
 
 });
 
-    function getBookList(page) {
+    function getBookList(sortType, page) {
         table.addClass("hidden");
         var maxBooks = $("#max-books").val();
-        var uri = "/api/books/list/" + maxBooks + "/" + page;
-        console.log(maxBooks);
-        console.log(page);
+        var uri = "/api/books/list/?type=" + sortType +
+                  "&max-books=" + maxBooks +
+                   "&page=" + page;
         $("tbody").remove();
         $.get(uri, function (res) {
             displayBooks(res.result, "There are no books in the list! Let's create one.")
@@ -116,13 +121,17 @@ $(document).ready(function () {
 
     }
 
-    // Sort book list
-   function sortBooksList(sortType) {
-       $("tbody").remove();
-       $.get("/api/books/" + sortType, function (res) {
-           displayBooks(res.result, "There are no books in the list! Let's create one.")
-       });
-   }
+   //  // Sort book list
+   // function sortBooksList(sortType, page) {
+   //     $("tbody").remove();
+   //     var url = "/api/books/sort?type=" +
+   //         sortType +
+   //         "&page=" + page +
+   //         "&max-books=" + $("#max-books").val();
+   //     $.get(url, function (res) {
+   //         displayBooks(res.result, "There are no books in the list! Let's create one.")
+   //     });
+   // }
 
    // Block and unblock book
     function blockAndUnblockBook(checkbox) {

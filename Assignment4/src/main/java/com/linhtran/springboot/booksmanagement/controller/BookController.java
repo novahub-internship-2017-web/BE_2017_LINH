@@ -39,10 +39,11 @@ public class BookController {
 
 
     @JsonView(Views.Public.class)
-    @GetMapping(value = "/books/list/{max-books}/{page}")
+    @GetMapping(value = "/books/list")
     public BookDTO listAllBooks(HttpServletRequest request, Authentication authentication,
-                                @PathVariable("max-books") int maxbooks,
-                                @PathVariable("page") int page) {
+                                @RequestParam("type") String type,
+                                @RequestParam("max-books") int maxbooks,
+                                @RequestParam("page") int page) {
         String userEmail = authentication.getName();
         User currentUser = userService.searchUserByEmail(userEmail);
 
@@ -58,22 +59,24 @@ public class BookController {
             disabledList = bookService.listAllBooksByUserIdAndStatus(currentUser.getId(), false);
             result.addAll(disabledList);
         }
-
+        bookService.sortBooks(result, type);
         result = bookService.pagingBooks(result, maxbooks, page);
 
         bookDTO.setResult(result);
         return bookDTO;
     }
 
-    @JsonView(Views.Public.class)
-    @GetMapping(value = "/books/{type}")
-    public BookDTO sortBooks(@PathVariable("type") String type,
-                             HttpServletRequest request,
-                             Authentication authentication) {
-        BookDTO bookDTO = listAllBooks(request, authentication, 10, 0);
-        bookService.sortBooks(bookDTO.getResult(), type);
-        return bookDTO;
-    }
+//    @JsonView(Views.Public.class)
+//    @GetMapping(value = "/books/sort")
+//    public BookDTO sortBooks(@RequestParam("type") String type,
+//                             @RequestParam("page") int page,
+//                             @RequestParam("max-books") int maxBooks,
+//                             HttpServletRequest request,
+//                             Authentication authentication) {
+//        BookDTO bookDTO = listAllBooks(request, authentication, maxBooks, page);
+//        bookService.sortBooks(bookDTO.getResult(), type);
+//        return bookDTO;
+//    }
 
     @JsonView(Views.Public.class)
     @PostMapping("/add-book")
