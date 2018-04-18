@@ -45,7 +45,8 @@ public class BookController {
                                 @RequestParam("max-books") int maxbooks,
                                 @RequestParam("page") int page,
                                 @RequestParam("search-type") String searchType,
-                                @RequestParam("search-value") String searchValue) {
+                                @RequestParam("search-value") String searchValue,
+                                @RequestParam("my-list") boolean isMyList) {
         String userEmail = authentication.getName();
         User currentUser = userService.searchUserByEmail(userEmail);
 
@@ -54,14 +55,21 @@ public class BookController {
         List<Book> disabledList;
         logger.info("==============?" + isAdmin(request));
 
-        if (isAdmin(request)) {
+        if (isAdmin(request) || !isMyList) {
             result = bookService.listAllBooks();
+        } if (isMyList) {
+            result = bookService.listAllBooksByUserIdAndStatus(currentUser.getId(), true);
+            disabledList = bookService.listAllBooksByUserIdAndStatus(currentUser.getId(), false);
+            result.addAll(disabledList);
         } else {
             result = bookService.listAllBooksByStatus(true);
             disabledList = bookService.listAllBooksByUserIdAndStatus(currentUser.getId(), false);
             result.addAll(disabledList);
         }
 
+
+
+        //For searching request
         result = bookService.searchBooks(searchType, searchValue, result);
         int amountOfBooks = result.size();
         bookService.sortBooks(result, type);

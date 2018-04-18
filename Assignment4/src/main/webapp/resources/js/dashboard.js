@@ -2,6 +2,7 @@ var table = $("table");
 
 $(document).ready(function () {
 
+    $("#isMyList").val(false);
     getBookList($("#sortType").val(), 0);
 
     $("#max-books").change(function () {
@@ -39,6 +40,7 @@ $(document).ready(function () {
         $(".text-input").val("");
     });
 
+    //Sort book by click header of table
     $(".clickable").click(function () {
         var sortType;
         if ($(this).is("#th-title")) {
@@ -54,6 +56,13 @@ $(document).ready(function () {
         $("#sortType").val(sortType);
         getBookList(sortType, 0);
     });
+
+    $("#my-list").click(function () {
+        $("#isMyList").val(true);
+        getBookList($("#sortType").val(), 0);
+    });
+
+
 
     $("body").on("click", "input.enabled-checkbox", function () {
         blockAndUnblockBook($(this));
@@ -71,7 +80,8 @@ $(document).ready(function () {
                   "&max-books=" + maxBooks +
                    "&page=" + page +
                     "&search-type=" + searchType +
-                    "&search-value=" + searchValue;
+                    "&search-value=" + searchValue +
+                     "&my-list=" + $("#isMyList").val();
         $("tbody").remove();
         $.get(uri, function (res) {
             $("#total-books").html(res.amountOfBooks);

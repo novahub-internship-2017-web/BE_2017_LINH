@@ -19,6 +19,17 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
 <body>
 <jsp:include page="header.jsp"/>
 <div class="container">
+  <%--<div class="row">--%>
+    <%--<div class="col col-md-4">--%>
+            <%----%>
+    <%--</div>--%>
+    <%--<div class="col col-md-4">--%>
+
+    <%--</div>--%>
+    <%--<div class="col col-md-4">--%>
+      <%----%>
+    <%--</div>    --%>
+  <%--</div>--%>
   <h3>List of books</h3>
 
   <%--Only login user could see this form--%>
@@ -104,6 +115,8 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
   <input type="hidden" id="userId" value="${user.id}">
   <input type="hidden" id="roleId" value="${user.roleId}">
   <input type="hidden" id="sortType" value="unsorted">
+  <input type="hidden" id="isMyList">
+
 
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -23,7 +23,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
             <a href="#" class="dropdown-toggle">Menu</a>
             <div class="dropdown">
               <ul class="dropdown-menu">
-                <li><a href="#">My list</a></li>
+                <li><a id="my-list" href="#">My list</a></li>
                 <li><a href="#" data-target=".bs-example-modal-sm" data-toggle="modal">Log out</a></li>
               </ul>
             </div>
