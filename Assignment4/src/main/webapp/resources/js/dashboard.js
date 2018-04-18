@@ -40,13 +40,6 @@ $(document).ready(function () {
 
     });
 
-    $(".dropdown-toggle").click(function (e) {
-        e.preventDefault();
-        $(".dropdown-menu").toggle();
-        $(".dropdown-menu").mouseleave(function () {
-            $(this).hide();
-        });
-    });
 
     $(".search-form").submit(function (event) {
         event.preventDefault();
@@ -105,12 +98,13 @@ $(document).ready(function () {
                      "&my-list=" + $("#isMyList").val();
         $("tbody").remove();
         $.get(uri, function (res) {
+
             $("#total-books").html(res.amountOfBooks);
-            var numberOfPages = res.amountOfBooks / maxBooks;
+            var numberOfPages = res.amountOfBooks / maxBooks + 1;
             var maxCurrentPages = parseInt($(".pagination .page-number").last().find("a").text());
             var i;
             if (maxCurrentPages < numberOfPages) {
-                for (i = maxCurrentPages + 1; i <= numberOfPages + 1; i++) {
+                for (i = maxCurrentPages + 1; i < numberOfPages; i++) {
                     var a = $("<a>").prop("href", "#");
                     a.html(i);
                     var li = $("<li>").append(a);
@@ -119,7 +113,7 @@ $(document).ready(function () {
                 }
 
              } else if (maxCurrentPages > numberOfPages) {
-                for (i = maxCurrentPages - 1; i > numberOfPages; i--) {
+                for (i = maxCurrentPages; i > numberOfPages; i--) {
                     $(".pagination .page-number").last().remove();
                 }
             }
@@ -159,7 +153,7 @@ $(document).ready(function () {
         data.id = checkbox.attr("id");
         data.enabled = checkbox.is(":checked");
         $.ajax({
-            type: "POST",
+            type: "PUT",
             url: "/api/book/block",
             contentType: "application/json",
             data: JSON.stringify(data),

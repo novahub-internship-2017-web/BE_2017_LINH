@@ -44,5 +44,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
     </nav>
   </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/resources/js/header.js"></script>
 </body>
 </html>

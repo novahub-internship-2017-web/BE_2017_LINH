@@ -138,7 +138,7 @@ public class BookController {
 
 //    Not validate owner yet
     @JsonView(Views.Public.class)
-    @PostMapping("/book/block")
+    @PutMapping("/book/block")
     public Book blockUnblockBook(@RequestBody BlockBookForm blockBookForm,
                                  Authentication authentication,
                                  HttpServletRequest request) {
