@@ -30,7 +30,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       <%----%>
     <%--</div>    --%>
   <%--</div>--%>
-  <h3>List of books</h3>
+  <h3 id="list-name">List of books</h3>
 
   <%--Only login user could see this form--%>
   <security:authorize access="isAuthenticated()">
@@ -89,11 +89,11 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       <%--</tbody>--%>
     </table>
   <ul class="pagination" id="page">
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
+    <li class="first"><a href="#">First</a></li>
+    <li class="previous"><a href="#">Previous</a></li>
+    <li class="page-number"><a href="#">1</a></li>
+    <li class="next"><a href="#">Next</a></li>
+    <li class="last"><a href="#">Last</a></li>
   </ul>
   <div>This list have <span id="total-books"></span> books in total.</div>
 

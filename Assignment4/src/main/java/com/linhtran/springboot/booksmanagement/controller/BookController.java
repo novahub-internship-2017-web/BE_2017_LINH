@@ -40,7 +40,8 @@ public class BookController {
 
     @JsonView(Views.Public.class)
     @GetMapping(value = "/books/list")
-    public BookDTO listAllBooks(HttpServletRequest request, Authentication authentication,
+    public BookDTO listAllBooks(HttpServletRequest request,
+                                Authentication authentication,
                                 @RequestParam("type") String type,
                                 @RequestParam("max-books") int maxbooks,
                                 @RequestParam("page") int page,
@@ -53,11 +54,10 @@ public class BookController {
         BookDTO bookDTO = new BookDTO();
         List<Book> result;
         List<Book> disabledList;
-        logger.info("==============?" + isAdmin(request));
 
-        if (isAdmin(request) || !isMyList) {
+        if (isAdmin(request) && !isMyList) {
             result = bookService.listAllBooks();
-        } if (isMyList) {
+        } else if (isMyList) {
             result = bookService.listAllBooksByUserIdAndStatus(currentUser.getId(), true);
             disabledList = bookService.listAllBooksByUserIdAndStatus(currentUser.getId(), false);
             result.addAll(disabledList);
@@ -146,7 +146,7 @@ public class BookController {
         book.setEnabled(blockBookForm.isEnabled());
         //Check if owner are modify book's information
         logger.info("======>" + isAdmin(request));
-        if (book.getUser().getEmail().equals(authentication.getName()) || isAdmin(request)) {
+        if (isAdmin(request)) {
             bookService.updateBook(book);
         }
         return book;

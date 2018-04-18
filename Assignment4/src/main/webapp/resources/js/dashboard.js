@@ -1,8 +1,11 @@
 var table = $("table");
+var page = 1;
 
 $(document).ready(function () {
 
     $("#isMyList").val(false);
+    $("#list-name").text("List of books");
+
     getBookList($("#sortType").val(), 0);
 
     $("#max-books").change(function () {
@@ -12,9 +15,27 @@ $(document).ready(function () {
     });
 
     $(".pagination").on("click", "a", function () {
-        var page = $(this).text();
+        var maxPage = ($(".page-number").last().find("a").text());
+        var minPage = 1;
+        if ($(this).parent().hasClass("page-number")) {
+            page = parseInt($(this).text());
+        } else if ($(this).parent().hasClass("next")) {
+            if (page < maxPage) {
+                page = page + 1;
+            }
+        } else if ($(this).parent().hasClass("previous")) {
+            if (page > minPage) {
+                page = page - 1;
+            }
+        } else if ($(this).parent().hasClass("last")) {
+            page = parseInt($(".page-number").last().find("a").text());
+        } else {
+            page = parseInt($(".page-number").first().find("a").text());
+        }
+
         var sortType = $("#sortType").val();
 
+        changeColorPageNumber(page);
         getBookList(sortType, page - 1);
 
     });
@@ -59,9 +80,9 @@ $(document).ready(function () {
 
     $("#my-list").click(function () {
         $("#isMyList").val(true);
+        $("#list-name").text("My list of book");
         getBookList($("#sortType").val(), 0);
     });
-
 
 
     $("body").on("click", "input.enabled-checkbox", function () {
@@ -85,6 +106,24 @@ $(document).ready(function () {
         $("tbody").remove();
         $.get(uri, function (res) {
             $("#total-books").html(res.amountOfBooks);
+            var numberOfPages = res.amountOfBooks / maxBooks;
+            var maxCurrentPages = parseInt($(".pagination .page-number").last().find("a").text());
+            var i;
+            if (maxCurrentPages < numberOfPages) {
+                for (i = maxCurrentPages + 1; i <= numberOfPages + 1; i++) {
+                    var a = $("<a>").prop("href", "#");
+                    a.html(i);
+                    var li = $("<li>").append(a);
+                    li.addClass("page-number");
+                    $(".page-number").last().after(li);
+                }
+
+             } else if (maxCurrentPages > numberOfPages) {
+                for (i = maxCurrentPages - 1; i > numberOfPages; i--) {
+                    $(".pagination .page-number").last().remove();
+                }
+            }
+
             displayBooks(res.result, "There are no books in the list! Let's create one.")
         });
     }
@@ -114,40 +153,6 @@ $(document).ready(function () {
     }
 
 
-   //Search book ajax request
-   //  function searchBook() {
-   //      var search = {};
-   //      search["searchType"] = $("select[name=search-type]").val();
-   //      search["searchValue"] = $("input[name=search-value]").val();
-   //      console.log(search["searchType"]);
-   //      console.log(search["searchValue"]);
-   //
-   //      $.ajax({
-   //          type: "POST",
-   //          contentType: "application/json",
-   //          url: "/api/books/search",
-   //          data: JSON.stringify(search),
-   //          dataType: 'json',
-   //          timeout: 100000,
-   //          success: function (res) {
-   //              displayBooks(res.result, "No result can found!");
-   //          }
-   //      });
-   //
-   //  }
-
-   //  // Sort book list
-   // function sortBooksList(sortType, page) {
-   //     $("tbody").remove();
-   //     var url = "/api/books/sort?type=" +
-   //         sortType +
-   //         "&page=" + page +
-   //         "&max-books=" + $("#max-books").val();
-   //     $.get(url, function (res) {
-   //         displayBooks(res.result, "There are no books in the list! Let's create one.")
-   //     });
-   // }
-
    // Block and unblock book
     function blockAndUnblockBook(checkbox) {
         var data = {};
@@ -164,7 +169,7 @@ $(document).ready(function () {
                 console.log("Book is enabled/disabled");
             }
 
-    });
+     });
     }
 
 
@@ -231,6 +236,11 @@ $(document).ready(function () {
         }
 
         return tr;
+    }
+
+    function changeColorPageNumber(page) {
+        $(".page-number").find("a").css("background", "white");
+        $(".pagination").find('a:contains("' + page + '")').css("background", "#ededee");
     }
 
 
