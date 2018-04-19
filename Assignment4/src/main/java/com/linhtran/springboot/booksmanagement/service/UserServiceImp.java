@@ -39,6 +39,16 @@ public class UserServiceImp implements UserService {
 	}
 
 	@Override
+	public User searchUserById(int id) {
+		return userRepository.findById(id).orElse(null);
+	}
+
+	@Override
+	public void update(User user) {
+		userRepository.save(user);
+	}
+
+	@Override
 	public List<User> listAll() {
 		return userRepository.findAll();
 	}

@@ -1,6 +1,6 @@
 package com.linhtran.springboot.booksmanagement.request;
 
-public class BlockBookForm {
+public class BlockForm {
 
     private int id;
 

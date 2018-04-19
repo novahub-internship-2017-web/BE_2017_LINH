@@ -3,8 +3,7 @@ package com.linhtran.springboot.booksmanagement.controller;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.linhtran.springboot.booksmanagement.model.Book;
 import com.linhtran.springboot.booksmanagement.model.User;
-import com.linhtran.springboot.booksmanagement.request.BlockBookForm;
-import com.linhtran.springboot.booksmanagement.request.SearchBookForm;
+import com.linhtran.springboot.booksmanagement.request.BlockForm;
 import com.linhtran.springboot.booksmanagement.response.BookDTO;
 import com.linhtran.springboot.booksmanagement.service.BookService;
 import com.linhtran.springboot.booksmanagement.service.UserService;
@@ -14,14 +13,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.security.Principal;
-import java.util.Collection;
 import java.util.List;
 
 
@@ -139,7 +134,7 @@ public class BookController {
 //    Not validate owner yet
     @JsonView(Views.Public.class)
     @PutMapping("/book/block")
-    public Book blockUnblockBook(@RequestBody BlockBookForm blockBookForm,
+    public Book blockUnblockBook(@RequestBody BlockForm blockBookForm,
                                  Authentication authentication,
                                  HttpServletRequest request) {
         Book book = bookService.searchBookById(blockBookForm.getId());

@@ -99,9 +99,5 @@ public class MainController {
         return "book-detail";
     }
 
-    @GetMapping("/admin/user-manager")
-    public String userManager(Model model) {
-        model.addAttribute("users", userService.listAll());
-        return "user-manager";
-    }
+
 }
