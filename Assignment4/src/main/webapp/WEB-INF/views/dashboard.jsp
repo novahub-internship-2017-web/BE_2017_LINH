@@ -31,9 +31,6 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
     <%--</div>    --%>
   <%--</div>--%>
   <h3 id="list-name">List of books</h3>
-
-  <%--Only login user could see this form--%>
-  <security:authorize access="isAuthenticated()">
     <form class="row search-form" action="/book/search" method="post">
       <div class="col-md-3">
         <div>
@@ -54,7 +51,6 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
         </div>
       </div>
     </form>
-  </security:authorize>
   <div class="maxbooks-select">
     Display
     <select class="form-control" id="max-books">

@@ -62,9 +62,14 @@ public class MainController {
 
     @GetMapping("/dashboard")
     public String dashboard(Principal principal, Model model) {
-        String loginUserEmail = principal.getName();
-        User loginUser = userService.searchUserByEmail(loginUserEmail);
-        model.addAttribute("user", loginUser);
+        if (principal != null) {
+            String loginUserEmail = principal.getName();
+            User loginUser = userService.searchUserByEmail(loginUserEmail);
+            model.addAttribute("user", loginUser);
+        } else {
+            model.addAttribute("user", new User());
+        }
+
         return "dashboard";
     }
 

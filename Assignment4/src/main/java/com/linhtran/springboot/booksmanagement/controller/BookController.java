@@ -43,29 +43,41 @@ public class BookController {
                                 @RequestParam("search-type") String searchType,
                                 @RequestParam("search-value") String searchValue,
                                 @RequestParam("my-list") boolean isMyList) {
-        String userEmail = authentication.getName();
-        User currentUser = userService.searchUserByEmail(userEmail);
+
 
         BookDTO bookDTO = new BookDTO();
         List<Book> result;
         List<Book> disabledList;
 
-        if (isAdmin(request) && !isMyList) {
+        if (isAdmin(request) && !isMyList) {//If admin want to see all list
             result = bookService.listAllBooks();
-        } else if (isMyList) {
-            result = bookService.listAllBooksByUserIdAndStatus(currentUser.getId(), true);
-            disabledList = bookService.listAllBooksByUserIdAndStatus(currentUser.getId(), false);
-            result.addAll(disabledList);
-        } else {
-            result = bookService.listAllBooksByStatus(true);
-            disabledList = bookService.listAllBooksByUserIdAndStatus(currentUser.getId(), false);
-            result.addAll(disabledList);
+        }
+        //If login user want to see list of books
+        else if (authentication != null) {
+            String userEmail = authentication.getName();
+            User currentUser = userService.searchUserByEmail(userEmail);
+            if (!isMyList) {//Want to see all books have permitted
+                result = bookService.listAllBooksByStatus(true);
+                disabledList = bookService.listAllBooksByUserIdAndStatus(currentUser.getId(), false);
+                result.addAll(disabledList);
+            } else {//Want to see their list
+                result = bookService.listAllBooksByUserIdAndStatus(currentUser.getId(), true);
+                disabledList = bookService.listAllBooksByUserIdAndStatus(currentUser.getId(), false);
+                result.addAll(disabledList);
+            }
+        }
+        //If anonymous user want to see book list
+        else {
+             result = bookService.listAllBooksByStatus(true);
         }
 
-
+        logger.info(searchType);
+        logger.info(searchValue);
 
         //For searching request
         result = bookService.searchBooks(searchType, searchValue, result);
+
+
         int amountOfBooks = result.size();
         bookService.sortBooks(result, type);
         result = bookService.pagingBooks(result, maxbooks, page);

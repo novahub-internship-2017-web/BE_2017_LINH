@@ -19,17 +19,18 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
           <security:authorize access="hasRole('ADMIN')">
             <li><a href="/admin/user-manager">User manager</a></li>
           </security:authorize>
-          <li>
-            <a href="#" class="dropdown-toggle">Menu</a>
-            <div class="dropdown">
-              <ul class="dropdown-menu">
-                <li><a id="my-list" href="#">My list</a></li>
-                <li><a href="#" data-target=".bs-example-modal-sm" data-toggle="modal">Log out</a></li>
-              </ul>
-            </div>
-          </li>
+          <security:authorize access="isAuthenticated()">
+            <li>
+              <a href="#" class="dropdown-toggle">Menu</a>
+              <div class="dropdown">
+                <ul class="dropdown-menu">
+                  <li><a id="my-list" href="#">My list</a></li>
+                  <li><a href="#" data-target=".bs-example-modal-sm" data-toggle="modal">Log out</a></li>
+                </ul>
+              </div>
+            </li>
+          </security:authorize>
         </ul>
-
       </div>
 
       <div tabindex="-1" class="modal bs-example-modal-sm" role="dialog" aria-hidden="true">
