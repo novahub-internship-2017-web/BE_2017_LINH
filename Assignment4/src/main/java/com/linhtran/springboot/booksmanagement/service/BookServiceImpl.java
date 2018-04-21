@@ -40,6 +40,22 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    public void deleteBook(Book book) {
+        User user = userRepository.findById(book.getUser().getId()).orElse(null);
+        if (user != null) {
+            logger.info(user.getBooks().size() + "");
+            user.getBooks().remove(book);
+            logger.info(user.getBooks().size() + "");
+            userRepository.save(user);
+            logger.info(user.getBooks().size() + "");
+
+            bookRepository.delete(book);
+        }
+        User user1 = userRepository.findById(user.getId()).orElse(null);
+        logger.info(user1.getBooks().size() + "");
+    }
+
+    @Override
     public List<Book> pagingBooks(List<Book> books, int maxBooksPerPage, int page) {
         if (books == null || books.size() == 0) {
             return new ArrayList<>();

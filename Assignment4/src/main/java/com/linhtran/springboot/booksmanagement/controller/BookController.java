@@ -87,17 +87,6 @@ public class BookController {
         return bookDTO;
     }
 
-//    @JsonView(Views.Public.class)
-//    @GetMapping(value = "/books/sort")
-//    public BookDTO sortBooks(@RequestParam("type") String type,
-//                             @RequestParam("page") int page,
-//                             @RequestParam("max-books") int maxBooks,
-//                             HttpServletRequest request,
-//                             Authentication authentication) {
-//        BookDTO bookDTO = listAllBooks(request, authentication, maxBooks, page);
-//        bookService.sortBooks(bookDTO.getResult(), type);
-//        return bookDTO;
-//    }
 
     @JsonView(Views.Public.class)
     @PostMapping("/add-book")
@@ -158,6 +147,16 @@ public class BookController {
         }
         return book;
     }
+
+    @JsonView(Views.Public.class)
+    @DeleteMapping("/book/delete")
+    public Book deleteBook(@RequestBody Book book) {
+        Book currentBook = bookService.searchBookById(book.getId());
+        logger.info(currentBook.toString());
+        bookService.deleteBook(currentBook);
+        return currentBook;
+    }
+
 
     private boolean isAdmin(HttpServletRequest request) {
         SecurityContextHolderAwareRequestWrapper sc =

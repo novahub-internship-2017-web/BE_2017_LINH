@@ -6,6 +6,7 @@ $(document).ready(function () {
     $("#isMyList").val(false);
     $("#list-name").text("List of books");
 
+    //Get book list after page loaded
     getBookList($("#sortType").val(), 0);
 
     $("#max-books").change(function () {
@@ -14,6 +15,7 @@ $(document).ready(function () {
 
     });
 
+    //Event when click page button
     $(".pagination").on("click", "a", function () {
         var maxPage = ($(".page-number").last().find("a").text());
         var minPage = 1;
@@ -40,7 +42,7 @@ $(document).ready(function () {
 
     });
 
-
+    //Event submit searchform
     $(".search-form").submit(function (event) {
         event.preventDefault();
         table.addClass("hidden");
@@ -48,6 +50,7 @@ $(document).ready(function () {
         getBookList($("#sortType").val(), 0);
     });
 
+    //Even add book form
     $(".addbook-form").submit(function (event) {
         event.preventDefault();
         addNewBook();
@@ -71,16 +74,22 @@ $(document).ready(function () {
         getBookList(sortType, 0);
     });
 
+    //Move to my list of books
     $("#my-list").click(function () {
         $("#isMyList").val(true);
         $("#list-name").text("My list of book");
         getBookList($("#sortType").val(), 0);
     });
 
-
+    //Enabled and disable books
     $("body").on("click", "input.enabled-checkbox", function () {
         blockAndUnblockBook($(this));
         console.log($(this).attr("id") + " Checkbox clicked");
+    });
+
+    $("body").on("click", ".delete-btn", function () {
+       var bookId =  $(this).closest("tr").find("td").first().text();
+       deleteBook(bookId);
     });
 
 });
@@ -166,6 +175,24 @@ $(document).ready(function () {
      });
     }
 
+    // Delete book
+    function deleteBook(bookId) {
+        var data = {};
+        data.id = parseInt(bookId);
+        $.ajax({
+            type: "DELETE",
+            url: "/api/book/delete",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            timeout: 100000,
+            success: function (res) {
+                console.log("Book is deleted");
+            }
+
+        });
+    }
+
 
     function displayBooks(books, notification) {
         if (books.length > 0) {
@@ -186,7 +213,7 @@ $(document).ready(function () {
 
             //Create tbody element
             var tbody = $("<tbody>");
-            tbody.append(createOneRowBook(book, i));
+            tbody.append(createOneRowBook(book));
             //Show table and add tbody
             table.removeClass("hidden");
             table.addClass("table table-striped");
@@ -194,30 +221,42 @@ $(document).ready(function () {
         }
     }
 
-    function createOneRowBook(book, index) {
+    function createOneRowBook(book) {
         var tr = $("<tr>");
 
         //Create td column
-        var index = $("<td>").append(index);
+        var id = $("<td>").append(book.id);
         var title = $("<td>").append(book.title);
         var author = $("<td>").append(book.author);
         var createdBy = $("<td>").append(book.user.email);
 
 
-         //Create td for button detail
-        var aTag = $("<a/>", {
-            href : "/book/detail/" + book.id
-        }).append($("<i>").addClass("glyphicon glyphicon-folder-open"));
-        var detail = $("<td>").append(aTag);
 
-        tr.append(book.id);
+         //Create td for detail button
+        var detailAtag = $("<a/>", {
+            href : "/book/detail/" + book.id
+        });
+        detailAtag.addClass("btn btn-primary detail-btn");
+        detailAtag.text("Detail");
+
+        //Create td for delete button
+        var deleteAtag = $("<a>");
+        deleteAtag.addClass("btn btn-danger delete-btn");
+        deleteAtag.text("Delete");
+
+        var action = $("<td>").append(detailAtag);
+        if ($("#roleId").val() == 1 || $("#userId").val() == book.user.id) {
+            action.append(deleteAtag);
+        }
+
+        tr.append(id);
         tr.append(title);
         tr.append(author);
         tr.append(createdBy);
-        tr.append(detail);
+        tr.append(action);
 
         //Create td for enable or disable book
-        if ($("#userId").val() == 1) {
+        if ($("#roleId").val() == 1) {
             var enabled = $("<td>");
             var checkBox = $("<input>").addClass("enabled-checkbox");
             checkBox.prop("type", "checkbox");
