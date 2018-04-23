@@ -89,7 +89,10 @@ $(document).ready(function () {
 
     $("body").on("click", ".delete-btn", function () {
        var bookId =  $(this).closest("tr").find("td").first().text();
-       deleteBook(bookId);
+       $(".confirm-delete").modal("sho");
+       $(".btn-block").click(function () {
+           deleteBook(bookId);
+       });
     });
 
 });

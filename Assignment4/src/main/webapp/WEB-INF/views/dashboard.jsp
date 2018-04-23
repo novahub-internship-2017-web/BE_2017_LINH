@@ -113,6 +113,16 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
   <input type="hidden" id="sortType" value="unsorted">
   <input type="hidden" id="isMyList">
 
+    <%--Confirm deleting book--%>
+  <div tabindex="-1" class="modal confirm-delete" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header"><h4>Logout <i class="fa fa-lock"></i></h4></div>
+          <div class="modal-body"><i class="fa fa-question-circle"></i> Are you sure to delete this book?</div>
+          <div class="modal-footer"><a class="btn btn-primary btn-block" href="#">Ok</a></div>
+        </div>
+      </div>
+  </div>
 
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

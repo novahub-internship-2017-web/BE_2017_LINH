@@ -3,6 +3,7 @@ package com.linhtran.springboot.booksmanagement.service;
 import com.linhtran.springboot.booksmanagement.model.Book;
 import com.linhtran.springboot.booksmanagement.model.User;
 import com.linhtran.springboot.booksmanagement.repository.BookRepository;
+import com.linhtran.springboot.booksmanagement.repository.CommentRepository;
 import com.linhtran.springboot.booksmanagement.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +25,9 @@ public class BookServiceImpl implements BookService {
     @Autowired
     BookRepository bookRepository;
 
+    @Autowired
+    CommentRepository commentRepository;
+
     @Override
     public List<Book> listAllBooks() {
         return bookRepository.findAll();
@@ -43,16 +47,11 @@ public class BookServiceImpl implements BookService {
     public void deleteBook(Book book) {
         User user = userRepository.findById(book.getUser().getId()).orElse(null);
         if (user != null) {
-            logger.info(user.getBooks().size() + "");
             user.getBooks().remove(book);
-            logger.info(user.getBooks().size() + "");
             userRepository.save(user);
-            logger.info(user.getBooks().size() + "");
-
+            commentRepository.deleteInBatch(commentRepository.findByBookId(book.getId()));
             bookRepository.delete(book);
         }
-        User user1 = userRepository.findById(user.getId()).orElse(null);
-        logger.info(user1.getBooks().size() + "");
     }
 
     @Override

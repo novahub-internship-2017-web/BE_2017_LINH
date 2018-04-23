@@ -17,6 +17,7 @@ import org.springframework.security.web.servletapi.SecurityContextHolderAwareReq
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
 import java.util.List;
 
 
@@ -150,11 +151,18 @@ public class BookController {
 
     @JsonView(Views.Public.class)
     @DeleteMapping("/book/delete")
-    public Book deleteBook(@RequestBody Book book) {
-        Book currentBook = bookService.searchBookById(book.getId());
-        logger.info(currentBook.toString());
-        bookService.deleteBook(currentBook);
-        return currentBook;
+    public Book deleteBook(@RequestBody Book book,
+                           Principal principal,
+                           HttpServletRequest request) {
+        if (principal != null) {
+            User user = userService.searchUserByEmail(principal.getName());
+            Book currentBook = bookService.searchBookById(book.getId());
+            if (isAdmin(request) || user.getId() == currentBook.getUser().getId()) {
+                bookService.deleteBook(currentBook);
+            }
+            return currentBook;
+        }
+        return new Book();
     }
 
 
