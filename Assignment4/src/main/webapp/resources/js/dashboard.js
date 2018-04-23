@@ -89,9 +89,13 @@ $(document).ready(function () {
 
     $("body").on("click", ".delete-btn", function () {
        var bookId =  $(this).closest("tr").find("td").first().text();
-       $(".confirm-delete").modal("sho");
+       var bookLine = $(this).closest("tr");
+
+       $(".confirm-delete").modal("show");
        $(".btn-block").click(function () {
            deleteBook(bookId);
+           // bookLine.remove();
+           $(".confirm-delete").modal("hide");
        });
     });
 
@@ -191,6 +195,7 @@ $(document).ready(function () {
             timeout: 100000,
             success: function (res) {
                 console.log("Book is deleted");
+                $(".pagination").find('a:contains("' + page + '")').click();
             }
 
         });
