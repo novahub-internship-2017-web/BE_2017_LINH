@@ -117,7 +117,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
   <div tabindex="-1" class="modal confirm-delete" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
-          <div class="modal-header"><h4>Logout <i class="fa fa-lock"></i></h4></div>
+          <div class="modal-header"><h4>Confirm deleting book <i class="fa fa-lock"></i></h4></div>
           <div class="modal-body"><i class="fa fa-question-circle"></i> Are you sure to delete this book?</div>
           <div class="modal-footer"><a class="btn btn-primary btn-block" href="#">Ok</a></div>
         </div>

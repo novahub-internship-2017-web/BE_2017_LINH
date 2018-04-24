@@ -101,7 +101,6 @@ public class BookController {
             bookService.addNewBook(newBook);
             newBook = bookService.searchBookByTitle(newBook.getTitle());
             bookValidation.getBook().setId(newBook.getId());
-            logger.info("" + newBook.getId());
         }
         return bookValidation;
     }

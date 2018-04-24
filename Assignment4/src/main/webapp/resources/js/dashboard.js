@@ -1,5 +1,6 @@
 var table = $("table");
 var page = 1;
+var bookId;
 
 $(document).ready(function () {
 
@@ -88,15 +89,9 @@ $(document).ready(function () {
     });
 
     $("body").on("click", ".delete-btn", function () {
-       var bookId =  $(this).closest("tr").find("td").first().text();
-       var bookLine = $(this).closest("tr");
+        bookId =  $(this).closest("tr").find("td").first().text();
+        deleteBook(bookId);
 
-       $(".confirm-delete").modal("show");
-       $(".btn-block").click(function () {
-           deleteBook(bookId);
-           // bookLine.remove();
-           $(".confirm-delete").modal("hide");
-       });
     });
 
 });
