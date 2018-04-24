@@ -125,19 +125,10 @@ public class BookController {
         return bookService.searchBookById(bookId);
     }
 
-//    @JsonView(Views.Public.class)
-//    @PostMapping(value = "/books/search")
-//    public BookDTO searchBooks(@RequestBody SearchBookForm search) {
-//        BookDTO result = new BookDTO();
-//        result.setResult(bookService.searchBooks(search.getSearchType(), search.getSearchValue()));
-//        return result;
-//    }
 
-//    Not validate owner yet
     @JsonView(Views.Public.class)
     @PutMapping("/book/block")
     public Book blockUnblockBook(@RequestBody BlockForm blockBookForm,
-                                 Authentication authentication,
                                  HttpServletRequest request) {
         Book book = bookService.searchBookById(blockBookForm.getId());
         book.setEnabled(blockBookForm.isEnabled());
