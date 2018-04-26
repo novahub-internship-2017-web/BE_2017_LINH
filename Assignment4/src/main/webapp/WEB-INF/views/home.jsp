@@ -46,7 +46,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
                         <input type="submit" class="btn btn-primary signup-btn" enabled="Sign in">
                     </form>
                     <h4>New here? Create a new account!</h4>
-                    <<form:form action="register" method="post" modelAttribute="user">
+                    <form:form action="register" method="post" modelAttribute="user">
                     <form:input path="firstName" type="text" class="form-control text-input" placeholder="First name"/>
                     <form:errors path="firstName" class="error"/>
                     <form:input path="lastName" type="text" class="form-control text-input" placeholder="Last name"/>

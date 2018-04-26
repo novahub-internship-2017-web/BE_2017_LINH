@@ -1,0 +1,2 @@
+dump database
+PGPASSWORD=123456 pg_dump --no-acl --no-owner -h localhost -U linh booksmanagement > books.sql

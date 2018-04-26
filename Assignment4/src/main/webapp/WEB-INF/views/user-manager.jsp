@@ -31,7 +31,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
         <th>Number of books</th>
         <th>Role</th>
         <th>Enabled</th>
-        <th>Delete</th>
+        <%--<th>Delete</th>--%>
       </tr>
       </thead>
       <tbody>
@@ -42,19 +42,22 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
           <td>${user.firstName} ${user.lastName}</td>
           <td>${user.email}</td>
           <td>${user.books.size()}</td>
-          <td>${user.roleId}</td>
+          <td>
+            <c:if test="${user.roleId == 1}">ADMIN</c:if>
+            <c:if test="${user.roleId == 2}">USER</c:if>
+          </td>
           <td>
             <c:if test="${user.roleId ne 1}">
             <input type="checkbox" name="enabled" id="${user.id}" <c:if test="${user.enabled == true}">checked</c:if>>
             </c:if>
           </td>
-          <td>
-            <c:if test="${user.roleId ne 1}">
-            <a href="/admin/delete?id=${user.id}" onclick="return confirm('Do you really want to delete this user')">
-              <i class="glyphicon glyphicon-remove-circle"></i>
-            </a>
-            </c:if>
-          </td>
+          <%--<td>--%>
+            <%--<c:if test="${user.roleId ne 1}">--%>
+            <%--<a href="/admin/delete?id=${user.id}" onclick="return confirm('Do you really want to delete this user')">--%>
+              <%--<i class="glyphicon glyphicon-remove-circle"></i>--%>
+            <%--</a>--%>
+            <%--</c:if>--%>
+          <%--</td>--%>
         </tr>
       </c:forEach>
       </tbody>

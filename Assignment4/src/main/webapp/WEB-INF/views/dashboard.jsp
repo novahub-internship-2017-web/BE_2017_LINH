@@ -32,15 +32,15 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
   <%--</div>--%>
   <h3 id="list-name">List of books</h3>
     <form class="row search-form" action="/book/search" method="post">
-      <div class="col-md-3">
-        <div>
-          <select name="search-type" class="form-control search">
-            <option value="by-title">Search by title</option>
-            <option value="by-author">Search by author</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-md-9">
+      <%--<div class="col-md-3">--%>
+        <%--<div>--%>
+          <%--<select name="search-type" class="form-control search">--%>
+            <%--<option value="by-title">Search by title</option>--%>
+            <%--<option value="by-author">Search by author</option>--%>
+          <%--</select>--%>
+        <%--</div>--%>
+      <%--</div>--%>
+      <div class="col-md-12">
         <div class="input-group">
           <input name="search-value" type="text" class="search-query form-control" placeholder="Search" />
           <span class="input-group-btn">

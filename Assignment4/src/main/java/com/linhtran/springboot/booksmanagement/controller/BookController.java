@@ -41,7 +41,6 @@ public class BookController {
                                 @RequestParam("type") String type,
                                 @RequestParam("max-books") int maxbooks,
                                 @RequestParam("page") int page,
-                                @RequestParam("search-type") String searchType,
                                 @RequestParam("search-value") String searchValue,
                                 @RequestParam("my-list") boolean isMyList) {
 
@@ -72,12 +71,11 @@ public class BookController {
              result = bookService.listAllBooksByStatus(true);
         }
 
-        logger.info(searchType);
+
         logger.info(searchValue);
 
         //For searching request
-        result = bookService.searchBooks(searchType, searchValue, result);
-
+        result = bookService.searchBooks(searchValue, result);
 
         int amountOfBooks = result.size();
         bookService.sortBooks(result, type);

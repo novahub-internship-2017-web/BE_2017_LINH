@@ -99,12 +99,10 @@ $(document).ready(function () {
     function getBookList(sortType, page) {
         table.addClass("hidden");
         var maxBooks = $("#max-books").val();
-        var searchType = $("select[name=search-type]").val();
         var searchValue = $("input[name=search-value]").val();
         var uri = "/api/books/list/?type=" + sortType +
                   "&max-books=" + maxBooks +
                    "&page=" + page +
-                    "&search-type=" + searchType +
                     "&search-value=" + searchValue +
                      "&my-list=" + $("#isMyList").val();
         $("tbody").remove();
@@ -129,7 +127,7 @@ $(document).ready(function () {
                 }
             }
 
-            displayBooks(res.result, "There are no books in the list! Let's create one.")
+            displayBooks(res.result, "There are no books in the result! .")
         });
     }
 
