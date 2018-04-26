@@ -90,8 +90,12 @@ $(document).ready(function () {
 
     $("body").on("click", ".delete-btn", function () {
         bookId =  $(this).closest("tr").find("td").first().text();
-        deleteBook(bookId);
+        $(".confirm-delete").modal("show");
+    });
 
+    $(".btn-block").click(function () {
+        $(".confirm-delete").modal("hide");
+        deleteBook(bookId);
     });
 
 });

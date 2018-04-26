@@ -65,6 +65,7 @@ function modifyBookInfo() {
         success: function (res) {
             $("#addBookModal").modal("hide");
             console.log("modify book success" + res);
+            location.reload(true);
         }
     });
 }

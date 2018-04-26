@@ -74,17 +74,11 @@ public class BookServiceImpl implements BookService {
         List<Book> result = new ArrayList<>();
 
         for (Book book : books) {
-            if (book.getTitle().toLowerCase().contains(searchValue.toLowerCase())) {
+            if (book.getTitle().toLowerCase().contains(searchValue.toLowerCase()) ||
+                book.getAuthor().toLowerCase().contains(searchValue.toLowerCase())) {
                 result.add(book);
             }
         }
-
-        for (Book book : books) {
-            if (book.getAuthor().toLowerCase().contains(searchValue.toLowerCase())) {
-                result.add(book);
-            }
-        }
-
         return result;
     }
 

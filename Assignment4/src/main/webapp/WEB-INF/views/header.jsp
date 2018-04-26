@@ -14,14 +14,12 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       </div>
       <div class="col-md-6 navbar">
         <ul class="nav navbar-nav navbar-right nav-menu">
-          <li><a href="/">Home</a></li>
-          <li><a href="/dashboard">Dashboard</a></li>
-          <security:authorize access="hasRole('ADMIN')">
-            <li><a href="/admin/user-manager">User manager</a></li>
-          </security:authorize>
           <security:authorize access="isAuthenticated()">
             <li>
-              <a href="#" class="dropdown-toggle">Menu</a>
+              <a href="#" class="dropdown-toggle">
+                Hi! <security:authentication property="principal.username" />
+                <i class="glyphicon glyphicon-triangle-bottom"></i>
+              </a>
               <div class="dropdown">
                 <ul class="dropdown-menu">
                   <li><a id="my-list" href="#">My list</a></li>
@@ -29,6 +27,10 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
                 </ul>
               </div>
             </li>
+          </security:authorize>
+          <li><a href="/dashboard">Dashboard</a></li>
+          <security:authorize access="hasRole('ADMIN')">
+            <li><a href="/admin/user-manager">User manager</a></li>
           </security:authorize>
         </ul>
       </div>

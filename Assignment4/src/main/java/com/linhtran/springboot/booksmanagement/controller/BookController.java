@@ -89,10 +89,15 @@ public class BookController {
 
     @JsonView(Views.Public.class)
     @PostMapping("/add-book")
-    public BookValidation addBook(@RequestBody Book book) {
+    public BookValidation addBook(@RequestBody Book book, HttpServletRequest request) {
         Book newBook = new Book(book.getTitle(), book.getAuthor());
         newBook.setImageUrl("/resources/upload/book-covers/genericBookCover.jpg");
         newBook.setDescription(book.getDescription());
+
+        //New book from regular user must be wait to be active
+        if (!isAdmin(request)) {
+            newBook.setEnabled(false);
+        }
         BookValidation bookValidation = new BookValidation(newBook);
         logger.info(book.getDescription());
         if (bookValidation.isValidBook()) {

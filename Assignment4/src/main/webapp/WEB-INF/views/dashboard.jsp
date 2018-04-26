@@ -32,14 +32,6 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
   <%--</div>--%>
   <h3 id="list-name">List of books</h3>
     <form class="row search-form" action="/book/search" method="post">
-      <%--<div class="col-md-3">--%>
-        <%--<div>--%>
-          <%--<select name="search-type" class="form-control search">--%>
-            <%--<option value="by-title">Search by title</option>--%>
-            <%--<option value="by-author">Search by author</option>--%>
-          <%--</select>--%>
-        <%--</div>--%>
-      <%--</div>--%>
       <div class="col-md-12">
         <div class="input-group">
           <input name="search-value" type="text" class="search-query form-control" placeholder="Search" />
@@ -74,15 +66,6 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
         </c:if>
       </tr>
       </thead>
-      <%--<tbody>--%>
-        <%--<tr>--%>
-          <%--<td></td>--%>
-          <%--<td></td>--%>
-          <%--<td></td>--%>
-          <%--<td></td>--%>
-          <%--<td><a href="#"><i class="glyphicon glyphicon-folder-open"></i></a></td>--%>
-        <%--</tr>--%>
-      <%--</tbody>--%>
     </table>
   <ul class="pagination" id="page">
     <li class="first"><a href="#">First</a></li>
@@ -93,9 +76,6 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
   </ul>
   <div>This list have <span id="total-books"></span> books in total.</div>
 
-  <%--<c:if test="${noResult == true}">--%>
-    <%--<div class="error" style="color: green">No result can found!</div>--%>
-  <%--</c:if>--%>
   <div class="row">
     <div class="col-md-12">
       <!-- Button trigger modal -->
