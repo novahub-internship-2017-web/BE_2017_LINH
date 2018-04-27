@@ -18,6 +18,10 @@ public class BookValidation {
     @JsonView(Views.Public.class)
     private boolean validBook;
 
+    @JsonView(Views.Public.class)
+    private boolean existedBook;
+
+
     public BookValidation(Book book) {
         this.book = book;
         this.validTitle = book.getTitle().length() > 0;
@@ -55,5 +59,13 @@ public class BookValidation {
 
     public void setValidBook(boolean validBook) {
         this.validBook = validBook;
+    }
+
+    public boolean isExistedBook() {
+        return existedBook;
+    }
+
+    public void setExistedBook(boolean existedBook) {
+        this.existedBook = existedBook;
     }
 }

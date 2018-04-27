@@ -4,7 +4,14 @@ function addNewBookHandler(res, title) {
     var successNotification = $("<div>");
     var errorTitleNotification = $("<div>");
     var errorAuthorNotification = $("<div>");
-    if (res.validBook === true) {
+    var errorExistedBook = $("<div>");
+
+    if (res.existedBook === true) {
+        errorExistedBook.html("This book already in your list. Please add another one");
+        errorExistedBook.addClass("error");
+        $("#description").after(errorExistedBook);
+                
+    } else if (res.validBook === true) {
         successNotification.html("Adding book with title \"" + title + "\" success");
         successNotification.addClass("notification");
         table.after(successNotification);

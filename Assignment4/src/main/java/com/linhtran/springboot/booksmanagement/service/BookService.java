@@ -22,7 +22,7 @@ public interface BookService {
 
     Book searchBookByTitle(String title);
 
-    void addNewBook(Book newBook);
+    boolean addNewBook(Book newBook);
 
     void updateBook(Book currentBook);
 

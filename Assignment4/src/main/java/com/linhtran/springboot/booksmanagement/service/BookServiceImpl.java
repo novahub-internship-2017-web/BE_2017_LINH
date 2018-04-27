@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +28,9 @@ public class BookServiceImpl implements BookService {
 
     @Autowired
     CommentRepository commentRepository;
+
+    @Autowired
+    EntityManager entityManager;
 
     @Override
     public List<Book> listAllBooks() {
@@ -108,13 +112,19 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void addNewBook(Book newBook) {
+    public boolean addNewBook(Book newBook) {
         String currentUserEmail=  SecurityContextHolder.getContext()
                 .getAuthentication().getName();
         User currentUser = userRepository.findByEmail(currentUserEmail);
-        newBook.setUser(currentUser);
-        currentUser.getBooks().add(newBook);
-        userRepository.save(currentUser);
+        Book addedBook = bookRepository.findByUserIdAndTitle(currentUser.getId(), newBook.getTitle());
+        if (addedBook == null) {
+            entityManager.persist(newBook);
+            newBook.setUser(currentUser);
+            currentUser.getBooks().add(newBook);
+            userRepository.save(currentUser);
+            return true;
+        }
+        return false;
     }
 
     @Override

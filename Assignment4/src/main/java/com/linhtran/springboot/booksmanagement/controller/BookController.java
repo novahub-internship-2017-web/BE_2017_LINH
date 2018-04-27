@@ -101,9 +101,12 @@ public class BookController {
         BookValidation bookValidation = new BookValidation(newBook);
         logger.info(book.getDescription());
         if (bookValidation.isValidBook()) {
-            bookService.addNewBook(newBook);
-            newBook = bookService.searchBookByTitle(newBook.getTitle());
-            bookValidation.getBook().setId(newBook.getId());
+            boolean isSucceed = bookService.addNewBook(bookValidation.getBook());
+            if (isSucceed) {
+                bookValidation.setExistedBook(false);
+            } else {
+                bookValidation.setExistedBook(true);
+            }
         }
         return bookValidation;
     }
