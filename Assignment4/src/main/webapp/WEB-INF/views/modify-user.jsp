@@ -7,37 +7,38 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
 <html lang="en">
 <body>
 <!-- Modal add book -->
-<div class="modal fade" id="addBookModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal fade" id="profile-modify" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="modalLabel">ADD NEW BOOK</h3>
+                <h3 class="modal-title" id="modalLabel">Modify user information</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" class="addbook-form">
-                    <input type="hidden" id="book-id">
+                <form method="POST" class="user-modify">
                     <div class="form-group">
-                        <label for="title">Title: <span style="color: red">*</span> </label>
-                        <input type="text" name="title" id="title" class="form-control text-input" placeholder="Book's title">
+                        <label for="user-email">Your email: </label>
+                        <div id="user-email"></div>
                     </div>
 
                     <div class="form-group">
-                        <label for="author">Author: <span style="color: red">*</span> </label>
-                        <input type="text" name="author" id="author" class="form-control text-input" placeholder="Author">
+                        <label for="first-name">First name:</label>
+                        <input type="text" name="first-name" id="first-name" class="form-control text-input" placeholder="First name">
                     </div>
+
                     <div class="form-group">
-                        <label for="description">Description: </label>
-                        <textarea name="description" id="description" class="form-control text-input" placeholder="Book's description"></textarea>
+                        <label for="last-name">Last name</label>
+                        <input type="text" name="last-name" id="last-name" class="form-control text-input" placeholder="Last name">
                     </div>
-                    <input type="submit" id="submit-form" class="hidden">
+
+                    <input type="submit" id="submit-change-profile" class="hidden">
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <label for="submit-form" class="btn btn-primary">Save book</label>
+                <label for="submit-change-profile" class="btn btn-primary">Update</label>
             </div>
         </div>
     </div>

@@ -28,6 +28,16 @@ public class UserController {
         return userValidation;
     }
 
+    @JsonView(Views.Public.class)
+    @PutMapping("/users/edit-profile")
+    public User updateProfile(@RequestBody User user) {
+        User currentUser = userService.searchUserById(user.getId());
+        currentUser.setFirstName(user.getFirstName());
+        currentUser.setLastName(user.getLastName());
+        userService.update(currentUser);
+        return currentUser;
+    }
+
     @GetMapping("/users")
     public List<User> getAllUsers() {
         return userService.listAll();

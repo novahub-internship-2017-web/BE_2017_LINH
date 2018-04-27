@@ -1,16 +1,21 @@
-$('input[type="checkbox"]').on('click', function(){
+$(document).ready(function () {
 
-    var data = {};
-    data.id = $(this).attr('id');
-    data.value = $(this).is(':checked') ? 1 : 0;
+    $('input[type="checkbox"]').on('click', function(){
 
-    console.log(data);
+        var data = {};
+        data.id = $(this).attr('id');
+        data.value = $(this).is(':checked') ? 1 : 0;
 
-    $.ajax({
-        type: "POST",
-        url: "/admin/enabled",
-        data: data
-    }).done(function(data) {
         console.log(data);
+
+        $.ajax({
+            type: "POST",
+            url: "/admin/enabled",
+            data: data
+        }).done(function(data) {
+            console.log(data);
+        });
     });
+
 });
+

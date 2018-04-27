@@ -23,6 +23,8 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
               <div class="dropdown">
                 <ul class="dropdown-menu">
                   <li><a id="my-list" href="#">My list</a></li>
+                  <li><a id="change-profile" href="#" data-target="#profile-modify" data-toggle="modal">Edit profile</a></li>
+                  <li><a id="change-pass" href="#" data-target="#password-modify" data-toggle="modal">Change password</a></li>
                   <li><a href="#" data-target=".bs-example-modal-sm" data-toggle="modal">Log out</a></li>
                 </ul>
               </div>

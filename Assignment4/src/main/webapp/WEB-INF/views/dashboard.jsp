@@ -85,11 +85,18 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
         </button>
       </security:authorize>
       <jsp:include page="addbook-modal.jsp"/>
+      <jsp:include page="modify-user.jsp"/>
+      <jsp:include page="modify-password.jsp"/>
     </div>
   </div>
   <%--Logged in user id--%>
   <input type="hidden" id="userId" value="${user.id}">
   <input type="hidden" id="roleId" value="${user.roleId}">
+  <input type="hidden" id="firstName" value="${user.firstName}">
+  <input type="hidden" id="lastName" value="${user.lastName}">
+  <input type="hidden" id="email" value="${user.email}">
+
+  <%--Page information--%>
   <input type="hidden" id="sortType" value="unsorted">
   <input type="hidden" id="isMyList">
 
@@ -107,7 +114,8 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="/resources/js/event-handler.js"></script>
-<script src="/resources/js/dashboard.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/event-handler.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/dashboard.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/edit-profile.js"></script>
 </body>
 </html>
