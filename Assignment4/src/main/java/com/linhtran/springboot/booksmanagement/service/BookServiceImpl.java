@@ -29,9 +29,6 @@ public class BookServiceImpl implements BookService {
     @Autowired
     CommentRepository commentRepository;
 
-    @Autowired
-    EntityManager entityManager;
-
     @Override
     public List<Book> listAllBooks() {
         return bookRepository.findAll();
@@ -112,19 +109,19 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public boolean addNewBook(Book newBook) {
-        String currentUserEmail=  SecurityContextHolder.getContext()
+    public Book addNewBook(Book newBook) {
+        String currentUserEmail =  SecurityContextHolder.getContext()
                 .getAuthentication().getName();
         User currentUser = userRepository.findByEmail(currentUserEmail);
         Book addedBook = bookRepository.findByUserIdAndTitle(currentUser.getId(), newBook.getTitle());
         if (addedBook == null) {
-            entityManager.persist(newBook);
             newBook.setUser(currentUser);
             currentUser.getBooks().add(newBook);
             userRepository.save(currentUser);
-            return true;
+            newBook = bookRepository.findByUserIdAndTitle(currentUser.getId(), newBook.getTitle());
+            return newBook;
         }
-        return false;
+        return null;
     }
 
     @Override

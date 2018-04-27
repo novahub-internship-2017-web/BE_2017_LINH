@@ -101,8 +101,9 @@ public class BookController {
         BookValidation bookValidation = new BookValidation(newBook);
         logger.info(book.getDescription());
         if (bookValidation.isValidBook()) {
-            boolean isSucceed = bookService.addNewBook(bookValidation.getBook());
-            if (isSucceed) {
+            Book addedBook = bookService.addNewBook(bookValidation.getBook());
+            if (addedBook != null) {
+                bookValidation.setBook(addedBook);
                 bookValidation.setExistedBook(false);
             } else {
                 bookValidation.setExistedBook(true);

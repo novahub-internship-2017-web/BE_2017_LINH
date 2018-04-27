@@ -28,7 +28,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
               </div>
             </li>
           </security:authorize>
-          <li><a href="/dashboard">Dashboard</a></li>
+          <li><a href="/">Home</a></li>
           <security:authorize access="hasRole('ADMIN')">
             <li><a href="/admin/user-manager">User manager</a></li>
           </security:authorize>
