@@ -113,11 +113,14 @@ $(document).ready(function () {
         $.get(uri, function (res) {
 
             $("#total-books").html(res.amountOfBooks);
-            var numberOfPages = res.amountOfBooks / maxBooks + 1;
+            var numberOfPages = Math.floor(parseInt(res.amountOfBooks)/(parseInt(maxBooks) + 1)) + 1;
+            console.log(res.amountOfBooks);
+            console.log(maxBooks + 1);
+            console.log(numberOfPages);
             var maxCurrentPages = parseInt($(".pagination .page-number").last().find("a").text());
             var i;
             if (maxCurrentPages < numberOfPages) {
-                for (i = maxCurrentPages + 1; i < numberOfPages; i++) {
+                for (i = maxCurrentPages + 1; i <= numberOfPages; i++) {
                     var a = $("<a>").prop("href", "#");
                     a.html(i);
                     var li = $("<li>").append(a);
