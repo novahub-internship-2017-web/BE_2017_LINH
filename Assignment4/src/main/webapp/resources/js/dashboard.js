@@ -8,11 +8,11 @@ $(document).ready(function () {
     $("#list-name").text("List of books");
 
     //Get book list after page loaded
-    getBookList($("#sortType").val(), 0);
+    getBookList($("#sortType").val(), 0, "There are no books in the list. Please create one.");
 
     $("#max-books").change(function () {
         var sortType = $("#sortType").val();
-        getBookList(sortType, 0);
+        getBookList(sortType, 0, "There are no books in the list. Please create one.");
 
     });
 
@@ -39,7 +39,7 @@ $(document).ready(function () {
         var sortType = $("#sortType").val();
 
         changeColorPageNumber(page);
-        getBookList(sortType, page - 1);
+        getBookList(sortType, page - 1, "The are no book in this page");
 
     });
 
@@ -48,7 +48,7 @@ $(document).ready(function () {
         event.preventDefault();
         table.addClass("hidden");
         $("tbody").remove();
-        getBookList($("#sortType").val(), 0);
+        getBookList($("#sortType").val(), 0, "There are no books in the result");
     });
 
     //Even add book form
@@ -72,14 +72,14 @@ $(document).ready(function () {
             console.log("Th created clicked")
         }
         $("#sortType").val(sortType);
-        getBookList(sortType, 0);
+        getBookList(sortType, 0, "There are no book in the list");
     });
 
     //Move to my list of books
     $("#my-list").click(function () {
         $("#isMyList").val(true);
         $("#list-name").text("My list of book");
-        getBookList($("#sortType").val(), 0);
+        getBookList($("#sortType").val(), 0, "There are no book this list. Please create one");
     });
 
     //Enabled and disable books
@@ -100,7 +100,7 @@ $(document).ready(function () {
 
 });
 
-    function getBookList(sortType, page) {
+    function getBookList(sortType, page, message) {
         table.addClass("hidden");
         var maxBooks = $("#max-books").val();
         var searchValue = $("input[name=search-value]").val();
@@ -134,7 +134,7 @@ $(document).ready(function () {
                 }
             }
 
-            displayBooks(res.result, "There are no books in the result! .")
+            displayBooks(res.result, message)
         });
     }
 
