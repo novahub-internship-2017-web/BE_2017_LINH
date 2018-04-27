@@ -203,9 +203,9 @@ $(document).ready(function () {
 
 
     function displayBooks(books, notification) {
+        $(".notification").remove();
         if (books.length > 0) {
             displayBooksList(books);
-            $(".notification").remove();
         } else {
             table.addClass("hidden");
             var errorNotification = $("<div>");
