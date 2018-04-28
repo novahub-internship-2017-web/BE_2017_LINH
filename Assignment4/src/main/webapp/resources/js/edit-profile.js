@@ -1,3 +1,5 @@
+var successMessage = $("<div>");
+successMessage.addClass("notification");
 $(document).ready(function () {
     $("#change-profile").click(function () {
         getUserInformation();
@@ -7,6 +9,7 @@ $(document).ready(function () {
         e.preventDefault();
         updateProfile();
     });
+
 });
 
 function getUserInformation() {
@@ -17,6 +20,7 @@ function getUserInformation() {
 
 function updateProfile() {
     var currentUser = {};
+
     currentUser["id"] = $("#userId").val();
     currentUser["firstName"] = $("#first-name").val();
     currentUser["lastName"] = $("#last-name").val();
@@ -29,8 +33,14 @@ function updateProfile() {
         dataType: 'json',
         timeout: 100000,
         success: function (res) {
-            $("#profile-modify").modal("hide");
-            console.log("modify book success" + res);
+            $("#profile-modify").modal("hide");;
+            console.log("Linh tran kljdfaldjal");
+            successMessage.html("Edit profile successfully");
+            successMessage.attr("id", "success-noti")
+            $("#list-name").before(successMessage);
+            setTimeout(function () {
+                $("#success-noti").remove();
+            }, 5000);
         }
     });
 
