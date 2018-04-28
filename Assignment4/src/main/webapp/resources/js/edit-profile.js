@@ -47,7 +47,7 @@ function updateProfile() {
         dataType: 'json',
         timeout: 100000,
         success: function (res) {
-            $("#profile-modify").modal("hide");;
+            $("#profile-modify").modal("hide");
             console.log("Linh tran kljdfaldjal");
             successMessage.html("Edit profile successfully");
             successMessage.attr("id", "success-noti")

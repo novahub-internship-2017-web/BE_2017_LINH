@@ -1,6 +1,8 @@
 var table = $("table");
 var page = 1;
 var bookId;
+var isAsc = true; //this variable for sorting order
+
 
 $(document).ready(function () {
 
@@ -61,16 +63,30 @@ $(document).ready(function () {
     //Sort book by click header of table
     $(".clickable").click(function () {
         var sortType;
+        var icon = $(this).find("i");
+        console.log("is asc is" + isAsc);
+        $("i").removeClass("glyphicon-sort-by-alphabet-alt");
+        $("i").removeClass("glyphicon-sort-by-alphabet");
+
         if ($(this).is("#th-title")) {
             sortType = "title";
-            console.log("Th title clicked")
+            isAsc = !isAsc;
         } else if ($(this).is("#th-author")) {
             sortType = "author";
-            console.log("Th author clicked")
+            isAsc = !isAsc;
         } else {
             sortType = "owner";
-            console.log("Th created clicked")
+            isAsc = !isAsc;
         }
+              
+        if (isAsc) {
+           icon.removeClass("glyphicon-sort-by-alphabet-alt");
+           icon.addClass("glyphicon-sort-by-alphabet");
+        } else {
+            icon.removeClass("glyphicon-sort-by-alphabet");
+            icon.addClass("glyphicon-sort-by-alphabet-alt");
+        }
+
         $("#sortType").val(sortType);
         getBookList(sortType, 0, "There are no book in the list");
     });
@@ -108,7 +124,8 @@ $(document).ready(function () {
                   "&max-books=" + maxBooks +
                    "&page=" + page +
                     "&search-value=" + searchValue +
-                     "&my-list=" + $("#isMyList").val();
+                     "&my-list=" + $("#isMyList").val() +
+                     "&is-asc=" + isAsc;
         $("tbody").remove();
         $.get(uri, function (res) {
 

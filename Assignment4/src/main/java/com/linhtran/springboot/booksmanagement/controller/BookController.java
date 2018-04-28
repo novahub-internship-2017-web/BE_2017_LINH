@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -42,7 +44,8 @@ public class BookController {
                                 @RequestParam("max-books") int maxbooks,
                                 @RequestParam("page") int page,
                                 @RequestParam("search-value") String searchValue,
-                                @RequestParam("my-list") boolean isMyList) {
+                                @RequestParam("my-list") boolean isMyList,
+                                @RequestParam("is-asc") boolean isAsc) {
 
 
         BookDTO bookDTO = new BookDTO();
@@ -79,6 +82,9 @@ public class BookController {
 
         int amountOfBooks = result.size();
         bookService.sortBooks(result, type);
+        if (!isAsc) { //If request is desc sort order
+            Collections.reverse(result);
+        }
         result = bookService.pagingBooks(result, maxbooks, page);
 
         bookDTO.setResult(result);
