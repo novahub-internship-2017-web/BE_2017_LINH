@@ -45,8 +45,9 @@ public class UserServiceImp implements UserService {
 
 	@Override
 	public void update(User user) {
-		userRepository.save(user);
-	}
+		userRepository.save(user);	}
+
+
 
 	@Override
 	public List<User> listAll() {

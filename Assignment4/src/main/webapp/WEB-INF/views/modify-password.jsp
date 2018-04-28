@@ -17,7 +17,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" class="user-modify">
+                <form method="POST" class="pass-modify">
                     <div class="form-group">
                         <label for="current-password">Current password: </label>
                         <input type="password" name="current-password" id="current-password" class="form-control text-input" placeholder="Current password">
