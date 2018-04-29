@@ -78,7 +78,7 @@ $(document).ready(function () {
             sortType = "owner";
             isAsc = !isAsc;
         }
-              
+
         if (isAsc) {
            icon.removeClass("glyphicon-sort-by-alphabet-alt");
            icon.addClass("glyphicon-sort-by-alphabet");
