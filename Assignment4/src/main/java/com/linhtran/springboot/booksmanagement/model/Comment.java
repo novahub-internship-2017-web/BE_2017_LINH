@@ -19,6 +19,7 @@ public class Comment {
     @JsonView(Views.Public.class)
     private String content;
 
+    @JsonView(Views.Public.class)
     private Date createdAt;
 
     private Date updateAt;

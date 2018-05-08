@@ -22,11 +22,16 @@ public class UploadController {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
+
     private HttpServletRequest request;
 
-    @Autowired
     BookService bookService;
+
+    @Autowired
+    public UploadController(HttpServletRequest request, BookService bookService) {
+        this.request = request;
+        this.bookService = bookService;
+    }
 
     @PostMapping("/uploadBookCover")
     public String uploadFile(@RequestParam("file") MultipartFile file,
@@ -43,6 +48,7 @@ public class UploadController {
         try {
             String uploadDir = "/resources/upload/book-covers/";
             String realPath = request.getServletContext().getRealPath(uploadDir);
+            logger.info("Upload to ===> " + realPath);
             String filePath = realPath + "book_" + bookId + "_"+ file.getOriginalFilename();
             String filePathInHost = uploadDir + "book_" + bookId + "_"+ file.getOriginalFilename();
             File transferFile = new File(filePath);

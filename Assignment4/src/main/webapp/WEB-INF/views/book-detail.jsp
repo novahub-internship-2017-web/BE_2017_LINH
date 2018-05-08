@@ -81,6 +81,7 @@ charset=ISO-8859-1" pageEncoding="utf-8"%>
       <div class="user">
         Linh
       </div>
+      <div class="comment-date"></div>
       <div class="comment-content">
         This book is awesome!
       </div>

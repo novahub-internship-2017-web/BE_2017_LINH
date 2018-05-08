@@ -98,14 +98,22 @@ function addCommentLine(res) {
     var comment = $("<div>");
     var commentOwner = $("<div>");
     var commentContent = $("<div>");
+    var commentDate = $("<div>");
+    var date = new Date(res.createdAt);
 
     commentOwner.html(res.user.firstName);
     commentContent.html(res.content);
 
+    commentDate.html('Commented at ' + date.getDate() +
+                      '/' + (date.getMonth() + 1) +
+                     '/' +  date.getFullYear());
+
     commentOwner.addClass("user");
     commentContent.addClass("comment-content");
+    commentDate.addClass("comment-date");
 
     comment.append(commentOwner);
+    comment.append(commentDate);
     comment.append(commentContent);
     comment.addClass("col col-md-12 comment");
 
