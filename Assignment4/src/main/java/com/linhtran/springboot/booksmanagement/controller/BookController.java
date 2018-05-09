@@ -37,7 +37,7 @@ public class BookController {
 
 
     @JsonView(Views.Public.class)
-    @GetMapping(value = "/books/list")
+    @GetMapping(value = "/books")
     public BookDTO listAllBooks(HttpServletRequest request,
                                 Authentication authentication,
                                 @RequestParam("type") String type,
@@ -94,7 +94,7 @@ public class BookController {
 
 
     @JsonView(Views.Public.class)
-    @PostMapping("/add-book")
+    @PostMapping("/books")
     public BookValidation addBook(@RequestBody Book book, HttpServletRequest request) {
         Book newBook = new Book(book.getTitle(), book.getAuthor());
         newBook.setImageUrl("/resources/upload/book-covers/genericBookCover.jpg");
@@ -119,7 +119,7 @@ public class BookController {
     }
 
     @JsonView(Views.Public.class)
-    @PostMapping("/modify-book")
+    @PutMapping("/books")
     public BookValidation modifyBookInformation(@RequestBody Book book) {
         Book newBook = new Book(book.getTitle(), book.getAuthor());
         newBook.setImageUrl("/resources/upload/book-covers/genericBookCover.jpg");
@@ -132,7 +132,7 @@ public class BookController {
     }
 
     @JsonView(Views.Public.class)
-    @GetMapping("/get-book/{id}")
+    @GetMapping("/books/{id}")
     public Book getBookById(@PathVariable("id") int bookId) {
         return bookService.searchBookById(bookId);
     }
@@ -153,7 +153,7 @@ public class BookController {
     }
 
     @JsonView(Views.Public.class)
-    @DeleteMapping("/book/delete")
+    @DeleteMapping("/books")
     public Book deleteBook(@RequestBody Book book,
                            Principal principal,
                            HttpServletRequest request) {

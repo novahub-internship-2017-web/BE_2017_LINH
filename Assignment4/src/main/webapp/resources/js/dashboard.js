@@ -120,7 +120,7 @@ $(document).ready(function () {
         table.addClass("hidden");
         var maxBooks = $("#max-books").val();
         var searchValue = $("input[name=search-value]").val();
-        var uri = "/api/books/list/?type=" + sortType +
+        var uri = "/api/books?type=" + sortType +
                   "&max-books=" + maxBooks +
                    "&page=" + page +
                     "&search-value=" + searchValue +
@@ -164,7 +164,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             contentType: "application/json",
-            url: "/api/add-book",
+            url: "/api/books",
             data: JSON.stringify(newBook),
             dataType: 'json',
             timeout: 100000,
@@ -205,7 +205,7 @@ $(document).ready(function () {
         data.id = parseInt(bookId);
         $.ajax({
             type: "DELETE",
-            url: "/api/book/delete",
+            url: "/api/books",
             contentType: "application/json",
             data: JSON.stringify(data),
             dataType: 'json',

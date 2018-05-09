@@ -32,7 +32,7 @@ $(document).ready(function () {
 function getBookInformation() {
     $.ajax({
         contentType: "application/json",
-        url: "/api/get-book/" + $("#book-id").val(),
+        url: "/api/books/" + $("#book-id").val(),
         dataType: 'json',
         timeout: 100000,
         success: function (res) {
@@ -56,9 +56,9 @@ function modifyBookInfo() {
     currentBook["description"] = $("textarea[name=description]").val();
 
     $.ajax({
-        type: "POST",
+        type: "PUT",
         contentType: "application/json",
-        url: "/api/modify-book",
+        url: "/api/books",
         data: JSON.stringify(currentBook),
         dataType: 'json',
         timeout: 100000,
